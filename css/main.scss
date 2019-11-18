@@ -1,3 +1,105 @@
+$pc: 1024px; // PC
+$tab: 768px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+html {
+  font-size: 12px;
+  @include tab {font-size: 14px;};
+  @include pc {font-size: 16px;};
+}
+
 body {
   font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+}
+
+  @mixin line-truncate(){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  // スクロール誘導 
+.scroll {
+   a {
+    display: inline-block;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    z-index: 2;
+  }
+
+   span {
+   position: absolute;
+   top: 20px;
+   left: 50%;
+   transform: translate(-50%);
+   -webkit-transform: translate(-50%);
+   -ms-transform: translate(-50%);
+   width: 30px;
+   height: 30px;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 100%;
+   -webkit-border-radius: 100%;
+   -moz-border-radius: 100%;
+   -ms-border-radius: 100%;
+   -o-border-radius: 100%;
+   animation: wave 3s infinite;
+    -webkit-animation: wave 3s infinite;
+}
+
+  span::after {
+    content: '';
+    // 中央寄せ高さ：円の高さ30px/2=15px 三角形の中心高さ5px 15-5=10px）
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    box-shadow: 0 0 10px 50px rgb(30, 30, 30);
+  }
+  100% {
+    opacity: 0;
+  }
+}
 }
