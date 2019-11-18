@@ -1,7 +1,34 @@
+//・・・・・・・ 全体共通設定・・・・・・・
+body {
+  font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+}
+
+//・・・・・・・ 背景色設定・・・・・・・
+@mixin whiteColor ($background: #F7F7F7 , $width: 100%){
+  background: $background;
+  width: $width;
+}
+
+@mixin blackColor ($background: #969595 , $width: 100%){
+  background: $background;
+  width: $width;
+}
+
+//・・・・・・・ 中央揃え・・・・・・・
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -o-transform: translate(-50%);
+}
+
+//・・・・・・・ レスポンシブ 設定・・・・・・・
 $pc: 1024px; // PC
 $tab: 768px; // タブレット
 $sp: 480px;  // スマホ
-
 @mixin pc {
   @media (min-width: ($pc)) {
     @content;
@@ -24,23 +51,13 @@ html {
   @include pc {font-size: 16px;};
 }
 
-body {
-  font-family: 'Rajdhani', sans-serif;
-  box-sizing: border-box;
-}
 
-  @mixin line-truncate(){
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  // スクロール誘導 
+  // ・・・・・・・スクロール誘導 ・・・・・・・
 .scroll {
-   a {
+    a {
     display: inline-block;
     position: absolute;
-    bottom: 80px;
+    bottom: 10%;
     left: 50%;
     transform: translate(0, -50%);
     -webkit-transform: translate(0, -50%);
@@ -50,22 +67,22 @@ body {
     z-index: 2;
   }
 
-   span {
-   position: absolute;
-   top: 20px;
-   left: 50%;
-   transform: translate(-50%);
-   -webkit-transform: translate(-50%);
-   -ms-transform: translate(-50%);
-   width: 30px;
-   height: 30px;
-   border: 1px solid rgb(80, 80, 80);
-   border-radius: 100%;
-   -webkit-border-radius: 100%;
-   -moz-border-radius: 100%;
-   -ms-border-radius: 100%;
-   -o-border-radius: 100%;
-   animation: wave 3s infinite;
+  span {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    animation: wave 3s infinite;
     -webkit-animation: wave 3s infinite;
 }
 
@@ -89,7 +106,7 @@ body {
 
 @keyframes wave {
   0% {
-    opacity: 0;
+    opacity: 0.2;
   }
   30% {
     opacity: 1;
@@ -102,4 +119,14 @@ body {
     opacity: 0;
   }
 }
+}
+
+.top-visual {
+  position: relative;
+  @include whiteColor;
+  height: 100vh;
+}
+
+.top-visual__inner {
+  @include center;
 }

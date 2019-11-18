@@ -1,3 +1,8 @@
+body {
+  font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 12px;
 }
@@ -14,15 +19,10 @@ html {
   }
 }
 
-body {
-  font-family: 'Rajdhani', sans-serif;
-  box-sizing: border-box;
-}
-
 .scroll a {
   display: inline-block;
   position: absolute;
-  bottom: 80px;
+  bottom: 10%;
   left: 50%;
   transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
@@ -70,7 +70,7 @@ body {
 
 @keyframes wave {
   0% {
-    opacity: 0;
+    opacity: 0.2;
   }
   30% {
     opacity: 1;
@@ -82,4 +82,20 @@ body {
   100% {
     opacity: 0;
   }
+}
+
+.top-visual {
+  position: relative;
+  background: #F7F7F7;
+  width: 100%;
+  height: 100vh;
+}
+
+.top-visual__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -o-transform: translate(-50%);
 }
