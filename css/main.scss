@@ -5,128 +5,211 @@ body {
 }
 
 //・・・・・・・ 背景色設定・・・・・・・
-@mixin whiteColor ($background: #F7F7F7 , $width: 100%){
+@mixin white ($background: #F7F7F7 , $color: #333333, $width: 100%){
   background: $background;
+  color: $color;
   width: $width;
 }
 
-@mixin blackColor ($background: #969595 , $width: 100%){
+@mixin black ($background: #969595 , $color: #EAEAEA, $width: 100%){
   background: $background;
+  color: $color;
   width: $width;
 }
 
-//・・・・・・・ 中央揃え・・・・・・・
-@mixin center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -o-transform: translate(-50%);
+//・・・・・・・ リンクカラー設定・・・・・・・
+@mixin linkColor($color) {
+  color: $color;
+  
+  &:hover, &:active, &:focus {
+      color: lighten($color, 20%);
+  }
 }
 
-//・・・・・・・ レスポンシブ 設定・・・・・・・
+//・・・・・・・ レスポンシブwidth設定・・・・・・・
 $pc: 1024px; // PC
-$tab: 768px; // タブレット
-$sp: 480px;  // スマホ
+$tab: 780px; // タブレット
+
 @mixin pc {
   @media (min-width: ($pc)) {
     @content;
+    :root {
+      font-size: 18px;
+    }
   }
 }
 @mixin tab {
-  @media (min-width: ($tab)) {
+  @media (min-width: ($tab)) and (max-width: ($pc)) {
     @content;
+    :root {
+      font-size: 16px;
+    }
   }
 }
 @mixin sp {
   @media (max-width: ($tab)) {
     @content;
+    :root {
+      font-size: 14px;
+    }
   }
 }
 
-html {
-  font-size: 12px;
-  @include tab {font-size: 14px;};
-  @include pc {font-size: 16px;};
+//・・・・・・・ フォントサイズ 設定(メディアクエリ によるフォントサイズ呼び出し)・・・・・・・
+@mixin fontsize($size: 16, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+@include pc();  // ベースフォントサイズ18px
+@include tab();  // ベースフォントサイズ16px
+@include sp();  // ベースフォントサイズ14px
+
+//・・・・・・・ 中央揃え設定・・・・・・・
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  -webkit-transform: translate(-50% ,-50%);
+  -moz-transform: translate(-50% ,-50%);
+  -ms-transform: translate(-50% ,-50%);
+  -o-transform: translate(-50% ,-50%);
 }
 
 
-  // ・・・・・・・スクロール誘導 ・・・・・・・
-.scroll {
-    a {
-    display: inline-block;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-    z-index: 2;
-  }
-
-  span {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%);
-    -webkit-transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgb(80, 80, 80);
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -ms-border-radius: 100%;
-    -o-border-radius: 100%;
-    animation: wave 3s infinite;
-    -webkit-animation: wave 3s infinite;
-}
-
-  span::after {
-    content: '';
-    // 中央寄せ高さ：円の高さ30px/2=15px 三角形の中心高さ5px 15-5=10px）
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%);
-    -webkit-transform: translate(-50%);
-    -moz-transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    -o-transform: translate(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 10px;
-    border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
-}
-
-@keyframes wave {
-  0% {
-    opacity: 0.2;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-    box-shadow: 0 0 10px 50px rgb(30, 30, 30);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-}
-
-.top-visual {
+// ・・・・・・・・・top-visual・・・・・・・・・
+.TopVisual {
   position: relative;
-  @include whiteColor;
+  @include white;
   height: 100vh;
 }
 
-.top-visual__inner {
+.TopVisual__inner {
   @include center;
+  h1 {
+    @include fontsize(26);
+    margin-bottom: 20px;
+  }
+  p {
+    @include fontsize(18);
+  }
+}
+
+// スクロール誘導
+.scroll {
+  a {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  z-index: 2;
+  @include linkColor(#6e1b1b);
+}
+
+span {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  animation: wave 3s infinite;
+  -webkit-animation: wave 3s infinite;
+}
+
+span::after {
+  content: '';
+  // 中央寄せ高さ：円の高さ30px/2=15px 三角形の中心高さ5px 15-5=10px）
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
+}
+
+@keyframes wave {
+0% {
+  opacity: 0.2;
+}
+30% {
+  opacity: 1;
+}
+90% {
+  opacity: 0;
+  box-shadow: 0 0 10px 50px rgb(30, 30, 30);
+}
+100% {
+  opacity: 0;
+}
+}
+}
+
+
+// ・・・・・・・・・header・・・・・・・・・
+.Header {
+  @include black;
+  
+}
+
+// ・・・・・・・・・about・・・・・・・・・
+.About {
+  @include white;
+}
+
+.About-photo {
+  width: 120px;
+  height: 120px;
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+}
+// ・・・・・・・・・skill・・・・・・・・・
+.Skill {
+  @include black;
+}
+
+// ・・・・・・・・・work・・・・・・・・・
+.Work {
+  @include white;
+}
+
+// ・・・・・・・・・price・・・・・・・・・
+.Price {
+  @include black;
+}
+// ・・・・・・・・・contact・・・・・・・・・
+.Contact {
+  @include white;
+}
+
+// ・・・・・・・・・footer・・・・・・・・・
+.Footer {
+  @include black;
 }

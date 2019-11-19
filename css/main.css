@@ -3,24 +3,55 @@ body {
   box-sizing: border-box;
 }
 
-html {
-  font-size: 12px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 14px;
+@media (min-width: 1024px) {
+  :root {
+    font-size: 18px;
   }
 }
 
-@media (min-width: 1024px) {
-  html {
+@media (min-width: 780px) and (max-width: 1024px) {
+  :root {
     font-size: 16px;
   }
 }
 
+@media (max-width: 780px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+.TopVisual {
+  position: relative;
+  background: #F7F7F7;
+  color: #333333;
+  width: 100%;
+  height: 100vh;
+}
+
+.TopVisual__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.TopVisual__inner h1 {
+  font-size: 26px;
+  font-size: 1.625rem;
+  margin-bottom: 20px;
+}
+
+.TopVisual__inner p {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
 .scroll a {
-  display: inline-block;
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -30,6 +61,11 @@ html {
   -ms-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
   z-index: 2;
+  color: #6e1b1b;
+}
+
+.scroll a:hover, .scroll a:active, .scroll a:focus {
+  color: #c02f2f;
 }
 
 .scroll span {
@@ -84,18 +120,59 @@ html {
   }
 }
 
-.top-visual {
-  position: relative;
-  background: #F7F7F7;
+.Header {
+  background: #969595;
+  color: #EAEAEA;
   width: 100%;
-  height: 100vh;
 }
 
-.top-visual__inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -o-transform: translate(-50%);
+.About {
+  background: #F7F7F7;
+  color: #333333;
+  width: 100%;
+}
+
+.About-photo {
+  width: 120px;
+  height: 120px;
+}
+
+.About-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.Skill {
+  background: #969595;
+  color: #EAEAEA;
+  width: 100%;
+}
+
+.Work {
+  background: #F7F7F7;
+  color: #333333;
+  width: 100%;
+}
+
+.Price {
+  background: #969595;
+  color: #EAEAEA;
+  width: 100%;
+}
+
+.Contact {
+  background: #F7F7F7;
+  color: #333333;
+  width: 100%;
+}
+
+.Footer {
+  background: #969595;
+  color: #EAEAEA;
+  width: 100%;
 }
