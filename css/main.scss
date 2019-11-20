@@ -26,6 +26,12 @@ body {
   }
 }
 
+//・・・・・・・ フォントサイズ 設定・・・・・・・
+@mixin fontsize($size: 16, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
 //・・・・・・・ レスポンシブwidth設定・・・・・・・
 $pc: 1024px; // PC
 $tab: 780px; // タブレット
@@ -33,37 +39,36 @@ $tab: 780px; // タブレット
 @mixin pc {
   @media (min-width: ($pc)) {
     @content;
-    :root {
-      font-size: 18px;
-    }
   }
 }
 @mixin tab {
   @media (min-width: ($tab)) and (max-width: ($pc)) {
     @content;
-    :root {
-      font-size: 16px;
-    }
   }
 }
 @mixin sp {
   @media (max-width: ($tab)) {
     @content;
-    :root {
-      font-size: 14px;
-    }
   }
 }
 
-//・・・・・・・ フォントサイズ 設定(メディアクエリ によるフォントサイズ呼び出し)・・・・・・・
-@mixin fontsize($size: 16, $base: 16) {
-  font-size: $size + px;
-  font-size: ($size / $base) * 1rem;
+// ・・・・・・・メディアクエリ呼び出し・・・・・・・
+@include pc { 
+  :root {
+    font-size: 18px;
+  }
+}  
+@include tab {
+  :root {
+    font-size: 16px;
+  }
+}
+@include sp {
+  :root {
+    font-size: 14px;
+  }
 }
 
-@include pc();  // ベースフォントサイズ18px
-@include tab();  // ベースフォントサイズ16px
-@include sp();  // ベースフォントサイズ14px
 
 //・・・・・・・ 中央揃え設定・・・・・・・
 @mixin center {
@@ -76,6 +81,8 @@ $tab: 780px; // タブレット
   -ms-transform: translate(-50% ,-50%);
   -o-transform: translate(-50% ,-50%);
 }
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでmixin設定＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 
 // ・・・・・・・・・top-visual・・・・・・・・・
@@ -93,6 +100,55 @@ $tab: 780px; // タブレット
   }
   p {
     @include fontsize(18);
+  }
+}
+
+
+.leftBack {
+  opacity: .5;
+  position: absolute;
+  @include sp {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: darkgreen;
+  }
+
+  @include tab {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: darkgreen;
+  }
+
+  @include pc {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: darkgreen;
+  }
+}
+
+.rightBack {
+  opacity: .5;
+  position: absolute;
+  @include tab {
+    top: 70%;
+    right: 0;
+    width: 80%;
+    height: 20%;
+    background: darkgreen;
+  }
+
+  @include pc {
+    top: 70%;
+    right: 0;
+    width: 80%;
+    height: 20%;
+    background: darkgreen;
   }
 }
 
@@ -147,7 +203,6 @@ span::after {
   border-width: 10px 10px 0 10px;
   border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
 }
-
 @keyframes wave {
 0% {
   opacity: 0.2;
