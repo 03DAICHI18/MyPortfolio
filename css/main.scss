@@ -367,11 +367,26 @@ span::after {
 }
 
 // ・・・・・・・・・about・・・・・・・・・
-.About {
-  height: 3000px;
-  @include white;
-  padding-top: 30px;
+.main-visual {
   position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow__img {
+  object-position: 0 50%;
+}
+
+.About {
+  @include white;
+  height: 4000px;
 }
 
 .About-photo {
