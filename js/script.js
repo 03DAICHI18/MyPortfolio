@@ -1,13 +1,13 @@
 $(function(){
  // メインビジュアルスライド
 var page=0;
-var lastPage =parseInt($("#slideshow img").length-1);
-$("#slideshow img").css("display","none");
-$("#slideshow img").eq(page).css("display","block");
+var lastPage =parseInt($("#slideshow li").length-1);
+$("#slideshow li").css("display","none");
+$("#slideshow li").eq(page).css("display","block");
 
 function changePage(){
-  $("#slideshow img").fadeOut(1000);
-  $("#slideshow img").eq(page).fadeIn(1000);
+  $("#slideshow li").fadeOut(1000);
+  $("#slideshow li").eq(page).fadeIn(1000);
 };
 
 var Timer;
