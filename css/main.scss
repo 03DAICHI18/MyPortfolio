@@ -1,8 +1,16 @@
 //・・・・・・・ 全体共通設定・・・・・・・
 body {
   font-family: 'Rajdhani', sans-serif;
+  font-size: 62.5%;
 }
 
+//・・・・・・・ 幅設定・・・・・・・
+@mixin width {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
 //・・・・・・・ 背景色設定・・・・・・・
 @mixin white ($background: #F7F7F7 , $color: #333333, $width: 100vw){
   background: $background;
@@ -16,15 +24,9 @@ body {
   width: $width;
 }
 
-//・・・・・・・ フォントサイズ 設定・・・・・・・
-@mixin fontsize($size: 16, $base: 16) {
-  font-size: $size + px;
-  font-size: ($size / $base) * 1rem;
-}
-
 //・・・・・・・ レスポンシブwidth設定・・・・・・・
 $pc: 1024px; // PC
-$tab: 780px; // タブレット
+$tab: 768px; // タブレット
 
 @mixin pc {
   @media (min-width: ($pc)) {
@@ -42,21 +44,26 @@ $tab: 780px; // タブレット
   }
 }
 
-// ・・・・・・・メディアクエリ呼び出し・・・・・・・
-@include pc { 
+//・・・・・・・ フォントサイズ 設定・・・・・・・
+@include pc {
   :root {
-    font-size: 18px;
+    font-size: 20px;
   }
-}  
+}
 @include tab {
   :root {
-    font-size: 16px;
+    font-size: calc(1rem + ((1vw - 7.68px) * 1.5625));
   }
 }
 @include sp {
   :root {
-    font-size: 14px;
+    font-size: 16px;
   }
+}
+
+@mixin fontsize($size: 16, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
 }
 
 //・・・・・・・ 中央揃え設定・・・・・・・
@@ -191,12 +198,12 @@ $tab: 780px; // タブレット
   &__inner {
     @include center;
     h1 {
-      @include fontsize(30);
       text-align: center;
       margin-bottom: 30px;
+      @include fontsize(30);
     }
     p {
-      @include fontsize(24);
+      @include fontsize(20);
       line-height: 1.5;
     }
   }
@@ -216,13 +223,10 @@ $tab: 780px; // タブレット
   }
 }
 
-
-
 // 背景フェードイン
 .leftBack {
   position: absolute;
   opacity: .5;
-
   @include sp{
     width: 0;
     height: 0;
@@ -285,12 +289,12 @@ $tab: 780px; // タブレット
 // スクロール誘導
 .scroll {
   a {
+  @include fontsize;
   color: #333333;
   position: absolute;
   bottom: 15%;
   left: 50%;
   @include centertransform;
-  @include fontsize(24);
   z-index: 2;
 }
 
@@ -356,17 +360,17 @@ span::after {
     &__list {
       @include sp {
         @include header;
-        @include fontsize(18);  // 余白消しで0にしたフォントサイズの再設定
+        @include fontsize(14);  // 余白消しで0にしたフォントサイズの再設定
         width: calc(100% / 3);
       }
       @include tab {
         @include header;
-        @include fontsize(18);  // 余白消しで0にしたフォントサイズの再設定
+        @include fontsize(16);  // 余白消しで0にしたフォントサイズの再設定
         width: calc(100% / 6);
       }
       @include pc {
         @include header;
-        @include fontsize(18);  // 余白消しで0にしたフォントサイズの再設定
+        @include fontsize(16);  // 余白消しで0にしたフォントサイズの再設定
         width: calc(100% / 6);
       }
     }
@@ -386,26 +390,91 @@ span::after {
 }
 
 .About__block {
-  position: relative;
-  @include white;
-  height: 100%;
-}
-.About-flex {
-  &__photo {
-  width: 120px;
-  height: 120px;
-    img {
-    width: 100%;
-    height: 100%;
-    @include circle;
-    }
+  @include width;
+  padding: 30px 20px;
+  h2 {
+    @include fontsize(30);
+    text-align: center;
   }
 }
 
 
+.About-flex {
+  display: flex;
+  margin-top: 30px;
+  @include fontsize(16);
+
+  @include sp {
+    flex-direction: column;
+    &__photo {
+    max-width: 250px;
+    margin: 0 auto;
+      img {
+      max-width: 100%;
+      height: auto;
+      @include circle;
+      }
+    }
+    &__text {
+      margin-top: 30px;
+    }
+    &__text--name {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include tab {
+    justify-content: space-around;
+    align-items: center;
+    &__photo {
+      width: 30%;
+      img {
+      width: 100%;
+      height: auto;
+      @include circle;
+      }
+    }
+    &__text {
+      width: 50%;
+      margin-top: 30px;
+      line-height: 1.5;
+    }
+    &__text--name {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include pc {
+    justify-content: space-around;
+    align-items: center;
+    &__photo {
+      width: 30%;
+      img {
+      width: 100%;
+      height: auto;
+      @include circle;
+      }
+    }
+    &__text {
+      width: 50%;
+      margin-top: 30px;
+      line-height: 1.5;
+    }
+    &__text--name {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.About__theme {
+  margin-top: 30px;
+  @include fontsize(14);
+  line-height: 2;
+}
+
 .main-visual {
   width: 100%;
-  height: 75vw;
+  height: 70vh;
   position: relative;
 }
 
@@ -441,30 +510,25 @@ span::after {
 
 // ・・・・・・・・・skill・・・・・・・・・
 .Skill {
-  position: relative;
   @include black;
   height: 3000px;
 }
 
 // ・・・・・・・・・work・・・・・・・・・
 .Work {
-  position: relative;
   @include white;
 }
 
 // ・・・・・・・・・price・・・・・・・・・
 .Price {
-  position: relative;
   @include black;
 }
 // ・・・・・・・・・contact・・・・・・・・・
 .Contact {
-  position: relative;
   @include white;
 }
 
 // ・・・・・・・・・footer・・・・・・・・・
 .Footer {
-  position: relative;
   @include black;
 }
