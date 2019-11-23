@@ -6,8 +6,8 @@ $("#slideshow li").css("display","none");
 $("#slideshow li").eq(page).css("display","block");
 
 function changePage(){
-  $("#slideshow li").fadeOut(1000);
-  $("#slideshow li").eq(page).fadeIn(1000);
+  $("#slideshow li").fadeOut(2000);
+  $("#slideshow li").eq(page).fadeIn(2000);
 };
 
 var Timer;
@@ -22,7 +22,7 @@ Timer =setInterval(function(){
       };
         },4000);
 }
-
 startTimer();
+
 });
 
