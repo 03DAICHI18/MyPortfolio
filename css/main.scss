@@ -169,10 +169,10 @@ $tab: 780px; // タブレット
 
 //・・・・・・・ アバウト背景設定・・・・・・・
 @mixin Backgroundimg {
-  background-size: cover;
-  background-position-y: 20%;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -383,32 +383,13 @@ span::after {
 // ・・・・・・・・・about・・・・・・・・・
 .About {
   @include white;
-  height: 4000px;
 }
 
-.main-visual {
-  width: 100%;
-  height: 70vw;
+.About__block {
   position: relative;
+  @include white;
+  height: 100%;
 }
-
-.slideshow__img--1 {
-  background-image: url(../img/fukuoka.jpeg);
-  @include Backgroundimg;
-}
-.slideshow__img--2 {
-  background-image: url(../img/momochi.jpeg);
-  @include Backgroundimg;
-}
-.slideshow__img--3 {
-  background-image: url(../img/Canal.jpeg);
-  @include Backgroundimg;
-}
-.slideshow__img--4 {
-  background-image: url(../img/nightvew.jpeg);
-  @include Backgroundimg;
-}
-
 .About-flex {
   &__photo {
   width: 120px;
@@ -421,26 +402,69 @@ span::after {
   }
 }
 
+
+.main-visual {
+  width: 100%;
+  height: 75vw;
+  position: relative;
+}
+
+.slideshow__img--1 {
+  @include Backgroundimg;
+  background-image: url(../img/hakata.jpeg);
+  @include sp {
+    background-image: url(../img/sptower.jpeg);
+  }
+}
+.slideshow__img--2 {
+  @include Backgroundimg;
+  background-image: url(../img/momochi.jpeg);
+  @include sp {
+    background-image: url(../img/spyamagasa.jpeg);
+  }
+}
+.slideshow__img--3 {
+  @include Backgroundimg;
+  background-image: url(../img/canal.jpeg);
+  @include sp {
+    background-image: url(../img/spnakasu.jpeg);
+  }
+}
+.slideshow__img--4 {
+  @include Backgroundimg;
+  background-image: url(../img/nightvew.jpeg);
+  @include sp {
+    background-image: url(../img/sphakatabay.jpeg);
+  }
+}
+
+
 // ・・・・・・・・・skill・・・・・・・・・
 .Skill {
+  position: relative;
   @include black;
+  height: 3000px;
 }
 
 // ・・・・・・・・・work・・・・・・・・・
 .Work {
+  position: relative;
   @include white;
 }
 
 // ・・・・・・・・・price・・・・・・・・・
 .Price {
+  position: relative;
   @include black;
 }
 // ・・・・・・・・・contact・・・・・・・・・
 .Contact {
+  position: relative;
   @include white;
 }
 
 // ・・・・・・・・・footer・・・・・・・・・
 .Footer {
+  position: relative;
   @include black;
 }

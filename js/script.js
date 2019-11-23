@@ -20,7 +20,7 @@ Timer =setInterval(function(){
       page ++;
       changePage();
       };
-        },3000);
+        },4000);
 }
 
 startTimer();
