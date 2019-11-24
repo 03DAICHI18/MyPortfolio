@@ -188,14 +188,16 @@ $tab: 768px; // タブレット
   -webkit-filter: grayscale(80%);
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでmixin設定＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
-
 // ・・・・・・・・・セクション共通・・・・・・・・・
 @mixin Section-title {
   @include fontsize(30);
   text-align: center;
 }
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでmixin設定＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+
 
 .section-title {
   @include Section-title;
@@ -218,11 +220,26 @@ $tab: 768px; // タブレット
       line-height: 1.5;
     }
   }
-}
 
-@mixin effect-fade {
-  animation: fadeInText 4s ease-in 0s 1 normal;
-  -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
+  @mixin effect-fade {
+    animation: fadeInText 4s ease-in 0s 1 normal;
+    -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
+    @keyframes fadeInText {
+      0% {
+        opacity: 0
+      }
+      100% {
+        opacity: 1
+      }
+    }
+  } 
+
+  // テキストフェードイン
+  .effect-fade__text {
+    @include effect-fade();
+    animation: fadeInText 4s ease-in 0s 1 normal;
+    -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
+  }
   @keyframes fadeInText {
     0% {
       opacity: 0
@@ -231,153 +248,126 @@ $tab: 768px; // タブレット
       opacity: 1
     }
   }
-} 
 
-// テキストフェードイン
-.effect-fade__text {
-  @include effect-fade();
-//   animation: fadeInText 4s ease-in 0s 1 normal;
-//   -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
-// }
-// @keyframes fadeInText {
-//   0% {
-//     opacity: 0
-//   }
-//   100% {
-//     opacity: 1
-//   }
-}
+  // 背景フェードイン
+  .leftBack {
+    position: absolute;
+    opacity: .5;
+    @include sp{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 100vh 100vw 0 0;
+      border-color: #333 transparent transparent transparent;
+      animation: SpfadeInBack 4s ease-in 0s 1 normal;
+      -webkit-animation: SpfadeInBack 4s ease-in 0s 1 normal;
+      @include SpfadeInBack;
+  }
 
-// 背景フェードイン
-.leftBack {
-  position: absolute;
-  opacity: .5;
-  @include sp{
+    @include tab {
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 60%;
+      background: #333;
+      animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      @include LeftTopkey;
+  }
+
+    @include pc {
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 60%;
+      background: #333;
+      animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      @include LeftTopkey;
+    }
+  }
+
+  .rightBack {
+    position: absolute;
+    opacity: .5;
+    animation: RightfadeInBack 4s ease-in 0s 1 normal;
+    -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
+
+    @include tab {
+      top: 70%;
+      right: 0;
+      width: 80%;
+      height: 10%;
+      background: #333;
+      @include RightTopkey;
+    }
+
+    @include pc {
+      top: 70%;
+      right: 0;
+      width: 80%;
+      height: 10%;
+      background: #333;
+      @include RightTopkey;
+    }
+  }
+
+  // スクロール誘導
+  .scroll {
+    a {
+    @include fontsize;
+    @include centertransform;
+    @include effect-fade;
+    color: #333333;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    z-index: 2;
+  }
+
+  span {
+    @include centertransform;
+    @include circle;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(80, 80, 80);
+    animation: wave 3s infinite;
+    -webkit-animation: wave 3s infinite;
+    @keyframes wave {
+      0% {
+        opacity: 0.2;
+      }
+      30% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0;
+        box-shadow: 0 0 10px 30px rgb(150, 150, 150) ;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  span::after {
+    @include centertransform;
+    content: '';
+    position: absolute;
+    //中央寄せ高さ：円の高さ50px/2=25px三角形の中心高さ10px25-10=15pxposition: absolute;
+    top: 15px;
+    left: 50%;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 100vh 100vw 0 0;
-    border-color: #333 transparent transparent transparent;
-    animation: SpfadeInBack 4s ease-in 0s 1 normal;
-    -webkit-animation: SpfadeInBack 4s ease-in 0s 1 normal;
-    @include SpfadeInBack;
-}
-
-  @include tab {
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 60%;
-    background: #333;
-    animation: LeftfadeInBack 4s ease-in 0s 1 normal;
-    -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
-    @include LeftTopkey;
-}
-
-  @include pc {
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 60%;
-    background: #333;
-    animation: LeftfadeInBack 4s ease-in 0s 1 normal;
-    -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
-    @include LeftTopkey;
+    border-width: 26px 15px 0 15px;
+    border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
+  }
   }
 }
-
-.rightBack {
-  position: absolute;
-  opacity: .5;
-  animation: RightfadeInBack 4s ease-in 0s 1 normal;
-  -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
-
-  @include tab {
-    top: 70%;
-    right: 0;
-    width: 80%;
-    height: 10%;
-    background: #333;
-    @include RightTopkey;
-  }
-
-  @include pc {
-    top: 70%;
-    right: 0;
-    width: 80%;
-    height: 10%;
-    background: #333;
-    @include RightTopkey;
-  }
-}
-
-// スクロール誘導
-.scroll {
-  a {
-  @include fontsize;
-  @include centertransform;
-  @include effect-fade;
-  color: #333333;
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  z-index: 2;
-//   animation: fadeInText 4s ease-in 0s 1 normal;
-//   -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
-
-// @keyframes fadeInText {
-//   0% {
-//     opacity: 0
-//   }
-//   100% {
-//     opacity: 1
-//   }
-// }
-}
-
-span {
-  @include centertransform;
-  @include circle;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border: 1px solid rgb(80, 80, 80);
-  animation: wave 3s infinite;
-  -webkit-animation: wave 3s infinite;
-  @keyframes wave {
-    0% {
-      opacity: 0.2;
-    }
-    30% {
-      opacity: 0.8;
-    }
-    90% {
-      opacity: 0;
-      box-shadow: 0 0 10px 30px rgb(150, 150, 150) ;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-}
-
-span::after {
-  @include centertransform;
-  content: '';
-  position: absolute;
-  //中央寄せ高さ：円の高さ50px/2=25px三角形の中心高さ10px25-10=15pxposition: absolute;
-  top: 15px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 26px 15px 0 15px;
-  border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
-}
-}
-
 
 // ・・・・・・・・・header・・・・・・・・・
 .Header {
@@ -424,51 +414,84 @@ span::after {
 // ・・・・・・・・・about・・・・・・・・・
 .About {
   @include white;
-}
 
-.About__block {
+&__block {
   @include width;
   padding: 30px 20px;
-}
 
-.About-flex {
-  display: flex;
-  margin-top: 30px;
-  @include fontsize(16);
-  filter: grayscale(80%);
-  @include sp {
-    flex-direction: column;
-    &__photo {
-    max-width: 200px;
-    margin: 0 auto;
-      img {
-      max-width: 100%;
-      height: auto;
-      @include circle;
+  .About-flex {
+    display: flex;
+    margin-top: 30px;
+    @include fontsize(16);
+    filter: grayscale(80%);
+    -webkit-filter: grayscale(80%);
+
+    @include sp {
+      flex-direction: column;
+      &__photo {
+      max-width: 200px;
+      margin: 0 auto;
+        img {
+        max-width: 100%;
+        height: auto;
+        @include circle;
+        }
+      }
+      &__text {
+        margin-top: 30px;
+      }
+      &__text--name {
+        text-align: center;
+        // max-width: 500px;
+        margin: 20px 0;
+        position: relative;
+      }
+      &__text--name::after {
+        position: absolute;
+        content: '';
+        width: 50%;
+        bottom: -10px;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
       }
     }
-    &__text {
-      margin-top: 30px;
-    }
-    &__text--name {
-      text-align: center;
-      // max-width: 500px;
-      margin: 20px 0;
-      position: relative;
-    }
-    &__text--name::after {
-      position: absolute;
-      content: '';
-      width: 100%;
-      bottom: -10px;
-      left: 50%;
-      @include centertransform;
-      height: 1px;
-      background: #333;
-    }
-  }
 
-  @include tab {
+    @include tab {
+      justify-content: space-around;
+      align-items: center;
+      &__photo {
+        width: 30%;
+        img {
+        width: 100%;
+        height: auto;
+        @include circle;
+        }
+      }
+      &__text {
+        width: 50%;
+        margin-top: 30px;
+        line-height: 1.5;
+      }
+      &__text--name {
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+      }
+      &__text--name::after {
+        position: absolute;
+        content: '';
+        width: 70%;
+        bottom: -10px;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+      }
+    } 
+
+    @include pc {
     justify-content: space-around;
     align-items: center;
     &__photo {
@@ -488,102 +511,68 @@ span::after {
       text-align: center;
       margin-bottom: 30px;
       position: relative;
-    }
+      }
     &__text--name::after {
-      position: absolute;
-      content: '';
-      width: 70%;
-      bottom: -10px;
-      left: 50%;
-      @include centertransform;
-      height: 1px;
-      background: #333;
+        position: absolute;
+        content: '';
+        width: 70%;
+        bottom: -10px;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+      }
     }
-  } 
+  }
+    .About__theme {
+      margin-top: 30px;
+      @include fontsize(14);
+      line-height: 2;
+    }
+  }
 
-  @include pc {
-  justify-content: space-around;
-  align-items: center;
-  &__photo {
-    width: 30%;
-    img {
-    width: 100%;
-    height: auto;
-    @include circle;
-    }
-  }
-  &__text {
-    width: 50%;
-    margin-top: 30px;
-    line-height: 1.5;
-  }
-  &__text--name {
-    text-align: center;
-    margin-bottom: 30px;
+  .main-visual {
     position: relative;
+    width: 100vw;
+    height: 100vw;
+
+    .slideshow__img--1 {
+      @include Backgroundimg;
+      background-image: url(../img/hakata.jpeg);
+      @include sp {
+        background-image: url(../img/sptower.jpeg);
+      }
     }
-  &__text--name::after {
-      position: absolute;
-      content: '';
-      width: 70%;
-      bottom: -10px;
-      left: 50%;
-      @include centertransform;
-      height: 1px;
-      background: #333;
+    .slideshow__img--2 {
+      @include Backgroundimg;
+      background-image: url(../img/momochi.jpeg);
+      @include sp {
+        background-image: url(../img/spyamagasa.jpeg);
+      }
     }
-  }
-}
-
-.About__theme {
-  margin-top: 30px;
-  @include fontsize(14);
-  line-height: 2;
-}
-
-.main-visual {
-  position: relative;
-  width: 100vw;
-  height: 100vw;
-}
-
-
-.slideshow__img--1 {
-  @include Backgroundimg;
-  background-image: url(../img/hakata.jpeg);
-  @include sp {
-    background-image: url(../img/sptower.jpeg);
-  }
-}
-.slideshow__img--2 {
-  @include Backgroundimg;
-  background-image: url(../img/momochi.jpeg);
-  @include sp {
-    background-image: url(../img/spyamagasa.jpeg);
-  }
-}
-.slideshow__img--3 {
-  @include Backgroundimg;
-  background-image: url(../img/canal.jpeg);
-  @include sp {
-    background-image: url(../img/spnakasu.jpeg);
-  }
-}
-.slideshow__img--4 {
-  @include Backgroundimg;
-  background-image: url(../img/nightvew.jpeg);
-  @include sp {
-    background-image: url(../img/sphakatabay.jpeg);
+    .slideshow__img--3 {
+      @include Backgroundimg;
+      background-image: url(../img/canal.jpeg);
+      @include sp {
+        background-image: url(../img/spnakasu.jpeg);
+      }
+    }
+    .slideshow__img--4 {
+      @include Backgroundimg;
+      background-image: url(../img/nightvew.jpeg);
+      @include sp {
+        background-image: url(../img/sphakatabay.jpeg);
+      }
+    }
   }
 }
 
 // ・・・・・・・・・Service・・・・・・・・・
 .Service {
-  @include black;
   @include width;
-  position: relative;
-  padding: 30px;
-  height: 1000px;
+  @include black;
+  display: block;
+  height: 500px;
 }
 
 
