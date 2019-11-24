@@ -9,13 +9,13 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   :root {
     font-size: calc(1rem + ((1vw - 7.68px) * 1.5625));
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   :root {
     font-size: 16px;
   }
@@ -31,19 +31,18 @@ body {
   position: relative;
   background: #F7F7F7;
   color: #333333;
-  width: 100vw;
   height: 100vh;
 }
 
 .TopVisual__inner {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
 }
 
 .TopVisual__inner h1 {
@@ -89,7 +88,7 @@ body {
   opacity: .5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .TopVisual .leftBack {
     width: 0;
     height: 0;
@@ -119,12 +118,12 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   .TopVisual .leftBack {
     top: 0;
     left: 0;
     width: 50%;
-    height: 60%;
+    height: 40%;
     background: #333;
     animation: LeftfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
@@ -154,7 +153,7 @@ body {
     top: 0;
     left: 0;
     width: 50%;
-    height: 60%;
+    height: 40%;
     background: #333;
     animation: LeftfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
@@ -186,9 +185,9 @@ body {
   -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   .TopVisual .rightBack {
-    top: 70%;
+    top: 60%;
     right: 0;
     width: 80%;
     height: 10%;
@@ -216,7 +215,7 @@ body {
 
 @media (min-width: 1024px) {
   .TopVisual .rightBack {
-    top: 70%;
+    top: 60%;
     right: 0;
     width: 80%;
     height: 10%;
@@ -254,7 +253,7 @@ body {
   -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
   color: #333333;
   position: absolute;
-  bottom: 15%;
+  bottom: 25%;
   left: 50%;
   z-index: 2;
 }
@@ -280,7 +279,7 @@ body {
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
   left: 50%;
   width: 50px;
   height: 50px;
@@ -339,7 +338,7 @@ body {
   font-size: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -356,7 +355,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -401,11 +400,10 @@ body {
 .About {
   background: #F7F7F7;
   color: #333333;
-  width: 100vw;
 }
 
 .About__block {
-  width: 100%;
+  width: 100vw;
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -420,7 +418,7 @@ body {
   -webkit-filter: grayscale(80%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .About__block .About-flex {
     flex-direction: column;
   }
@@ -448,7 +446,7 @@ body {
   .About__block .About-flex__text--name::after {
     position: absolute;
     content: '';
-    width: 50%;
+    width: 80%;
     bottom: -10px;
     left: 50%;
     transform: translate(-50%);
@@ -461,7 +459,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   .About__block .About-flex {
     justify-content: space-around;
     align-items: center;
@@ -563,8 +561,8 @@ body {
 .About .main-visual .slideshow__img--1 {
   background-attachment: fixed;
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
   background-position: center;
@@ -577,7 +575,7 @@ body {
   background-image: url(../img/hakata.jpeg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .About .main-visual .slideshow__img--1 {
     background-image: url(../img/sptower.jpeg);
   }
@@ -586,8 +584,8 @@ body {
 .About .main-visual .slideshow__img--2 {
   background-attachment: fixed;
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
   background-position: center;
@@ -600,7 +598,7 @@ body {
   background-image: url(../img/momochi.jpeg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .About .main-visual .slideshow__img--2 {
     background-image: url(../img/spyamagasa.jpeg);
   }
@@ -609,8 +607,8 @@ body {
 .About .main-visual .slideshow__img--3 {
   background-attachment: fixed;
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
   background-position: center;
@@ -623,7 +621,7 @@ body {
   background-image: url(../img/canal.jpeg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .About .main-visual .slideshow__img--3 {
     background-image: url(../img/spnakasu.jpeg);
   }
@@ -632,8 +630,8 @@ body {
 .About .main-visual .slideshow__img--4 {
   background-attachment: fixed;
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
   background-position: center;
@@ -646,28 +644,28 @@ body {
   background-image: url(../img/nightvew.jpeg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .About .main-visual .slideshow__img--4 {
     background-image: url(../img/sphakatabay.jpeg);
   }
 }
 
 .Service {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   background: #c0bebe;
   color: #EAEAEA;
-  width: 100vw;
   display: block;
-  height: 500px;
+}
+
+.Service__inner {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .Work {
   background: #F7F7F7;
   color: #333333;
   width: 100vw;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -676,7 +674,6 @@ body {
   background: #c0bebe;
   color: #EAEAEA;
   width: 100vw;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -685,7 +682,6 @@ body {
   background: #F7F7F7;
   color: #333333;
   width: 100vw;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -693,5 +689,4 @@ body {
 .Footer {
   background: #c0bebe;
   color: #EAEAEA;
-  width: 100vw;
 }
