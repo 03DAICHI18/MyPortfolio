@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAICHI Portfolio</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+    <section class="TopVisual">
+      <div class="TopVisual__inner">
+        <h1>DAICHI's Portfolio</h1>
+        <p class="effect-fade__text">Thank you for visiting this page.</p>
+        <p class="effect-fade__text">This is a website production in Fukuoka Ito Daichi’s portfolio site.</p>
+      </div>
+        <div class="leftBack"></div> 
+        <div class="rightBack"></div> 
+          <div class="scroll" >
+            <a href="#">Scroll</a><span></span>
+          </div>
+    </section>
+  <header class="Header">
+      <nav>
+        <ul class="Header-inner">
+          <li class="Header-inner__list"><a href="#">ABOUT</a></li>
+          <li class="Header-inner__list"><a href="#">SKILL</a></li>
+          <li class="Header-inner__list"><a href="#">SERVICE</a></li>
+          <li class="Header-inner__list"><a href="#">WORK</a></li>
+          <li class="Header-inner__list"><a href="#">PRICE</a></li>
+          <li class="Header-inner__list"><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <section class="About">
+      <div class="About__block">
+        <h2 class="section-title">ABOUT</h2>
+        <div class="About-flex">
+          <div class="About-flex__photo">
+            <p><img src="img/selfphoto.jpeg" alt="自己紹介写真"></p>
+          </div>
+          <div class="About-flex__text">
+            <p class="About-flex__text--name">伊藤　大地　／　Itou　Daichi</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="About__theme">
+          <p>福岡在住、WEBサイト製作（HP製作、LP製作）を行っている週末フリーランスです。</p>
+          <p>業務委託での営業や、コールセンターでの管理運営業務に携わってきた時間が長い為、ステークホルダーの存在を常に意識した行動を心掛ける事は勿論、コンシューマーやクライアントとのコミュニケーションを何よりも大切にしています。</p>
+          <p>見た目が洗練されているWEBサイトは数多くありますが、お客様の目的を実現させる手助けとなれるかどうかがWEBサイトにおいては重要であると考えています。</p>
+          <p>お仕事のご依頼をいただいた際は、ご満足いただけるようニーズを汲み取りご提案させていただく事を最重視しております。</p>
+        </div>
+      </div> 
+      <div class="main-visual">
+        <ul id="slideshow">
+          <li class="slideshow__img--1"></li>
+          <li class="slideshow__img--2"></li>
+          <li class="slideshow__img--3"></li>
+          <li class="slideshow__img--4"></li>
+        </ul>
+      </div>
+    </section>
+    <setion class="Service">
+        <h2 class="section-title">Service</h2>
+        <p>aaaaaaaaaaaa</p>
+    </setion>
+    <section class="Work">
+
+    </section>
+    <section class="Price">
+
+    </section>
+    <section class="Contact">
+
+    </section>
+  </main>
+  <footer class="Footer">
+
+  </footer>
+</body>
+</html>
