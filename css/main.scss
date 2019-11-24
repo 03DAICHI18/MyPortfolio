@@ -176,8 +176,10 @@ $tab: 768px; // タブレット
 //・・・・・・・ アバウト背景設定・・・・・・・
 @mixin Backgroundimg {
   background-attachment: fixed;
-  -webkit-backface-visibility:hidden; 
-  -webkit-transform: translate3d(0,0,0); 
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
   background-size: cover;
   background-position: center;
   position: absolute;

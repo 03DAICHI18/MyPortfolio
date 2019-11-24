@@ -562,6 +562,8 @@ body {
 
 .About .main-visual .slideshow__img--1 {
   background-attachment: fixed;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
@@ -583,6 +585,8 @@ body {
 
 .About .main-visual .slideshow__img--2 {
   background-attachment: fixed;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
@@ -604,6 +608,8 @@ body {
 
 .About .main-visual .slideshow__img--3 {
   background-attachment: fixed;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
@@ -625,6 +631,8 @@ body {
 
 .About .main-visual .slideshow__img--4 {
   background-attachment: fixed;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   background-size: cover;
