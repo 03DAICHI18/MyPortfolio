@@ -15,7 +15,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   :root {
     font-size: 16px;
   }
@@ -88,7 +88,7 @@ body {
   opacity: .5;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .TopVisual .leftBack {
     width: 0;
     height: 0;
@@ -323,8 +323,8 @@ body {
 
 .Header {
   position: relative;
-  position: -webkit-sticky;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background: #333333;
   opacity: .8;
@@ -338,7 +338,7 @@ body {
   font-size: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -418,7 +418,7 @@ body {
   -webkit-filter: grayscale(80%);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .About__block .About-flex {
     flex-direction: column;
   }
@@ -552,114 +552,115 @@ body {
   line-height: 2;
 }
 
-.About .main-visual {
+.parallax {
   position: relative;
-  width: 100vw;
-  height: 100vw;
 }
 
-.About .main-visual .slideshow__img--1 {
-  background-attachment: fixed;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  background-size: cover;
-  background-position: center;
-  position: absolute;
+.parallax .parallax__area {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter: grayscale(80%);
-  -webkit-filter: grayscale(80%);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+.parallax__img1 {
   background-image: url(../img/hakata.jpeg);
-}
-
-@media (max-width: 480px) {
-  .About .main-visual .slideshow__img--1 {
-    background-image: url(../img/sptower.jpeg);
-  }
-}
-
-.About .main-visual .slideshow__img--2 {
   background-attachment: fixed;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter: grayscale(80%);
-  -webkit-filter: grayscale(80%);
+  background-size: cover;
+}
+
+.parallax__img2 {
   background-image: url(../img/momochi.jpeg);
-}
-
-@media (max-width: 480px) {
-  .About .main-visual .slideshow__img--2 {
-    background-image: url(../img/spyamagasa.jpeg);
-  }
-}
-
-.About .main-visual .slideshow__img--3 {
   background-attachment: fixed;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter: grayscale(80%);
-  -webkit-filter: grayscale(80%);
-  background-image: url(../img/canal.jpeg);
+  background-size: cover;
 }
 
-@media (max-width: 480px) {
-  .About .main-visual .slideshow__img--3 {
-    background-image: url(../img/spnakasu.jpeg);
-  }
-}
-
-.About .main-visual .slideshow__img--4 {
+.parallax__img3 {
+  background-image: url(../img/Canal.jpeg);
   background-attachment: fixed;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter: grayscale(80%);
-  -webkit-filter: grayscale(80%);
+  background-size: cover;
+}
+
+.parallax__img4 {
   background-image: url(../img/nightvew.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-@media (max-width: 480px) {
-  .About .main-visual .slideshow__img--4 {
-    background-image: url(../img/sphakatabay.jpeg);
+@media (max-width: 479px) {
+  .parallax__img1::before {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    z-index: -1;
+    background-image: url("../img/sptower.jpeg");
+  }
+  .parallax__img2::before {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    z-index: -1;
+    background-image: url("../img/spnakasu.jpeg");
+  }
+  .parallax__img3::before {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    z-index: -1;
+    background-image: url("../img/spyamagasa.jpeg");
+  }
+  .parallax__img4::before {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    z-index: -1;
+    background-image: url("../img/sphakatabay.jpeg");
   }
 }
 
 .Service {
+  position: absolute;
   background: #c0bebe;
   color: #EAEAEA;
-  display: block;
 }
 
 .Service__inner {
   width: 100vw;
   max-width: 1200px;
   margin: 0 auto;
+  display: block;
 }
 
 .Work {

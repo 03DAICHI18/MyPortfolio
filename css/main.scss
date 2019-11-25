@@ -36,7 +36,7 @@ $tab: 480px; // タブレット
   }
 }
 @mixin sp {
-  @media (max-width: ($tab)) {
+  @media (max-width: ($tab - 1)) {
     @content;
   }
 }
@@ -160,32 +160,36 @@ $tab: 480px; // タブレット
 //・・・・・・・ ヘッダー設定・・・・・・・
 @mixin header {
   display: inline-block;
-        text-align: center;
-        height: 50px;
-        line-height: 50px;
-        border: 1px solid #EAEAEA;
-        border-top: 0;
-        a {
-          color: #EAEAEA;
-        }
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #EAEAEA;
+  border-top: 0;
+    a {
+      color: #EAEAEA;
+    }
+}
+
+// ・・・・・・・・・パララックス・・・・・・・・・
+@mixin pallax {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 
-//・・・・・・・ アバウト背景設定・・・・・・・
-@mixin Backgroundimg {
-  background-attachment: fixed;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
-  background-size: cover;
+@mixin spparallax {
+  background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter: grayscale(80%);
-  -webkit-filter: grayscale(80%);
+  height: 100vh;
+  content: "";
+  z-index: -1;
 }
 
 // ・・・・・・・・・セクション共通・・・・・・・・・
@@ -195,8 +199,6 @@ $tab: 480px; // タブレット
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでmixin設定＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
-
 
 
 .section-title {
@@ -379,8 +381,8 @@ $tab: 480px; // タブレット
 // ・・・・・・・・・header・・・・・・・・・
 .Header {
   position: relative;
-  position: -webkit-sticky;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background: #333333;
   opacity: .8;
@@ -536,50 +538,65 @@ $tab: 480px; // タブレット
       line-height: 2;
     }
   }
+}
 
-  .main-visual {
-    position: relative;
-    width: 100vw;
-    height: 100vw;
+// パララックス
+.parallax {
+  position: relative;
+  .parallax__area {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+  }
 
-    .slideshow__img--1 {
-      @include Backgroundimg;
-      background-image: url(../img/hakata.jpeg);
-      @include sp {
-        background-image: url(../img/sptower.jpeg);
-      }
+//  PCの場合の背景画像
+  &__img1 {
+    background-image: url(../img/hakata.jpeg);
+    @include pallax;
+  }
+  &__img2 {
+    background-image: url(../img/momochi.jpeg);
+    @include pallax;
+  }
+  &__img3 {
+    background-image: url(../img/Canal.jpeg);
+    @include pallax;
+  }
+  &__img4 {
+    background-image: url(../img/nightvew.jpeg);
+    @include pallax;
+  }
+
+// スマートフォンの場合
+  @include sp {
+  &__img1::before {
+    @include spparallax;
+    background-image: url("../img/sptower.jpeg");
     }
-    .slideshow__img--2 {
-      @include Backgroundimg;
-      background-image: url(../img/momochi.jpeg);
-      @include sp {
-        background-image: url(../img/spyamagasa.jpeg);
-      }
+  &__img2::before {
+    @include spparallax;
+    background-image: url("../img/spnakasu.jpeg");
     }
-    .slideshow__img--3 {
-      @include Backgroundimg;
-      background-image: url(../img/canal.jpeg);
-      @include sp {
-        background-image: url(../img/spnakasu.jpeg);
-      }
+  &__img3::before {
+    @include spparallax;
+    background-image: url("../img/spyamagasa.jpeg");
     }
-    .slideshow__img--4 {
-      @include Backgroundimg;
-      background-image: url(../img/nightvew.jpeg);
-      @include sp {
-        background-image: url(../img/sphakatabay.jpeg);
-      }
+  &__img4::before {
+    @include spparallax;
+    background-image: url("../img/sphakatabay.jpeg");
     }
   }
 }
 
 // ・・・・・・・・・Service・・・・・・・・・
 .Service {
-  @include black;
-  display: block;
+  position: absolute;
   &__inner {
     @include width;
+    display: block;
   }
+  @include black;
 
 }
 
