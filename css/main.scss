@@ -3,6 +3,7 @@ body {
   font-size: 62.5%;
 }
 
+
 //・・・・・・・ 幅設定・・・・・・・
 @mixin width {
   width: 100vw;
@@ -23,7 +24,7 @@ body {
 
 //・・・・・・・ レスポンシブwidth設定・・・・・・・
 $pc: 1024px; // PC
-$tab: 480px; // タブレット
+$tab: 768px; // タブレット
 
 @mixin pc {
   @media (min-width: ($pc)) {
@@ -168,28 +169,6 @@ $tab: 480px; // タブレット
     a {
       color: #EAEAEA;
     }
-}
-
-// ・・・・・・・・・パララックス・・・・・・・・・
-@mixin pallax {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-
-@mixin spparallax {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  content: "";
-  z-index: -1;
 }
 
 // ・・・・・・・・・セクション共通・・・・・・・・・
@@ -385,7 +364,6 @@ $tab: 480px; // タブレット
   position: -webkit-sticky;
   top: 0;
   background: #333333;
-  opacity: .8;
   box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
@@ -423,10 +401,12 @@ $tab: 480px; // タブレット
 // ・・・・・・・・・about・・・・・・・・・
 .About {
   @include white;
+  margin-bottom: 70vh;
+  
 
 &__block {
   @include width;
-  padding: 30px 20px;
+  padding: 50px 20px;
 
   .About-flex {
     display: flex;
@@ -540,64 +520,32 @@ $tab: 480px; // タブレット
   }
 }
 
-// パララックス
-.parallax {
-  position: relative;
-  .parallax__area {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-  }
-
-//  PCの場合の背景画像
-  &__img1 {
-    background-image: url(../img/hakata.jpeg);
-    @include pallax;
-  }
-  &__img2 {
-    background-image: url(../img/momochi.jpeg);
-    @include pallax;
-  }
-  &__img3 {
-    background-image: url(../img/Canal.jpeg);
-    @include pallax;
-  }
-  &__img4 {
-    background-image: url(../img/nightvew.jpeg);
-    @include pallax;
-  }
-
-// スマートフォンの場合
+// パララックス（ios対応のため  background-attachment: fixedは使用しない）
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/Canal.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
   @include sp {
-  &__img1::before {
-    @include spparallax;
-    background-image: url("../img/sptower.jpeg");
-    }
-  &__img2::before {
-    @include spparallax;
-    background-image: url("../img/spnakasu.jpeg");
-    }
-  &__img3::before {
-    @include spparallax;
-    background-image: url("../img/spyamagasa.jpeg");
-    }
-  &__img4::before {
-    @include spparallax;
-    background-image: url("../img/sphakatabay.jpeg");
-    }
+    background-image: url(../img/sptower.jpeg);
   }
 }
 
+
 // ・・・・・・・・・Service・・・・・・・・・
 .Service {
-  position: absolute;
-  &__inner {
-    @include width;
-    display: block;
-  }
+  position: relative;
+  display: block;
   @include black;
-
+  height: 500px;
 }
 
 

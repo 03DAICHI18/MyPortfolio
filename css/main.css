@@ -9,13 +9,13 @@ body {
   }
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   :root {
     font-size: calc(1rem + ((1vw - 7.68px) * 1.5625));
   }
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   :root {
     font-size: 16px;
   }
@@ -88,7 +88,7 @@ body {
   opacity: .5;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   .TopVisual .leftBack {
     width: 0;
     height: 0;
@@ -118,7 +118,7 @@ body {
   }
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .TopVisual .leftBack {
     top: 0;
     left: 0;
@@ -185,7 +185,7 @@ body {
   -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .TopVisual .rightBack {
     top: 60%;
     right: 0;
@@ -327,7 +327,6 @@ body {
   position: -webkit-sticky;
   top: 0;
   background: #333333;
-  opacity: .8;
   box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.1);
@@ -338,7 +337,7 @@ body {
   font-size: 0;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -355,7 +354,7 @@ body {
   }
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -400,13 +399,14 @@ body {
 .About {
   background: #F7F7F7;
   color: #333333;
+  margin-bottom: 70vh;
 }
 
 .About__block {
   width: 100vw;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
 
 .About__block .About-flex {
@@ -418,7 +418,7 @@ body {
   -webkit-filter: grayscale(80%);
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   .About__block .About-flex {
     flex-direction: column;
   }
@@ -459,7 +459,7 @@ body {
   }
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .About__block .About-flex {
     justify-content: space-around;
     align-items: center;
@@ -552,115 +552,33 @@ body {
   line-height: 2;
 }
 
-.parallax {
-  position: relative;
-}
-
-.parallax .parallax__area {
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  position: absolute;
-  top: 0;
-}
-
-.parallax__img1 {
-  background-image: url(../img/hakata.jpeg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.parallax__img2 {
-  background-image: url(../img/momochi.jpeg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.parallax__img3 {
   background-image: url(../img/Canal.jpeg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
-.parallax__img4 {
-  background-image: url(../img/nightvew.jpeg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-@media (max-width: 479px) {
-  .parallax__img1::before {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    content: "";
-    z-index: -1;
-    background-image: url("../img/sptower.jpeg");
-  }
-  .parallax__img2::before {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    content: "";
-    z-index: -1;
-    background-image: url("../img/spnakasu.jpeg");
-  }
-  .parallax__img3::before {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    content: "";
-    z-index: -1;
-    background-image: url("../img/spyamagasa.jpeg");
-  }
-  .parallax__img4::before {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    content: "";
-    z-index: -1;
-    background-image: url("../img/sphakatabay.jpeg");
+@media (max-width: 767px) {
+  body::before {
+    background-image: url(../img/sptower.jpeg);
   }
 }
 
 .Service {
-  position: absolute;
+  position: relative;
+  display: block;
   background: #c0bebe;
   color: #EAEAEA;
-}
-
-.Service__inner {
-  width: 100vw;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: block;
+  height: 500px;
 }
 
 .Work {
