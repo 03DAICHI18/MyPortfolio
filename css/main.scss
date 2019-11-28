@@ -191,7 +191,7 @@ $tab: 768px; // タブレット
   height: 100vh;
   &__inner {
     position: absolute;
-    top: 30%;
+    top: 25vh;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -308,7 +308,7 @@ $tab: 768px; // タブレット
     @include effect-fade;
     color: #333333;
     position: absolute;
-    bottom: 25%;
+    bottom: 25vh;
     left: 50%;
     z-index: 2;
   }

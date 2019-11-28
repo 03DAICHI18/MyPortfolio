@@ -36,7 +36,7 @@ body {
 
 .TopVisual__inner {
   position: absolute;
-  top: 30%;
+  top: 25vh;
   left: 50%;
   transform: translate(-50%);
   -webkit-transform: translate(-50%);
@@ -253,7 +253,7 @@ body {
   -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
   color: #333333;
   position: absolute;
-  bottom: 25%;
+  bottom: 25vh;
   left: 50%;
   z-index: 2;
 }

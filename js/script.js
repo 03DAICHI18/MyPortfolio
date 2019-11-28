@@ -8,9 +8,9 @@ $(function(){
     $(window).scroll(function () {
         var winTop = $(this).scrollTop();
         //スクロール位置がHeaderの位置より下だったらクラスfixedを追加
-        if (winTop >= HeaderTop + 50) {
+        if (winTop >= HeaderTop + 30) {
             Header.css('opacity' , '.8');
-        } else if (winTop <= HeaderTop + 50) {
+        } else if (winTop <= HeaderTop + 30) {
             Header.css('opacity' , '1');
         }
     });
