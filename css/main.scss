@@ -24,7 +24,7 @@ body {
 
 //・・・・・・・ レスポンシブwidth設定・・・・・・・
 $pc: 1024px; // PC
-$tab: 768px; // タブレット
+$tab: 460px; // タブレット
 
 @mixin pc {
   @media (min-width: ($pc)) {
@@ -191,13 +191,22 @@ $tab: 768px; // タブレット
   height: 100vh;
   &__inner {
     position: absolute;
-    top: 25vh;
+    top: 40vh;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
     -o-transform: translate(-50%);
+    @include sp {
+      top: 15vh;
+      left: 50%;
+      transform: translate(-50%);
+      -webkit-transform: translate(-50%);
+      -moz-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+      -o-transform: translate(-50%);
+    }
     h1 {
       text-align: center;
       margin-bottom: 30px;

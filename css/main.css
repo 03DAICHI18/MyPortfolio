@@ -9,13 +9,13 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 460px) and (max-width: 1024px) {
   :root {
     font-size: calc(1rem + ((1vw - 7.68px) * 1.5625));
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 459px) {
   :root {
     font-size: 16px;
   }
@@ -36,13 +36,25 @@ body {
 
 .TopVisual__inner {
   position: absolute;
-  top: 25vh;
+  top: 40vh;
   left: 50%;
   transform: translate(-50%);
   -webkit-transform: translate(-50%);
   -moz-transform: translate(-50%);
   -ms-transform: translate(-50%);
   -o-transform: translate(-50%);
+}
+
+@media (max-width: 459px) {
+  .TopVisual__inner {
+    top: 15vh;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+  }
 }
 
 .TopVisual__inner h1 {
@@ -88,7 +100,7 @@ body {
   opacity: .5;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 459px) {
   .TopVisual .leftBack {
     width: 0;
     height: 0;
@@ -118,7 +130,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 460px) and (max-width: 1024px) {
   .TopVisual .leftBack {
     top: 0;
     left: 0;
@@ -185,7 +197,7 @@ body {
   -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 460px) and (max-width: 1024px) {
   .TopVisual .rightBack {
     top: 60%;
     right: 0;
@@ -337,7 +349,7 @@ body {
   font-size: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 459px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -354,7 +366,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 460px) and (max-width: 1024px) {
   .Header .Header-inner__list {
     display: inline-block;
     text-align: center;
@@ -418,7 +430,7 @@ body {
   -webkit-filter: grayscale(80%);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 459px) {
   .About__block .About-flex {
     flex-direction: column;
   }
@@ -459,7 +471,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 460px) and (max-width: 1024px) {
   .About__block .About-flex {
     justify-content: space-around;
     align-items: center;
@@ -567,7 +579,7 @@ body::before {
   z-index: -1;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 459px) {
   body::before {
     background-image: url(../img/sptower.jpeg);
   }
