@@ -15,6 +15,15 @@ $(function(){
         } else if (winTop <= AboutTop) {
             Header.css('opacity' , '1');
         }
+
+        $('.fadeIn').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight + 200){
+                $(this).addClass('scrollIn');
+            }
+        });
     });
 
 });

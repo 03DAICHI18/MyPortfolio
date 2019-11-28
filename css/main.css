@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: 'Rajdhani', sans-serif;
   font-size: 62.5%;
@@ -19,6 +20,30 @@ body {
   :root {
     font-size: 16px;
   }
+}
+
+.fadeIn {
+  opacity: 0.5;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+  -webkit-transform: translate(0, 10vh);
+  -moz-transform: translate(0, 10vh);
+  -ms-transform: translate(0, 10vh);
+  -o-transform: translate(0, 10vh);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+/* 画面内に入った状態 */
+.fadeIn.scrollIn {
+  opacity: 1;
+  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
 }
 
 .section-title {
@@ -574,11 +599,13 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url(../img/Canal.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
+  filter: grayscale(60%);
+  -webkit-filter: grayscale(60%);
+  background-image: url(../img/Canal.jpeg);
 }
 
 @media (max-width: 459px) {
@@ -592,7 +619,7 @@ body::before {
   display: block;
   background: #c0bebe;
   color: #EAEAEA;
-  height: 500px;
+  height: 1500px;
 }
 
 .Work {
