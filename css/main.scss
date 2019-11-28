@@ -191,7 +191,7 @@ $tab: 460px; // タブレット
   height: 100vh;
   &__inner {
     position: absolute;
-    top: 40vh;
+    top: 30vh;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -199,7 +199,9 @@ $tab: 460px; // タブレット
     -ms-transform: translate(-50%);
     -o-transform: translate(-50%);
     @include sp {
-      top: 15vh;
+      width: 80%;
+      position: absolute;
+      top: 30vh;
       left: 50%;
       transform: translate(-50%);
       -webkit-transform: translate(-50%);
