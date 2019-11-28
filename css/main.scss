@@ -23,7 +23,7 @@ body {
 
 //・・・・・・・ レスポンシブwidth設定・・・・・・・
 $pc: 1024px; // PC
-$tab: 460px; // タブレット
+$tab: 480px; // タブレット
 
 @mixin pc {
   @media (min-width: ($pc)) {
@@ -42,9 +42,14 @@ $tab: 460px; // タブレット
 }
 
 //・・・・・・・ フォントサイズ 設定・・・・・・・
+@mixin fontsize($size: 16, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
 @include pc {
   :root {
-    font-size: 20px;
+    @include fontsize(20);
   }
 }
 @include tab {
@@ -54,13 +59,8 @@ $tab: 460px; // タブレット
 }
 @include sp {
   :root {
-    font-size: 16px;
+    @include fontsize(14);
   }
-}
-
-@mixin fontsize($size: 16, $base: 16) {
-  font-size: $size + px;
-  font-size: ($size / $base) * 1rem;
 }
 
 //・・・・・・・ 中央揃え設定・・・・・・・
@@ -195,7 +195,7 @@ $tab: 460px; // タブレット
 
 // ・・・・・・・・・ブロック単位でフェイドインさせる・・・・・・・・・
 .fadeIn {
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translate(0, 10vh);
   transition: all 1s;
   -webkit-transform: translate(0, 10vh);
@@ -577,38 +577,51 @@ $tab: 460px; // タブレット
       line-height: 2;
     }
 
-    .ABOUT__link {
+    .About__link {
       margin-top: 30px;
+      @include fontsize(16);
       text-align: center;
-      @include fontsize(14);
 
-      button {
-        margin-top: 10px;
-        padding: 20px;
-        background-color: #c0bebe;
-        cursor: pointer;
-        border-radius: 4px;
-        box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;
-        transition: all 0.2s ease-in-out;
-        -webkit-transition: all 0.2s ease-in-out;
-        -moz-transition: all 0.2s ease-in-out;
-        -ms-transition: all 0.2s ease-in-out;
-        -o-transition: all 0.2s ease-in-out;
-          &:hover {
-            transform: scale(1.1);
-            -webkit-transform: scale(1.1);
-            -moz-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-            -o-transform: scale(1.1);
-            }
-          a {
-              color: #333333;
-            }
+      .About__link-button {
+        margin-top: 30px;
+        display: inline-block;
+        position: relative;
+
+        button{
+          padding: 20px;
+          position:relative;
+          background: #F7F7F7;
+          border: none;
         }
+        .border{
+          position:absolute;
+          background:none;
+          transition:all .5s ease-in-out;
+        
+          &:nth-of-type(1){
+            top:0;
+            left:0;
+            border-left:1px solid #333333;
+            border-top:1px solid #333333;
+            width:30px;
+            height:30px;
+          }
+          
+          &:nth-of-type(2){
+            bottom:0;
+            right:0;
+            border-right:1px solid #333333;
+            border-bottom:1px solid #333333;
+            width:30px;
+            height:30px;
+          }
+        }
+        &:hover .border{
+          width:105%;
+          height:110%;
+        }
+        }
+      
     }
 }
 
@@ -627,26 +640,27 @@ body::before {
   display: block;
   @include black;
   @include fontsize(14);
+  height: 600px;
 }
 
 // ・・・・・・・・・work・・・・・・・・・
 .Work {
   @include white;
   @include fontsize(14);
-
+  height: 600px;
 }
 
 // ・・・・・・・・・price・・・・・・・・・
 .Price {
   @include black;
   @include fontsize(14);
-
+  height: 600px;
 }
 // ・・・・・・・・・contact・・・・・・・・・
 .Contact {
   @include white;
   @include fontsize(14);
-
+  height: 600px;
 }
 
 // ・・・・・・・・・footer・・・・・・・・・
