@@ -635,13 +635,13 @@ body {
   color: #333333;
 }
 
-.About .About__link .border {
+.About .About__link .About__link-button .border {
   position: absolute;
   background: none;
   transition: all .5s ease-in-out;
 }
 
-.About .About__link .border:nth-of-type(1) {
+.About .About__link .About__link-button .border:nth-of-type(1) {
   top: 0;
   left: 0;
   border-left: 1px solid #333333;
@@ -650,7 +650,7 @@ body {
   height: 30px;
 }
 
-.About .About__link .border:nth-of-type(2) {
+.About .About__link .About__link-button .border:nth-of-type(2) {
   bottom: 0;
   right: 0;
   border-right: 1px solid #333333;
@@ -659,7 +659,7 @@ body {
   height: 30px;
 }
 
-.About .About__link:hover .border {
+.About .About__link .About__link-button:hover .border {
   width: 110%;
   height: 120%;
 }

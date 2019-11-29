@@ -598,7 +598,7 @@ $tab: 480px; // タブレット
         cursor: pointer;
         @include fontsize(12);
         color: #333333;
-        }
+        
         .border{
           position:absolute;
           background:none;
@@ -621,12 +621,13 @@ $tab: 480px; // タブレット
             width:30px;
             height:30px;
           }
+          
         }
         &:hover .border{
           width:110%;
           height:120%;
         }
-        
+      }
       
     }
 }
