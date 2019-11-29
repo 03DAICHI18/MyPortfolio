@@ -1,3 +1,4 @@
+
 body {
   font-family: 'Rajdhani', sans-serif;
 }
@@ -578,21 +579,21 @@ $tab: 480px; // タブレット
       line-height: 2;
     }
 
+    // コンタクトフォームへのリンク
     .About__link {
       margin-top: 30px;
-      @include fontsize(16);
       text-align: center;
+      position: relative;
 
       .About__link-button {
         margin-top: 30px;
         display: inline-block;
         position: relative;
-
-        button{
-          padding: 20px;
-          position:relative;
-          background: #F7F7F7;
-          border: none;
+        padding: 20px 30px;
+        cursor: pointer;
+        @include fontsize(12);
+        color: #333333;
+        
         }
         .border{
           position:absolute;
@@ -618,10 +619,10 @@ $tab: 480px; // タブレット
           }
         }
         &:hover .border{
-          width:105%;
-          height:110%;
+          width:110%;
+          height:120%;
         }
-        }
+        
       
     }
 }
@@ -646,6 +647,7 @@ body::before {
 
 // ・・・・・・・・・work・・・・・・・・・
 .Work {
+  display: block;
   @include white;
   @include fontsize(14);
   height: 600px;
@@ -653,15 +655,17 @@ body::before {
 
 // ・・・・・・・・・price・・・・・・・・・
 .Price {
+  display: block;
   @include black;
   @include fontsize(14);
   height: 600px;
 }
 // ・・・・・・・・・contact・・・・・・・・・
 .Contact {
+  display: block;
   @include white;
   @include fontsize(14);
-  height: 600px;
+  height: 1000px;
 }
 
 // ・・・・・・・・・footer・・・・・・・・・
