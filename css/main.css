@@ -611,9 +611,17 @@ body {
 }
 
 .About .About__link {
+  display: inline-block;
   margin-top: 30px;
   text-align: center;
   position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
 }
 
 .About .About__link .About__link-button {
