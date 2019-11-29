@@ -411,7 +411,7 @@ body {
     border-top: 0;
     font-size: 14px;
     font-size: 0.875rem;
-    width: calc(100% / 3);
+    width: calc(100% / 5);
   }
   .Header .Header-inner__list a {
     color: #EAEAEA;
@@ -428,7 +428,7 @@ body {
     border-top: 0;
     font-size: 16px;
     font-size: 1rem;
-    width: calc(100% / 6);
+    width: calc(100% / 5);
   }
   .Header .Header-inner__list a {
     color: #EAEAEA;
@@ -445,7 +445,7 @@ body {
     border-top: 0;
     font-size: 16px;
     font-size: 1rem;
-    width: calc(100% / 6);
+    width: calc(100% / 5);
   }
   .Header .Header-inner__list a {
     color: #EAEAEA;
@@ -458,6 +458,7 @@ body {
 
 .Header .Header-inner__list:hover a {
   color: #424242;
+  display: block;
 }
 
 .About {

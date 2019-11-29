@@ -441,17 +441,17 @@ $tab: 480px; // タブレット
       @include sp {
         @include header;
         @include fontsize(14);  // 余白消しで0にしたフォントサイズの再設定
-        width: calc(100% / 3);
+        width: calc(100% / 5);
       }
       @include tab {
         @include header;
         @include fontsize(16);  // 余白消しで0にしたフォントサイズの再設定
-        width: calc(100% / 6);
+        width: calc(100% / 5);
       }
       @include pc {
         @include header;
         @include fontsize(16);  // 余白消しで0にしたフォントサイズの再設定
-        width: calc(100% / 6);
+        width: calc(100% / 5);
       }
     }
 
@@ -459,6 +459,7 @@ $tab: 480px; // タブレット
       background: #cfcfcf;
       a {
         color: rgb(66, 66, 66);
+        display: block;
       }
     }
   }
