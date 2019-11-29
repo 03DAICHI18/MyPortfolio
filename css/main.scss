@@ -249,7 +249,7 @@ $tab: 480px; // タブレット
     @include sp {
       width: 80%;
       position: absolute;
-      top: 20vh;
+      top: 15vh;
       left: 50%;
       transform: translate(-50%);
       -webkit-transform: translate(-50%);
@@ -361,28 +361,29 @@ $tab: 480px; // タブレット
 
   // スクロール誘導
   .scroll {
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    @include centertransform;
+    @include sp {
+    position: absolute;
+    bottom: 20vh;
+    left: 50%;
+    @include centertransform;
+    }
     a {
     @include fontsize;
-    @include centertransform;
     @include effect-fade;
     color: #333333;
-    position: absolute;
-    bottom: 25vh;
-    left: 50%;
     z-index: 2;
-    @include sp {
-      position: absolute;
-      bottom: 30vh;
-      left: 50%;
-    }
   }
 
   span {
-    @include centertransform;
     @include circle;
     position: absolute;
-    bottom: 15%;
+    bottom: 4vh;
     left: 50%;
+    @include centertransform;
     width: 50px;
     height: 50px;
     border: 1px solid rgb(80, 80, 80);
