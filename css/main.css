@@ -83,7 +83,7 @@ body {
   .TopVisual__inner {
     width: 80%;
     position: absolute;
-    top: 15vh;
+    top: 20vh;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -693,7 +693,49 @@ body::before {
   color: #EAEAEA;
   font-size: 14px;
   font-size: 0.875rem;
-  height: 600px;
+}
+
+.Service__block {
+  margin-top: 30px;
+}
+
+.Service__block .Service__title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Service__block .Service__title .fa-laptop-code {
+  margin-right: 20px;
+}
+
+.Service__block .Service__title p {
+  display: inline-block;
+}
+
+.Service__block .Service__text {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+.Service__about {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 30px;
+}
+
+.Service__about .Service__about-list {
+  padding: 10px 0;
+}
+
+.Service__about .Service__about-list::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  margin-bottom: 5px;
 }
 
 .Work {
