@@ -668,25 +668,70 @@ body::before {
     .Service__text {
       @include fontsize(16);
       margin: 20px 0;
+      text-align: center;
+      @include sp {
+        text-align: left;
+      }
     }
 
   }
   
   &__about {
-    @include fontsize(14);
+    @include fontsize(16);
     margin-bottom: 30px;
-
-    .Service__about-list {
-      padding: 10px 0;
+    
+    td {
+      padding-bottom: 10px;
     }
-        .Service__about-list::before {
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          content: "\f00c";
-          margin-bottom: 5px;
-        }
+    .fa-check {
+      margin-right: 10px;
+    }
   }
 
+  .skill {
+    h3 {
+      @include fontsize(20);
+      text-align: center;
+    }
+    .skill__container {
+      display: flex;
+      @include sp {
+        flex-direction: column;
+      }
+
+      &-contents {
+        padding: 10px;
+        border-right: 1px solid #EAEAEA;
+        @include sp {
+          border-right: none;
+          border-bottom: 1px solid #EAEAEA;
+        }
+      }
+      &-contents:nth-of-type(3) {
+        border-right: none;
+      }
+
+      &-title {
+        text-align: center;
+        padding: 10px;
+        .fab {
+          @include fontsize(30);
+          padding: 10px;
+        }
+        p {
+          @include fontsize(20);
+          padding-bottom: 20px;
+          @include sp {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      .skill__container-about {
+        @include fontsize(14);
+      }
+    }
+  }
 }
 // ・・・・・・・・・work・・・・・・・・・
 .Work {

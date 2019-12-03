@@ -719,23 +719,87 @@ body::before {
   font-size: 16px;
   font-size: 1rem;
   margin: 20px 0;
+  text-align: center;
+}
+
+@media (max-width: 479px) {
+  .Service__block .Service__text {
+    text-align: left;
+  }
 }
 
 .Service__about {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 30px;
 }
 
-.Service__about .Service__about-list {
-  padding: 10px 0;
+.Service__about td {
+  padding-bottom: 10px;
 }
 
-.Service__about .Service__about-list::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f00c";
-  margin-bottom: 5px;
+.Service__about .fa-check {
+  margin-right: 10px;
+}
+
+.Service .skill h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.Service .skill .skill__container {
+  display: flex;
+}
+
+@media (max-width: 479px) {
+  .Service .skill .skill__container {
+    flex-direction: column;
+  }
+}
+
+.Service .skill .skill__container-contents {
+  padding: 10px;
+  border-right: 1px solid #EAEAEA;
+}
+
+@media (max-width: 479px) {
+  .Service .skill .skill__container-contents {
+    border-right: none;
+    border-bottom: 1px solid #EAEAEA;
+  }
+}
+
+.Service .skill .skill__container-contents:nth-of-type(3) {
+  border-right: none;
+}
+
+.Service .skill .skill__container-title {
+  text-align: center;
+  padding: 10px;
+}
+
+.Service .skill .skill__container-title .fab {
+  font-size: 30px;
+  font-size: 1.875rem;
+  padding: 10px;
+}
+
+.Service .skill .skill__container-title p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 479px) {
+  .Service .skill .skill__container-title p {
+    padding-bottom: 0;
+  }
+}
+
+.Service .skill .skill__container .skill__container-about {
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .Work {
