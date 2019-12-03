@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Rajdhani', sans-serif;
 }
@@ -7,7 +6,7 @@ body {
 //・・・・・・・ 幅設定・・・・・・・
 @mixin width {
   width: 100vw;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -194,6 +193,57 @@ $tab: 480px; // タブレット
   text-align: center;
 }
 
+// リンクボタン
+.link {
+  display: inline-block;
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+  top: 0%;
+  left: 50%;
+  @include centertransform;
+
+  .link-button {
+    margin-top: 30px;
+    display: inline-block;
+    position: relative;
+    padding: 20px 30px;
+    cursor: pointer;
+    @include fontsize(12);
+    color: #333333;
+    
+    .border{
+      position:absolute;
+      background:none;
+      transition:all .5s ease-in-out;
+    
+      &:nth-of-type(1){
+        top:0;
+        left:0;
+        border-left:1px solid #333333;
+        border-top:1px solid #333333;
+        width:30px;
+        height:30px;
+      }
+      
+      &:nth-of-type(2){
+        bottom:0;
+        right:0;
+        border-right:1px solid #333333;
+        border-bottom:1px solid #333333;
+        width:30px;
+        height:30px;
+      }
+      
+    }
+    &:hover .border{
+      width:110%;
+      height:120%;
+    }
+  }
+  
+}
+
 // ・・・・・・・・・ブロック単位でフェイドインさせる・・・・・・・・・
 .fadeIn {
   opacity: 0.3;
@@ -229,7 +279,7 @@ $tab: 480px; // タブレット
 .content-block {
   @include width;
   margin: 0 auto;
-  padding: 40px 30px;
+  padding: 60px 30px 40px 30px;
 }
 
 // ・・・・・・・・・top-visual・・・・・・・・・
@@ -480,7 +530,7 @@ $tab: 480px; // タブレット
     @include sp {
       flex-direction: column;
       &__photo {
-      max-width: 200px;
+      max-width: 10rem;
       margin: 0 auto;
         img {
         max-width: 100%;
@@ -576,59 +626,7 @@ $tab: 480px; // タブレット
   }
     .About__theme {
       margin-top: 30px;
-      @include fontsize(14);
       line-height: 2;
-    }
-
-    // コンタクトフォームへのリンク
-    .About__link {
-      display: inline-block;
-      margin-top: 30px;
-      text-align: center;
-      position: relative;
-      top: 0%;
-      left: 50%;
-      @include centertransform;
-
-      .About__link-button {
-        margin-top: 30px;
-        display: inline-block;
-        position: relative;
-        padding: 20px 30px;
-        cursor: pointer;
-        @include fontsize(12);
-        color: #333333;
-        
-        .border{
-          position:absolute;
-          background:none;
-          transition:all .5s ease-in-out;
-        
-          &:nth-of-type(1){
-            top:0;
-            left:0;
-            border-left:1px solid #333333;
-            border-top:1px solid #333333;
-            width:30px;
-            height:30px;
-          }
-          
-          &:nth-of-type(2){
-            bottom:0;
-            right:0;
-            border-right:1px solid #333333;
-            border-bottom:1px solid #333333;
-            width:30px;
-            height:30px;
-          }
-          
-        }
-        &:hover .border{
-          width:110%;
-          height:120%;
-        }
-      }
-      
     }
 }
 
@@ -646,7 +644,6 @@ body::before {
 .Service {
   display: block;
   @include black;
-  @include fontsize(14);
   
   &__block {
     margin-top: 30px;
@@ -669,6 +666,7 @@ body::before {
       @include fontsize(16);
       margin: 20px 0;
       text-align: center;
+      line-height: 1.3;
       @include sp {
         text-align: left;
       }
@@ -690,11 +688,12 @@ body::before {
 
   .skill {
     h3 {
-      @include fontsize(20);
+      @include fontsize(24);
       text-align: center;
     }
     .skill__container {
       display: flex;
+      line-height: 1.3;
       @include sp {
         flex-direction: column;
       }
@@ -726,10 +725,6 @@ body::before {
           }
         }
       }
-
-      .skill__container-about {
-        @include fontsize(14);
-      }
     }
   }
 }
@@ -737,23 +732,57 @@ body::before {
 .Work {
   display: block;
   @include white;
-  @include fontsize(14);
-  height: 600px;
+
+  .Work__text {
+    @include fontsize(14);
+    margin-top: 2rem;
+    text-align: center;
+    &--sm {
+      @include fontsize(12);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  }
+
+  .Work__capture {
+    padding-top: 2rem;
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(260px, 1fr)
+      );
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid #c0bebe;
+      box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+      -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+      -moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+    }
+  }
+  .Work__capture-link {
+    display: block;
+    margin: 3rem auto 0;
+    text-align: center;
+    width: 20%;
+    color: #333;
+  }
 }
 
 // ・・・・・・・・・price・・・・・・・・・
 .Price {
   display: block;
   @include black;
-  @include fontsize(14);
-  height: 600px;
 }
 // ・・・・・・・・・contact・・・・・・・・・
 .Contact {
   display: block;
   @include white;
-  @include fontsize(14);
-  height: 1000px;
+
 }
 
 // ・・・・・・・・・footer・・・・・・・・・
