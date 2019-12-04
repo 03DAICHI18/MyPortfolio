@@ -280,6 +280,10 @@ $tab: 480px; // タブレット
   @include width;
   margin: 0 auto;
   padding: 6rem 3rem 4rem 3rem;
+  @include sp {
+    padding: 6rem 1rem 4rem 1rem;
+
+  }
 }
 
 // ・・・・・・・・・top-visual・・・・・・・・・
@@ -530,7 +534,7 @@ $tab: 480px; // タブレット
     @include sp {
       flex-direction: column;
       &__photo {
-      max-width: 10rem;
+      max-width: 15rem;
       margin: 0 auto;
         img {
         max-width: 100%;
