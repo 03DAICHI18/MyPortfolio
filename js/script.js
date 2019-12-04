@@ -35,4 +35,21 @@ $(function(){
         $('body,html').animate({ scrollTop : position }, 500); 
         return false;
     });
+
+// ・・・キャプチャ画像の説明文・・・
+    // li要素をマウスオーバー
+    $(".work__capture-img").hover(function(){
+    // キャプション部分の表示：フェードイン
+    $(this).children(".caption").stop().fadeIn(300);
+    // キャプションのテキスト位置：top70% から 50% へ移動
+    $(this).children(".caption").children("p").stop().animate({"top" : "50%"}, 300);
+    // ポインタを変更
+    $(this).css('cursor','pointer');
+    
+    }, function(){
+    // キャプション部分の非表示：フェードアウト
+    $(this).children(".caption").stop().fadeOut(300);
+    // キャプションのテキスト位置：top50% から 70%へ移動
+    $(this).children(".caption").children("p").stop().animate({"top":"70%"}, 300);
+    });
 });
