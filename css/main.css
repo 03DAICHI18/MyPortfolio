@@ -41,7 +41,7 @@ body {
   margin-top: 3rem;
   display: inline-block;
   position: relative;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   cursor: pointer;
   font-size: 12px;
   font-size: 0.75rem;
@@ -59,8 +59,8 @@ body {
   left: 0;
   border-left: 1px solid #333333;
   border-top: 1px solid #333333;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .link .link-button .border:nth-of-type(2) {
@@ -68,8 +68,8 @@ body {
   right: 0;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .link .link-button:hover .border {
@@ -392,57 +392,60 @@ body {
 }
 
 .TopVisual .scroll span {
-  border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
   position: absolute;
-  bottom: 4vh;
-  left: 50%;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
-  width: 50px;
-  height: 50px;
-  border: 1px solid #505050;
-  animation: wave 3s infinite;
-  -webkit-animation: wave 3s infinite;
+  bottom: 10vh;
+  margin-left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-left: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: scroll 2s infinite;
+  animation: scroll 2s infinite;
+  opacity: 0;
 }
 
-@keyframes wave {
+.TopVisual .scroll span:nth-of-type(1) {
+  top: -7vh;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.TopVisual .scroll span:nth-of-type(2) {
+  top: -5vh;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+
+.TopVisual .scroll span:nth-of-type(3) {
+  top: -3vh;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+@-webkit-keyframes scroll {
   0% {
-    opacity: 0.2;
-  }
-  30% {
-    opacity: 0.8;
-  }
-  90% {
     opacity: 0;
-    box-shadow: 0 0 10px 30px #969696;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
   }
 }
 
-.TopVisual .scroll span::after {
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 26px 15px 0 15px;
-  border-color: rgba(80, 80, 80, 0.5) transparent transparent transparent;
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .Header {
@@ -922,6 +925,28 @@ body::before {
   display: block;
   background: #7a7979;
   color: #EAEAEA;
+}
+
+.Price .Price__table {
+  margin: 2rem auto 1rem;
+}
+
+.Price .Price__table-block {
+  border-bottom: 1px solid #F7F7F7;
+}
+
+.Price .Price__table-block--left {
+  padding: 2rem;
+  border-right: 1px solid #F7F7F7;
+}
+
+.Price .Price__table-block--right {
+  padding: 0 3rem 0 1rem;
+}
+
+.Price .Price__text {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .Contact {
