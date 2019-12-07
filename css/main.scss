@@ -248,7 +248,7 @@ $tab: 480px; // タブレット
 // ・・・・・・・・・ブロック単位でフェイドインさせる・・・・・・・・・
 .fadeIn {
   opacity: .3;
-  transform: translate(0, 20vh);
+  transform: translate(0, 15vh);
   transition: all 1.3s;
   -webkit-transform: translate(0, 20vh);
   -moz-transform: translate(0, 20vh);
@@ -645,6 +645,9 @@ $tab: 480px; // タブレット
         margin: 2rem 0 4rem;
         position: relative;
 
+        td {
+          padding-bottom: 1rem;
+        }
         p {
           text-align: center;
           margin-bottom: 2rem;
@@ -853,6 +856,7 @@ body::before {
 
   .Price__table {
     margin: 2rem auto 1rem;
+    
     &-block {
       border-bottom: 1px solid #F7F7F7;
 
@@ -909,7 +913,7 @@ body::before {
   }
 
   .textarea {
-    width: 100%;
+    width: 90%;
     height: 8rem;
     border: 1px solid #333333;
     background: #F7F7F7;

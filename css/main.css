@@ -79,7 +79,7 @@ body {
 
 .fadeIn {
   opacity: .3;
-  transform: translate(0, 20vh);
+  transform: translate(0, 15vh);
   transition: all 1.3s;
   -webkit-transform: translate(0, 20vh);
   -moz-transform: translate(0, 20vh);
@@ -676,6 +676,10 @@ body {
   position: relative;
 }
 
+.About .About__theme-history td {
+  padding-bottom: 1rem;
+}
+
 .About .About__theme-history p {
   text-align: center;
   margin-bottom: 2rem;
@@ -989,7 +993,7 @@ body::before {
 }
 
 .Contact .textarea {
-  width: 100%;
+  width: 90%;
   height: 8rem;
   border: 1px solid #333333;
   background: #F7F7F7;
