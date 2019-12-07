@@ -942,7 +942,7 @@ body::before {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
     background: #F7F7F7;
-    @include fontsize(12);
+    @include fontsize(14);
     cursor: pointer;
     transition: all .3s;
   }
@@ -962,7 +962,7 @@ body::before {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
     background: #F7F7F7;
-    @include fontsize(12);
+    @include fontsize(14);
     cursor: pointer;
     transition: all .3s;
   }
