@@ -78,17 +78,17 @@ body {
 }
 
 .fadeIn {
-  opacity: 0.3;
-  transform: translate(0, 10vh);
-  transition: all 1s;
-  -webkit-transform: translate(0, 10vh);
-  -moz-transform: translate(0, 10vh);
-  -ms-transform: translate(0, 10vh);
-  -o-transform: translate(0, 10vh);
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
+  opacity: .3;
+  transform: translate(0, 20vh);
+  transition: all 1.3s;
+  -webkit-transform: translate(0, 20vh);
+  -moz-transform: translate(0, 20vh);
+  -ms-transform: translate(0, 20vh);
+  -o-transform: translate(0, 20vh);
+  -webkit-transition: all 1.3s;
+  -moz-transition: all 1.3s;
+  -ms-transition: all 1.3s;
+  -o-transition: all 1.3s;
 }
 
 /* 画面内に入った状態 */
@@ -112,12 +112,12 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   margin: 0 auto;
-  padding: 6rem 3rem 4rem 3rem;
+  padding: 5rem 3rem 4rem 3rem;
 }
 
 @media (max-width: 479px) {
   .content-block {
-    padding: 6rem 1rem 4rem 1rem;
+    padding: 5rem 1rem 4rem 1rem;
   }
 }
 
@@ -231,7 +231,7 @@ body {
     top: 0;
     left: 0;
     width: 50%;
-    height: 30%;
+    height: 55%;
     background: #333;
     animation: LeftfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
@@ -261,7 +261,7 @@ body {
     top: 0;
     left: 0;
     width: 50%;
-    height: 30%;
+    height: 55%;
     background: #333;
     animation: LeftfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
@@ -295,7 +295,7 @@ body {
 
 @media (min-width: 480px) and (max-width: 1024px) {
   .TopVisual .rightBack {
-    top: 60%;
+    top: 65%;
     right: 0;
     width: 80%;
     height: 10%;
@@ -323,7 +323,7 @@ body {
 
 @media (min-width: 1024px) {
   .TopVisual .rightBack {
-    top: 60%;
+    top: 65%;
     right: 0;
     width: 80%;
     height: 10%;
@@ -363,7 +363,7 @@ body {
 @media (max-width: 479px) {
   .TopVisual .scroll {
     position: absolute;
-    bottom: 20vh;
+    bottom: 25vh;
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -407,19 +407,19 @@ body {
 }
 
 .TopVisual .scroll span:nth-of-type(1) {
-  top: -7vh;
+  top: -8vh;
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
 
 .TopVisual .scroll span:nth-of-type(2) {
-  top: -5vh;
+  top: -6vh;
   -webkit-animation-delay: .15s;
   animation-delay: .15s;
 }
 
 .TopVisual .scroll span:nth-of-type(3) {
-  top: -3vh;
+  top: -4vh;
   -webkit-animation-delay: .3s;
   animation-delay: .3s;
 }
@@ -871,6 +871,7 @@ body::before {
 }
 
 .Work .Work__capture .work__capture-img {
+  display: flex;
   position: relative;
   width: 15rem;
   height: 10rem;
@@ -953,6 +954,120 @@ body::before {
   display: block;
   background: #F7F7F7;
   color: #333333;
+  margin: 0 auto;
+}
+
+.Contact .Contact__text {
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+
+.Contact__area {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Contact .label {
+  margin-bottom: 0.5rem;
+}
+
+.Contact .inputs {
+  width: 90%;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #333333;
+  background: #F7F7F7;
+  margin-right: 1rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.Contact .inputs:focus {
+  outline: none;
+  box-shadow: 0 3px 3px #7a7979;
+}
+
+.Contact .textarea {
+  width: 100%;
+  height: 8rem;
+  border: 1px solid #333333;
+  background: #F7F7F7;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.Contact .textarea:focus {
+  outline: none;
+  box-shadow: 0 3px 3px #7a7979;
+}
+
+.Contact__block {
+  margin-top: 2rem;
+}
+
+.Contact__block-btn {
+  width: 10rem;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Contact__block-send {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  background: #F7F7F7;
+  font-size: 12px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.Contact__block-send:hover {
+  box-shadow: 0 3px 3px #7a7979;
+  transform: translateY(-3px);
+}
+
+.Contact__block-send:focus {
+  outline: none;
+}
+
+.Contact__block-reset {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  background: #F7F7F7;
+  font-size: 12px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.Contact__block-reset:hover {
+  box-shadow: 0 3px 3px #7a7979;
+  transform: translateY(-3px);
+}
+
+.Contact__block-reset:focus {
+  outline: none;
+}
+
+.Contact .Contant__sns {
+  padding-top: 2rem;
+  width: 10rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Contact .Contant__sns a {
+  color: #333;
+}
+
+.Contact .Contant__sns:hover {
+  cursor: pointer;
 }
 
 .Footer {

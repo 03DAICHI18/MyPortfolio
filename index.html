@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="js/script.js"></script>
 </head>
@@ -59,25 +60,25 @@
             <table>
               <tr>
                 <td class="year">2009年</td>
-                <td>全国展開で注文住宅を販売しているハウスメーカーに勤務。飛込訪問や住宅展示場での接客営業を経験。</td>
+                <td>全国展開で注文住宅を販売しているハウスメーカーに就職。飛込訪問や住宅展示場での接客営業を経験。</td>
               </tr>
               <tr>
                 <td class="year">2011年</td>
-                <td>販売代理店事業のベンチャー企業へ転職。コンシューマー向けのサービス営業を主に飛込訪問で経験。</td>  
+                <td>販売代理店事業のベンチャー企業へ転職。飛込訪問でコンシューマー向け営業を経験。</td>
               </tr>
               <tr>
                 <td class="year">2014年</td>
-                <td>グループ会社の立ち上げに出向し、太陽光パネルの訪問販売を経験。</td>
+                <td>グループ会社の立ち上げに出向し、太陽光パネルの訪問営業を経験。</td>
               </tr>
               <tr>
                 <td class="year">2015年〜</td>
-                <td>社内のコールセンター事業部の立ち上げメンバーに参画し、管理運営サイドにシフトチェンジしたことで、マネジメント業務がメインに。</td>
+                <td>社内のコールセンター事業立ち上げに参画。管理運営サイドにシフトチェンジし、チームのマネジメント業務がメインに。</td>
               </tr>
             </table>
           </div>
-          <p>クライアントワークでの営業経験が長い為、ステークホルダーの存在を常に意識した行動を心掛ける事、他者とのコミュニケーションを大切にする事を仕事のモットーとしてきました。</p>
-          <p>見た目が洗練されているWEBサイトは数多くありますが、お客様の目的を実現させる手助けになるかどうかがWEB製作において最も重要であると考えています。</p>
-          <p>新規注文や受託業務に関わらず、お仕事のご依頼をいただいた際はご満足いただけるように誠心誠意込めてご対応させていただきます。</p>
+          <p>クライアントワークでの営業経験が長い為、ステークホルダーの存在を意識した行動を心掛ける事や、他者とのコミュニケーションを大切にする事を仕事のモットーとしています。</p>
+          <p>見た目が洗練されているWEBサイトは数多くありますが、お客様の目的を実現できるかどうかがWEB製作において最も重要であると考えています。</p>
+          <p>新規作成注文や受託業務に関わらず、お仕事のご依頼をいただいた際は、ご満足いただけるように誠心誠意込めてご対応させていただきます。</p>
           <div class="link">
             <p>HPやLPの作成について、お困りのことがございませんか？</p>
             <a class="link-button" href="#Contact">お問い合わせはこちらへ
@@ -114,7 +115,7 @@
             </tr>
             <tr>
               <td><i class="fas fa-check"></i></td>
-              <td>WEBサイト作成が初めてという方もお気軽にご相談ください。営業的な観点を持って、お客様に必要な内容をご提案をさせていただきます。</td>
+              <td>WEBサイト作成が初めてという方もお気軽にご相談ください。営業的な観点を持って、お客様に必要な内容をご提案させていただきます。</td>
             </tr>
           </table>
         </div>
@@ -209,8 +210,32 @@
 <!-- Contact -->
     <section id="Contact" class="Contact">
       <div class="content-block fadeIn">
-          <h2 class="section-title">Contact</h2>
-          <p>aaaaaaaaaaa</p>
+        <h2 class="section-title">Contact</h2>
+        <div class="Contact__text">
+          <p>最後までご覧いただきありがとうございました。</p>
+          <p>お仕事のご依頼、ご質問等ございましたら下記フォームか、TwitterのDMからお気軽にお声掛けください。</p>
+        </div>
+          <form class="Contact__area" action="confirm.php" method="post">
+            <div class="Contact__block Contact__block-name">
+                <label class="label" for="name">氏名（会社名）：</label>
+                <input id="name" class="inputs" type="text" name="name" placeholder="山田太郎">
+            </div>
+            <div class="Contact__block Contact__block-mail">
+                <label class="label" for="mail">メールアドレス：</label>
+                <input id="mail" class="inputs" type="email" name="mail" placeholder="○○○＠△△.△△">
+            </div>
+            <div class="Contact__block Contact__block-message">
+                <label class="label" for="comment">メッセージ：</label>
+                <textarea id="comment" class="textarea" name="comment" placeholder="ここには自由にコメントを記入してください"></textarea>
+            </div>
+            <div class="Contact__block Contact__block-btn">
+                <input class="Contact__block-send" type="submit" value="送信">
+                <input class="Contact__block-reset" type="reset" value="リセット">
+            </div>
+          </form>
+          <div class="Contant__sns">
+            <a href="https://twitter.com/18__DAiCHi" target="blank"><i class="fab fa-twitter fa-lg faa-horizontal animated-hover"></i></a>
+          </div>
       </div>
     </section>
   </main>

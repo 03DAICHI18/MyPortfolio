@@ -194,6 +194,7 @@ $tab: 480px; // タブレット
 }
 
 // リンクボタン
+
 .link {
   display: inline-block;
   margin-top: 1rem;
@@ -246,17 +247,17 @@ $tab: 480px; // タブレット
 
 // ・・・・・・・・・ブロック単位でフェイドインさせる・・・・・・・・・
 .fadeIn {
-  opacity: 0.3;
-  transform: translate(0, 10vh);
-  transition: all 1s;
-  -webkit-transform: translate(0, 10vh);
-  -moz-transform: translate(0, 10vh);
-  -ms-transform: translate(0, 10vh);
-  -o-transform: translate(0, 10vh);
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
+  opacity: .3;
+  transform: translate(0, 20vh);
+  transition: all 1.3s;
+  -webkit-transform: translate(0, 20vh);
+  -moz-transform: translate(0, 20vh);
+  -ms-transform: translate(0, 20vh);
+  -o-transform: translate(0, 20vh);
+  -webkit-transition: all 1.3s;
+  -moz-transition: all 1.3s;
+  -ms-transition: all 1.3s;
+  -o-transition: all 1.3s;
 }
 
 /* 画面内に入った状態 */
@@ -270,8 +271,6 @@ $tab: 480px; // タブレット
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでmixin設定＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
-
 .section-title {
   @include Section-title;
 }
@@ -279,9 +278,9 @@ $tab: 480px; // タブレット
 .content-block {
   @include width;
   margin: 0 auto;
-  padding: 6rem 3rem 4rem 3rem;
+  padding: 5rem 3rem 4rem 3rem;
   @include sp {
-    padding: 6rem 1rem 4rem 1rem;
+    padding: 5rem 1rem 4rem 1rem;
 
   }
 }
@@ -370,7 +369,7 @@ $tab: 480px; // タブレット
       top: 0;
       left: 0;
       width: 50%;
-      height: 30%;
+      height: 55%;
       background: #333;
       animation: LeftfadeInBack 4s ease-in 0s 1 normal;
       -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
@@ -381,7 +380,7 @@ $tab: 480px; // タブレット
       top: 0;
       left: 0;
       width: 50%;
-      height: 30%;
+      height: 55%;
       background: #333;
       animation: LeftfadeInBack 4s ease-in 0s 1 normal;
       -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
@@ -396,7 +395,7 @@ $tab: 480px; // タブレット
     -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
 
     @include tab {
-      top: 60%;
+      top: 65%;
       right: 0;
       width: 80%;
       height: 10%;
@@ -405,7 +404,7 @@ $tab: 480px; // タブレット
     }
 
     @include pc {
-      top: 60%;
+      top: 65%;
       right: 0;
       width: 80%;
       height: 10%;
@@ -414,7 +413,7 @@ $tab: 480px; // タブレット
     }
   }
 
-  // スクロール誘導
+// スクロール誘導
   .scroll {
     position: absolute;
     bottom: 10vh;
@@ -422,102 +421,70 @@ $tab: 480px; // タブレット
     @include centertransform;
     @include sp {
     position: absolute;
-    bottom: 20vh;
+    bottom: 25vh;
     left: 50%;
     @include centertransform;
     }
     a {
-    @include fontsize;
-    @include effect-fade;
-    color: #333333;
-    z-index: 2;
-  }
+      @include fontsize;
+      @include effect-fade;
+      color: #333333;
+      z-index: 2;
+    }
 
-  span {
-    position: absolute;
-    bottom: 10vh;
-    margin-left: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    border-left: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-animation: scroll 2s infinite;
-    animation: scroll 2s infinite;
-    opacity: 0;
+    span {
+      position: absolute;
+      bottom: 10vh;
+      margin-left: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-left: 1px solid #333333;
+      border-bottom: 1px solid #333333;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: scroll 2s infinite;
+      animation: scroll 2s infinite;
+      opacity: 0;
+      }
+      span:nth-of-type(1) {
+        top: -8vh;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+      span:nth-of-type(2) {
+        top: -6vh;
+        -webkit-animation-delay: .15s;
+        animation-delay: .15s;
+      }
+      span:nth-of-type(3) {
+        top: -4vh;
+        -webkit-animation-delay: .3s;
+        animation-delay: .3s;
+      }
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 0;
+        }
+      50% {
+        opacity: 1;
+        }
+      100% {
+        opacity: 0;
+        }
+      }
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   }
-  span:nth-of-type(1) {
-    top: -7vh;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  }
-  span:nth-of-type(2) {
-  top: -5vh;
-  -webkit-animation-delay: .15s;
-  animation-delay: .15s;
-  }
-  span:nth-of-type(3) {
-  top: -3vh;
-  -webkit-animation-delay: .3s;
-  animation-delay: .3s;
 }
-@-webkit-keyframes scroll {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes scroll {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-    // border: 1px solid rgb(80, 80, 80);
-    // animation: wave 3s infinite;
-    // -webkit-animation: wave 3s infinite;
-    // @keyframes wave {
-    //   0% {
-    //     opacity: 0.2;
-    //   }
-    //   30% {
-    //     opacity: 0.8;
-    //   }
-    //   90% {
-    //     opacity: 0;
-    //     box-shadow: 0 0 10px 30px rgb(150, 150, 150) ;
-    //   }
-    //   100% {
-    //     opacity: 0;
-    //   }
-    // }
-  }
-
-  // span::after {
-  //   @include centertransform;
-  //   content: '';
-  //   position: absolute;
-  //   //中央寄せ高さ：円の高さ50px/2=25px三角形の中心高さ10px25-10=15pxposition: absolute;
-  //   top: 15px;
-  //   left: 50%;
-  //   width: 0;
-  //   height: 0;
-  //   border-style: solid;
-  //   border-width: 26px 15px 0 15px;
-  //   border-color: rgba(80, 80, 80, .5) transparent transparent transparent;
-  // }
-  }
 
 // ・・・・・・・・・header・・・・・・・・・
 .Header {
@@ -830,11 +797,11 @@ body::before {
 
 
     .work__capture-img {
+      display: flex;
       position: relative;
       width: 15rem;
       height: 10rem;
       margin: 1rem;
-
       @include pc {
         width: 10rem;
         height: 10rem;
@@ -909,7 +876,114 @@ body::before {
 .Contact {
   display: block;
   @include white;
+  margin: 0 auto;
 
+  .Contact__text {
+    margin: 2rem 0;
+    line-height: 1.5;
+  }
+
+  &__area {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .label {
+    margin-bottom: 0.5rem;
+  }
+
+  .inputs {
+    width: 90%;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #333333;
+    background: #F7F7F7;
+    margin-right: 1rem;
+    @include fontsize(14);
+  }
+
+  .inputs:focus {
+    outline: none;
+    box-shadow: 0 3px 3px #7a7979;
+  }
+
+  .textarea {
+    width: 100%;
+    height: 8rem;
+    border: 1px solid #333333;
+    background: #F7F7F7;
+    @include fontsize(14);
+  }
+
+  .textarea:focus {
+    outline: none;
+    box-shadow: 0 3px 3px #7a7979;
+  }
+
+  &__block {
+    margin-top: 2rem;
+  }
+
+  &__block-btn {
+    width: 10rem;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__block-send {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    background: #F7F7F7;
+    @include fontsize(12);
+    cursor: pointer;
+    transition: all .3s;
+  }
+
+  &__block-send:hover {
+    box-shadow: 0 3px 3px #7a7979;
+    transform: translateY(-3px);
+  }
+
+  &__block-send:focus {
+    outline: none;
+  }
+
+  &__block-reset {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    background: #F7F7F7;
+    @include fontsize(12);
+    cursor: pointer;
+    transition: all .3s;
+  }
+  
+  &__block-reset:hover {
+    box-shadow: 0 3px 3px #7a7979;
+    transform: translateY(-3px);
+  }
+
+  &__block-reset:focus {
+    outline: none;
+  }
+
+  .Contant__sns {
+    padding-top: 2rem;
+    width: 10rem;
+    margin: 0 auto;
+    text-align: center;
+    a {
+      color: #333;
+    }
+  }
+  .Contant__sns:hover {
+    cursor: pointer;
+  }
 }
 
 // ・・・・・・・・・footer・・・・・・・・・

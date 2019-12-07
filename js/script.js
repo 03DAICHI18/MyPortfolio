@@ -41,8 +41,8 @@ $(function(){
     $(".work__capture-img").hover(function(){
     // キャプション部分の表示：フェードイン
     $(this).children(".caption").stop().fadeIn(300);
-    // キャプションのテキスト位置：top70% から 50% へ移動
-    $(this).children(".caption").children("p").stop().animate({"top" : "50%"}, 300);
+    // キャプションのテキスト位置：top70% から 40% へ移動
+    $(this).children(".caption").children("p").stop().animate({"top" : "40%"}, 300);
     // ポインタを変更
     $(this).css('cursor','pointer');
     
