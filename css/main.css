@@ -962,7 +962,10 @@ body::before {
 }
 
 .Contact .Contact__text {
-  margin: 2rem 0;
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+  margin: 2rem auto;
   line-height: 1.5;
 }
 
@@ -1011,13 +1014,14 @@ body::before {
 }
 
 .Contact__block-btn {
-  width: 10rem;
-  margin: 2rem auto 0;
+  margin: 2rem auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .Contact__block-send {
+  margin-right: 5%;
   padding: 0.5rem 1rem;
   border: none;
   border-top: 1px solid #333;
@@ -1039,6 +1043,7 @@ body::before {
 }
 
 .Contact__block-reset {
+  margin-right: 5%;
   padding: 0.5rem 1rem;
   border: none;
   border-top: 1px solid #333;
@@ -1060,9 +1065,6 @@ body::before {
 }
 
 .Contact .Contant__sns {
-  padding-top: 2rem;
-  width: 10rem;
-  margin: 0 auto;
   text-align: center;
 }
 
