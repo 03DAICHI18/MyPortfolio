@@ -802,13 +802,14 @@ body::before {
     .work__capture-img {
       display: flex;
       position: relative;
-      width: 15rem;
-      height: 10rem;
-      margin: 1rem;
-      @include pc {
-        width: 10rem;
-        height: 10rem;
+      width: 40%;
+      max-width: 20rem;
+      height: 15rem;
+      @include sp {
+        width: 20rem;
+        height: 20rem;
       }
+      margin: 1rem;
     }
     
     img {
@@ -828,14 +829,16 @@ body::before {
       display: none;
       width: 100%;
       height: 100%;
-      background: rgba($color: #333, $alpha: .7);
+      background: rgba($color: #333, $alpha: .5);
       color: #EAEAEA;
 
-      p {
+      .modal-link {
         position: absolute;
         top: 70%;
-        padding:0 1rem;
         @include fontsize(12);
+        width: 100%;
+        padding: 1rem;
+        background: rgba($color: #333, $alpha: .7);
       }
     }
   }
@@ -848,6 +851,73 @@ body::before {
     color: #333;
   }
 }
+
+// モーダルウィンドウ
+.modal-switch {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+  width: 6rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #333;
+  background: #EAEAEA;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  opacity: 0.5;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0 ,0 ,0 ,0.5);
+  width: 100vw;
+  height: 100%;
+  z-index: 100;
+}
+
+.modal-window {
+  display: none;
+  width: 40vw;
+  height: 50vw;
+  border: 1px solid #333;
+  color: #333;
+  background: #EAEAEA;
+  position: fixed;
+  z-index: 110;
+
+  @include tab {
+    width: 50vw;
+    height: 60vw;
+  }
+  @include sp {
+    width: 80vw;
+    height: 90vw;
+  }
+
+  &__text {
+    padding: 1rem;
+    line-height: 1.5;
+    @include fontsize(14);
+    @include sp {
+      @include fontsize(12)
+    }
+  }
+
+  &__about {
+    margin-bottom: .5rem;
+  }
+  &__about:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
 
 // ・・・・・・・・・price・・・・・・・・・
 .Price {
