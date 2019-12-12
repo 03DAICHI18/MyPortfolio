@@ -59,26 +59,33 @@ $(function(){
 
 // ・・・・・モーダルウィンドウ・・・・・
     // クリックで表示制御
-    $('.open').click(function(){
+    $('.open').on('click' , function(){
         $('.overlay, .modal-window').fadeIn(1000);
         return false;
     });
         
-    $('.close').click(function(){
+    $('.close').on('click' , function(){
         $('.overlay, .modal-window').fadeOut(500);
         return false;
     });
 
-    // ウィンドウを常に中央に配置
-    locateCenter();
-    $(window).resize(locateCenter);
-
-    function locateCenter() {
-    var w = $(window).width();
-    var h = $(window).height();
-    var cw = $('.modal-window').outerWidth();
-    var ch = $('.modal-window').outerHeight();
-
-    $('.modal-window').css({'left': ((w - cw) / 2) ,'top': ((h - ch) / 2) });
-    }
+    // 画面幅に合わせてモーダル位置を変える
+    // ※スマホサイズはそれぞれのキャプチャ位置にfixさせるためjQuery未設定※
+    $(window).on('load resize', function(){
+        var w = $(window).width();
+        var x = 480;
+        if (w >= x){
+        // Window幅がタブレット以上ならモーダルを常に中央に配置
+        locateCenter();
+        $(window).resize(locateCenter);
+        function locateCenter() {
+        var w = $(window).width();
+        var h = $(window).height();
+        var cw = $('.modal-window').outerWidth();
+        var ch = $('.modal-window').outerHeight();
+    
+        $('.modal-window').css({'left': ((w - cw) / 2) + 'px','top': ((h - ch) / 2) + 'px'});
+        }
+        }
+    });
 });
