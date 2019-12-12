@@ -2,7 +2,6 @@ body {
   font-family: 'Rajdhani', sans-serif;
 }
 
-
 //・・・・・・・ 幅設定・・・・・・・
 @mixin width {
   width: 100vw;
@@ -168,6 +167,10 @@ $tab: 480px; // タブレット
     a {
       color: #EAEAEA;
     }
+}
+
+.highlight {
+  background: #7a7979;
 }
 
 //・・・・・・・ パララックス用背景設定・・・・・・・
@@ -853,56 +856,25 @@ body::before {
 }
 
 // モーダルウィンドウ
-.modal-switch {
-  display: block;
-  text-align: center;
-  margin: 1rem auto;
-  width: 6rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  color: #333;
-  border-bottom: 1px solid #333;
-  background: #EAEAEA;
-  cursor: pointer;
-}
-
-.modal-button:hover {
-  opacity: 0.5;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0 ,0 ,0 ,0.5);
-  width: 100%;
-  height: 120%;  // スマホのナビバー対策で120％
-  z-index: 100;
-}
-
 .modal-window {
   display: none;
-  width: 40vw;
-  height: 50vw;
+  position: fixed;
+  @include center;
+  width: 120%;
+  height: 180%;
+  @include sp {
+    width: 100%;
+  height: 130%;
+  }
   border: 1px solid #333;
   color: #333;
-  background: #EAEAEA;
-  position: fixed;
+  background: rgba($color: #333, $alpha: .9);
   z-index: 110;
-
-  @include tab {
-    width: 50vw;
-    height: 60vw;
-  }
-  @include sp {
-    width: 80vw;
-    height: 90vw;
-  }
 
   &__text {
     padding: 1rem;
     line-height: 1.5;
+    color: #F7F7F7;
     @include fontsize(14);
     @include sp {
       @include fontsize(12)
@@ -914,6 +886,22 @@ body::before {
   }
   &__about:last-child {
     margin-bottom: 0;
+  }
+
+  .modal-switch {
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
+    width: 6rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: #F7F7F7;
+    border: 1px solid #F7F7F7;
+    cursor: pointer;
+  }
+  
+  .modal-button:hover {
+    opacity: 0.5;
   }
 
 }

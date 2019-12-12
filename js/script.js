@@ -24,6 +24,18 @@ $(function(){
                 $(this).addClass('scrollIn');
             }
         });
+
+// ・・・・ページナビのハイライト・・・・
+    // 各コンテンツ位置とスクロール量の関係を調べる
+    for(var i = 1; i <= 5; i++){
+        if($("section:nth-child(" + i + ")").offset().top < $(window).scrollTop() + 100){
+          // 現在のhighlightクラスを削除
+            $("nav li").removeClass("highlight");
+          // 新しくhighlightクラスを追加
+            $("nav li:nth-child(" + i + ")").addClass("highlight");
+        }
+    }
+
     });
 
 
@@ -60,32 +72,12 @@ $(function(){
 // ・・・・・モーダルウィンドウ・・・・・
     // クリックで表示制御
     $('.open').on('click' , function(){
-        $('.overlay, .modal-window').fadeIn(1000);
+        $('.modal-window').fadeIn(1000);
         return false;
     });
         
     $('.close').on('click' , function(){
-        $('.overlay, .modal-window').fadeOut(500);
+        $('.modal-window').fadeOut(500);
         return false;
-    });
-
-    // 画面幅に合わせてモーダル位置を変える
-    // ※スマホサイズはそれぞれのキャプチャ位置にfixさせるためjQuery未設定※
-    $(window).on('load resize', function(){
-        var w = $(window).width();
-        var x = 480;
-        if (w >= x){
-        // Window幅がタブレット以上ならモーダルを常に中央に配置
-        locateCenter();
-        $(window).resize(locateCenter);
-        function locateCenter() {
-        var w = $(window).width();
-        var h = $(window).height();
-        var cw = $('.modal-window').outerWidth();
-        var ch = $('.modal-window').outerHeight();
-    
-        $('.modal-window').css({'left': ((w - cw) / 2) + 'px','top': ((h - ch) / 2) + 'px'});
-        }
-        }
     });
 });
