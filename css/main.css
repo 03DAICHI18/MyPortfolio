@@ -946,6 +946,8 @@ body::before {
   -o-transform: translate(-50%, -50%);
   width: 120%;
   height: 180%;
+  font-size: 14px;
+  font-size: 0.875rem;
   border: 1px solid #333;
   color: #333;
   background: rgba(51, 51, 51, 0.9);
@@ -963,15 +965,6 @@ body::before {
   padding: 1rem;
   line-height: 1.5;
   color: #F7F7F7;
-  font-size: 14px;
-  font-size: 0.875rem;
-}
-
-@media (max-width: 479px) {
-  .modal-window__text {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
 }
 
 .modal-window__about {
