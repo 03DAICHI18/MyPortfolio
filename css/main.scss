@@ -863,7 +863,7 @@ body::before {
   width: 120%;
   height: 180%;
   @include sp {
-    width: 100%;
+    width: 100vw;
   height: 130%;
   }
   border: 1px solid #333;
@@ -877,7 +877,7 @@ body::before {
     color: #F7F7F7;
     @include fontsize(14);
     @include sp {
-      @include fontsize(12)
+      @include fontsize(14)
     }
   }
 

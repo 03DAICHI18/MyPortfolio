@@ -954,7 +954,7 @@ body::before {
 
 @media (max-width: 479px) {
   .modal-window {
-    width: 100%;
+    width: 100vw;
     height: 130%;
   }
 }
@@ -969,8 +969,8 @@ body::before {
 
 @media (max-width: 479px) {
   .modal-window__text {
-    font-size: 12px;
-    font-size: 0.75rem;
+    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 
