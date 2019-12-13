@@ -15,8 +15,9 @@ $(function(){
             Header.css('opacity' , '1');
         }
 
-// ・・・ブロックフェードイン・・・
-        $('.fadeIn').each(function(){
+
+// ・・・ブロックフェードイン）・・・
+        $('.fadeInopacity , .fadeIn').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
             var windowHeight = $(window).height();
@@ -52,10 +53,6 @@ $(function(){
 
 
 // ・・・・・キャプチャ画像の説明文・・・・・
-$(window).on('load resize', function(){
-    var w = $(window).width();
-    var x = 480;
-    if (w > x) {
         // li要素をマウスオーバー
         $(".work__capture-img").hover(function(){
         // キャプション部分の表示：フェードイン
@@ -71,19 +68,15 @@ $(window).on('load resize', function(){
         // キャプションのテキスト位置：top50% から 70%へ移動
             $(this).children(".caption").children(".modal-link").stop().animate({"top":"70%"}, 500);
         });
-    }
-});
 
 
 // ・・・・・モーダルウィンドウ・・・・・
     // クリックで表示制御
     $('.open').on('click' , function(){
-        $('.modal-window').fadeIn(1000);
-        return false;
+        $('.overray , .modal-window').fadeIn(1000);
     });
         
     $('.close').on('click' , function(){
-        $('.modal-window').stop().fadeOut(500);
-        return false;
+        $('.overray , .modal-window').stop().fadeOut(500);
     });
 });

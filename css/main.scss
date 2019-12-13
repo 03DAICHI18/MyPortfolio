@@ -248,7 +248,22 @@ $tab: 480px; // タブレット
   
 }
 
-// ・・・・・・・・・ブロック単位でフェイドインさせる・・・・・・・・・
+// ・・・・・ブロック単位でフェードイン①（透過）・・・・・・・・・
+.fadeInopacity {
+  opacity: 0;
+  transition: all 4s;
+  -webkit-transition: all 4s;
+  -moz-transition: all 4s;
+  -ms-transition: all 4s;
+  -o-transition: all 4s;
+}
+
+/* 画面内に入った状態 */
+.fadeInopacity.scrollIn {
+  opacity: 1;
+}
+
+// ・・・・・ブロック単位でフェードイン②（下から浮かび上がってくる）・・・・・・・・・
 .fadeIn {
   opacity: .3;
   transform: translate(0, 15vh);
@@ -272,6 +287,7 @@ $tab: 480px; // タブレット
   -ms-transform: translate(0, 0);
   -o-transform: translate(0, 0);
 }
+
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでmixin設定＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .section-title {
@@ -496,6 +512,7 @@ $tab: 480px; // タブレット
   position: -webkit-sticky;
   top: 0;
   background: #333333;
+  transform: translate3d(0, 0, 0);  // iosでの不具合対策
   box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
@@ -856,15 +873,34 @@ body::before {
 }
 
 // モーダルウィンドウ
+.overray {
+  display: none;
+  width: 100vw;
+  height: 120vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
 .modal-window {
   display: none;
   position: fixed;
-  @include center;
-  width: 120%;
-  height: 180%;
+  top: 10%;
+  left: 50%;
+  @include centertransform;
+  width: 50vw;
+  padding: 1rem;
+  @include tab {
+    top: 20%;
+    left: 50%;
+    width: 50vw;
+  }
   @include sp {
-    width: 100vw;
-  height: 130%;
+    top: 20%;
+    left: 50%;
+    width: 80vw;
   }
   @include fontsize(14);
   border: 1px solid #333;
