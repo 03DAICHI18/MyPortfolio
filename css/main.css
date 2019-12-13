@@ -989,7 +989,7 @@ body::before {
 
 @media (max-width: 479px) {
   .modal-window {
-    top: 20%;
+    top: 15%;
     left: 50%;
     width: 80vw;
   }

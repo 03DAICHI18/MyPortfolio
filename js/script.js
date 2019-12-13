@@ -1,9 +1,11 @@
 $(function(){
-// ・・・トップ位置でフィックスすると色を透過させるヘッダー・・・
+    // ・・・トップ位置でフィックスすると色を透過させるヘッダー・・・
     var Header = $('#Header');
     var About = $('#About');
     //ウィンドウ枠からのAbout位置を取得
     var AboutTop = About.offset().top;
+
+// ＝＝＝＝＝＝＝＝ここからスクロール関連＝＝＝＝＝＝＝＝＝＝＝
     $(window).scroll(function () {
     // ウィンドウ枠からのスクロール量を取得
         var winTop = $(this).scrollTop();
@@ -16,7 +18,7 @@ $(function(){
         }
 
 
-// ・・・ブロックフェードイン）・・・
+    // ・・・ブロックフェードイン・・・
         $('.fadeInopacity , .fadeIn').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
@@ -26,7 +28,7 @@ $(function(){
             }
         });
 
-// ・・・・ページナビのハイライト・・・・
+    // ・・・・ページナビのハイライト・・・・
     // 各コンテンツ位置とスクロール量の関係を調べる
     for(var i = 1; i <= 5; i++){
         if($("section:nth-child(" + i + ")").offset().top < $(window).scrollTop() + 100){
@@ -38,6 +40,7 @@ $(function(){
     }
 
     });
+// ＝＝＝＝＝＝＝＝ここまでスクロール関連＝＝＝＝＝＝＝＝＝＝＝
 
 
 // ・・・・・ページ内スクロール・・・・・
@@ -53,21 +56,24 @@ $(function(){
 
 
 // ・・・・・キャプチャ画像の説明文・・・・・
-        // li要素をマウスオーバー
-        $(".work__capture-img").hover(function(){
-        // キャプション部分の表示：フェードイン
-            $(this).children(".caption").stop().fadeIn(500);
-        // キャプションのテキスト位置：top70% から 40% へ移動
-            $(this).children(".caption").children(".modal-link").stop().animate({"top" : "40%"}, 500);
-        // ポインタを変更
-            $(this).css('cursor','pointer');
+if(!navigator.userAgent.match(/(iPhone|Android)/)){
+// li要素をマウスオーバー
+$(".work__capture-img").hover(function(){
+    // キャプション部分の表示：フェードイン
+        $(this).children(".caption").stop().fadeIn(500);
+    // キャプションのテキスト位置：top70% から 40% へ移動
+        $(this).children(".caption").children(".modal-link").stop().animate({"top" : "40%"}, 500);
+    // ポインタを変更
+        $(this).css('cursor','pointer');
+    
+    }, function(){
+    // キャプション部分の非表示：フェードアウト
+        $(this).children(".caption").stop().fadeOut(500);
+    // キャプションのテキスト位置：top50% から 70%へ移動
+        $(this).children(".caption").children(".modal-link").stop().animate({"top":"70%"}, 500);
+    });
+}
         
-        }, function(){
-        // キャプション部分の非表示：フェードアウト
-            $(this).children(".caption").stop().fadeOut(500);
-        // キャプションのテキスト位置：top50% から 70%へ移動
-            $(this).children(".caption").children(".modal-link").stop().animate({"top":"70%"}, 500);
-        });
 
 
 // ・・・・・モーダルウィンドウ・・・・・
@@ -79,4 +85,6 @@ $(function(){
     $('.close').on('click' , function(){
         $('.overray , .modal-window').stop().fadeOut(500);
     });
+
+
 });

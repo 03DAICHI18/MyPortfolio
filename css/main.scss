@@ -898,7 +898,7 @@ body::before {
     width: 50vw;
   }
   @include sp {
-    top: 20%;
+    top: 15%;
     left: 50%;
     width: 80vw;
   }
@@ -932,7 +932,7 @@ body::before {
     border: 1px solid #F7F7F7;
     cursor: pointer;
   }
-  
+
   .modal-button:hover {
     opacity: 0.5;
   }
