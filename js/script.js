@@ -56,34 +56,37 @@ $(function(){
 
 
 // ・・・・・キャプチャ画像の説明文・・・・・
-if(!navigator.userAgent.match(/(iPhone|Android)/)){
 // li要素をマウスオーバー
 $(".work__capture-img").hover(function(){
     // キャプション部分の表示：フェードイン
         $(this).children(".caption").stop().fadeIn(500);
     // キャプションのテキスト位置：top70% から 40% へ移動
         $(this).children(".caption").children(".modal-link").stop().animate({"top" : "40%"}, 500);
-    // ポインタを変更
-        $(this).css('cursor','pointer');
-    
+
     }, function(){
     // キャプション部分の非表示：フェードアウト
         $(this).children(".caption").stop().fadeOut(500);
     // キャプションのテキスト位置：top50% から 70%へ移動
         $(this).children(".caption").children(".modal-link").stop().animate({"top":"70%"}, 500);
     });
-}
         
-
 
 // ・・・・・モーダルウィンドウ・・・・・
     // クリックで表示制御
     $('.open').on('click' , function(){
+        $("body").addClass("no_scroll");    // 背景固定させるクラス付与
+        $(window).on('touchmove', (e) => {
+        e.preventDefault();
+        });
         $('.overray , .modal-window').fadeIn(1000);
+        return false;
     });
         
     $('.close').on('click' , function(){
+        $("body").removeClass("no_scroll");    // 背景固定させるクラス削除
+        $(window).off('touchmove');
         $('.overray , .modal-window').stop().fadeOut(500);
+        return false;
     });
 
 

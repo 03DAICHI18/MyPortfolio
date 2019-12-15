@@ -2,6 +2,10 @@ body {
   font-family: 'Rajdhani', sans-serif;
 }
 
+.no_scroll {
+  overflow: hidden;
+}
+
 //・・・・・・・ 幅設定・・・・・・・
 @mixin width {
   width: 100vw;
@@ -818,7 +822,6 @@ body::before {
     flex-wrap: wrap;
     justify-content: center;
 
-
     .work__capture-img {
       display: flex;
       position: relative;
@@ -859,6 +862,7 @@ body::before {
         width: 100%;
         padding: 1rem;
         background: rgba($color: #333, $alpha: .7);
+        cursor: pointer;
       }
     }
   }
@@ -875,25 +879,26 @@ body::before {
 // モーダルウィンドウ
 .overray {
   display: none;
-  width: 100vw;
-  height: 120vh;
+  width: 100%;
+  height: 120%;
   position: fixed;
   top: 0;
   left: 0;
   background: rgba(0,0,0,0.5);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 100;
 }
 
 .modal-window {
   display: none;
   position: fixed;
-  top: 10%;
+  top: 20%;
   left: 50%;
   @include centertransform;
   width: 50vw;
   padding: 1rem;
   @include tab {
-    top: 20%;
     left: 50%;
     width: 50vw;
   }
@@ -912,6 +917,10 @@ body::before {
     padding: 1rem;
     line-height: 1.5;
     color: #F7F7F7;
+    a {
+      color: #F7F7F7;
+      text-decoration: underline;
+    }
   }
 
   &__about {
@@ -922,10 +931,13 @@ body::before {
   }
 
   .modal-switch {
-    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .modal-switch__btn {
     text-align: center;
     margin: 1rem auto;
-    width: 6rem;
+    width: 40%;
     padding: 0.5rem 1rem;
     border: none;
     color: #F7F7F7;
@@ -933,7 +945,7 @@ body::before {
     cursor: pointer;
   }
 
-  .modal-button:hover {
+  .modal-button__btn:hover {
     opacity: 0.5;
   }
 
