@@ -38,10 +38,7 @@ $(function(){
             $("nav li:nth-child(" + i + ")").addClass("highlight");
         }
     }
-
-    });
-// ＝＝＝＝＝＝＝＝ここまでスクロール関連＝＝＝＝＝＝＝＝＝＝＝
-
+});
 
 // ・・・・・ページ内スクロール・・・・・
     $('a[href^="#"]').click(function(event) {
@@ -53,6 +50,7 @@ $(function(){
         $('body,html').animate({ scrollTop : position }, 500); 
         return false;
     });
+// ＝＝＝＝＝＝＝＝ここまでスクロール関連＝＝＝＝＝＝＝＝＝＝＝
 
 
 // ・・・・・キャプチャ画像の説明文・・・・・
@@ -73,21 +71,21 @@ $(".work__capture-img").hover(function(){
 
 // ・・・・・モーダルウィンドウ・・・・・
     // クリックで表示制御
+    var scrollPos;
     $('.open').on('click' , function(){
-        $("body").addClass("no_scroll");    // 背景固定させるクラス付与
-        $(window).on('touchmove', (e) => {
-        e.preventDefault();
-        });
-        $('.overray , .modal-window').fadeIn(1000);
+        $("html , body").addClass("no_scroll");    // 背景固定させるクラス付与
+        scrollPos = $(window).scrollTop();
+
+        $('.overlay , .modal-window').fadeIn(1000);
         return false;
-    });
+        });
         
     $('.close').on('click' , function(){
-        $("body").removeClass("no_scroll");    // 背景固定させるクラス削除
-        $(window).off('touchmove');
-        $('.overray , .modal-window').stop().fadeOut(500);
+        $("html , body").removeClass("no_scroll");    // 背景固定させるクラス削除
+        $(window).scrollTop(scrollPos);
+
+        $('.overlay , .modal-window').stop().fadeOut(500);
         return false;
     });
-
 
 });

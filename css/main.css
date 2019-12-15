@@ -953,7 +953,7 @@ body::before {
   color: #333;
 }
 
-.overray {
+.overlay {
   display: none;
   width: 100%;
   height: 120%;
