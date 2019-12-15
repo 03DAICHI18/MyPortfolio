@@ -1,11 +1,9 @@
 $(function(){
-    // ・・・トップ位置でフィックスすると色を透過させるヘッダー・・・
+// ・・・トップ位置でフィックスすると色を透過させるヘッダー・・・
     var Header = $('#Header');
     var About = $('#About');
     //ウィンドウ枠からのAbout位置を取得
     var AboutTop = About.offset().top;
-
-// ＝＝＝＝＝＝＝＝ここからスクロール関連＝＝＝＝＝＝＝＝＝＝＝
     $(window).scroll(function () {
     // ウィンドウ枠からのスクロール量を取得
         var winTop = $(this).scrollTop();
@@ -17,8 +15,7 @@ $(function(){
             Header.css('opacity' , '1');
         }
 
-
-    // ・・・ブロックフェードイン・・・
+// ・・・・・ブロックフェードイン・・・
         $('.fadeInopacity , .fadeIn').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
@@ -28,7 +25,7 @@ $(function(){
             }
         });
 
-    // ・・・・ページナビのハイライト・・・・
+// ・・・・ページナビのハイライト・・・・
     // 各コンテンツ位置とスクロール量の関係を調べる
     for(var i = 1; i <= 5; i++){
         if($("section:nth-child(" + i + ")").offset().top < $(window).scrollTop() + 100){
@@ -50,6 +47,7 @@ $(function(){
         $('body,html').animate({ scrollTop : position }, 500); 
         return false;
     });
+    
 // ＝＝＝＝＝＝＝＝ここまでスクロール関連＝＝＝＝＝＝＝＝＝＝＝
 
 
@@ -80,12 +78,13 @@ $(".work__capture-img").hover(function(){
         return false;
         });
         
-    $('.close').on('click' , function(){
+    $('.close , .overlay').on('click' , function(){
         $("html , body").removeClass("no_scroll");    // 背景固定させるクラス削除
         $(window).scrollTop(scrollPos);
 
         $('.overlay , .modal-window').stop().fadeOut(500);
         return false;
+
     });
 
 });

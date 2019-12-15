@@ -1011,24 +1011,23 @@ body::before {
     background: #F7F7F7;
     margin-right: 1rem;
     @include fontsize(14);
-  }
 
-  .inputs:focus {
-    outline: none;
-    box-shadow: 0 3px 3px #7a7979;
+    &:focus {
+      outline: none;
+      box-shadow: 0 3px 3px #7a7979;
+    }
   }
-
   .textarea {
     width: 90%;
     height: 8rem;
     border: 1px solid #333333;
     background: #F7F7F7;
     @include fontsize(14);
-  }
 
-  .textarea:focus {
-    outline: none;
-    box-shadow: 0 3px 3px #7a7979;
+    &:focus {
+      outline: none;
+      box-shadow: 0 3px 3px #7a7979;
+    }
   }
 
   &__block {
@@ -1090,7 +1089,6 @@ body::before {
     cursor: pointer;
   }
 }
-
 // ・・・・・・・・・footer・・・・・・・・・
 .Footer {
   @include black;
