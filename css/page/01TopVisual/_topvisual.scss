@@ -1,0 +1,200 @@
+// ・・・・・・・・・top-visual・・・・・・・・・
+.TopVisual {
+  position: relative;
+  @include white;
+  height: 100vh;
+  &__inner {
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+
+    @include sp {
+      width: 80%;
+      position: absolute;
+      top: 20vh;
+      left: 50%;
+      transform: translate(-50%);
+      -webkit-transform: translate(-50%);
+      -moz-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+      -o-transform: translate(-50%);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      @include fontsize(30);
+    }
+    p {
+      @include fontsize(20);
+      line-height: 1.5;
+    }
+  }
+
+  @mixin effect-fade {
+    animation: fadeInText 4s ease-in 0s 1 normal;
+    -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
+    @keyframes fadeInText {
+      0% {
+        opacity: 0
+      }
+      100% {
+        opacity: 1
+      }
+    }
+  } 
+
+  // テキストフェードイン
+  .effect-fade__text {
+    @include effect-fade();
+    animation: fadeInText 4s ease-in 0s 1 normal;
+    -webkit-animation: fadeInText 4s ease-in 0s 1 normal;
+  }
+  @keyframes fadeInText {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+
+  // 背景フェードイン
+  .leftBack {
+    position: absolute;
+    opacity: .5;
+    @include sp{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 100vh 100vw 0 0;
+      border-color: #333 transparent transparent transparent;
+      animation: SpfadeInBack 4s ease-in 0s 1 normal;
+      -webkit-animation: SpfadeInBack 4s ease-in 0s 1 normal;
+      @include SpfadeInBack;
+  }
+
+    @include tab {
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 55%;
+      background: #333;
+      animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      @include LeftTopkey;
+  }
+
+    @include pc {
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 55%;
+      background: #333;
+      animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
+      @include LeftTopkey;
+    }
+  }
+
+  .rightBack {
+    position: absolute;
+    opacity: .5;
+    animation: RightfadeInBack 4s ease-in 0s 1 normal;
+    -webkit-animation: RightfadeInBack 4s ease-in 0s 1 normal;
+
+    @include tab {
+      top: 65%;
+      right: 0;
+      width: 80%;
+      height: 10%;
+      background: #333;
+      @include RightTopkey;
+    }
+
+    @include pc {
+      top: 65%;
+      right: 0;
+      width: 80%;
+      height: 10%;
+      background: #333;
+      @include RightTopkey;
+    }
+  }
+
+// スクロール誘導
+  .scroll {
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    @include centertransform;
+    @include sp {
+    position: absolute;
+    bottom: 25vh;
+    left: 50%;
+    @include centertransform;
+    }
+    a {
+      @include fontsize;
+      @include effect-fade;
+      color: #333333;
+      z-index: 2;
+    }
+
+    span {
+      position: absolute;
+      bottom: 10vh;
+      margin-left: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-left: 1px solid #333333;
+      border-bottom: 1px solid #333333;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: scroll 2s infinite;
+      animation: scroll 2s infinite;
+      opacity: 0;
+      }
+      span:nth-of-type(1) {
+        top: -8vh;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+      span:nth-of-type(2) {
+        top: -6vh;
+        -webkit-animation-delay: .15s;
+        animation-delay: .15s;
+      }
+      span:nth-of-type(3) {
+        top: -4vh;
+        -webkit-animation-delay: .3s;
+        animation-delay: .3s;
+      }
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 0;
+        }
+      50% {
+        opacity: 1;
+        }
+      100% {
+        opacity: 0;
+        }
+      }
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+//・・・・・・・ 幅設定・・・・・・・
+@mixin width {
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0 auto;
+}

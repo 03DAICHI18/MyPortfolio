@@ -1,0 +1,27 @@
+// ・・・・・・・・・price・・・・・・・・・
+.Price {
+  display: block;
+  @include black;
+
+  .Price__table {
+    margin: 2rem auto 1rem;
+    
+    &-block {
+      border-bottom: 1px solid #F7F7F7;
+
+        &--left {
+          padding: 2rem; 
+          border-right: 1px solid #F7F7F7;
+        }
+  
+        &--right {
+        padding: 0 3rem 0 1rem; 
+      }
+    }
+  }
+
+  .Price__text {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}

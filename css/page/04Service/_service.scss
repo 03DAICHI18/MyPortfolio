@@ -1,0 +1,89 @@
+// ・・・・・・・・・Service・・・・・・・・・
+.Service {
+  display: block;
+  @include black;
+  
+  &__block {
+    margin-top: 3rem;
+    .Service__title {
+      @include fontsize(20);
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+
+      .fa-laptop-code {
+        margin-right: 2rem;
+      }
+
+      p {
+        display: inline-block;
+      }
+    }
+
+    .Service__text {
+      @include fontsize(16);
+      margin: 2rem 0 3rem;
+      text-align: center;
+      line-height: 1.3;
+      @include sp {
+        text-align: left;
+      }
+    }
+
+  }
+  
+  &__about {
+    @include fontsize(16);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+    
+    td {
+      padding-bottom: 1rem;
+    }
+    .fa-check {
+      margin-right: 1rem;
+    }
+  }
+
+  .skill {
+    h3 {
+      @include fontsize(24);
+      text-align: center;
+    }
+    .skill__container {
+      display: flex;
+      line-height: 1.3;
+      @include sp {
+        flex-direction: column;
+      }
+
+      &-contents {
+        padding: 10px;
+        border-right: 1px solid #EAEAEA;
+        @include sp {
+          border-right: none;
+          border-bottom: 1px solid #EAEAEA;
+        }
+      }
+      &-contents:nth-of-type(3) {
+        border-right: none;
+      }
+
+      &-title {
+        text-align: center;
+        padding: 1rem;
+        .fab {
+          @include fontsize(30);
+          padding: 1rem;
+        }
+        p {
+          @include fontsize(20);
+          padding-bottom: 2rem;
+          @include sp {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

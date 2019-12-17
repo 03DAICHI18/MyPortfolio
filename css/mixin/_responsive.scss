@@ -1,0 +1,19 @@
+// //・・・・・・・ レスポンシブwidth設定・・・・・・・
+$pc: 1024px; // PC
+$tab: 480px; // タブレット
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: ($tab)) and (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($tab - 1)) {
+    @content;
+  }
+}

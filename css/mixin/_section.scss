@@ -1,0 +1,5 @@
+// // ・・・・・・・・・セクション共通・・・・・・・・・
+@mixin Section-title {
+  @include fontsize(30);
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+// //・・・・・・・ 背景色設定・・・・・・・
+@mixin white ($background: #F7F7F7 , $color: #333333, $width: 100vw){
+  background: $background;
+  color: $color;
+}
+
+@mixin black ($background: #7a7979 , $color: #EAEAEA, $width: 100vw){
+  background: $background;
+  color: $color;
+}

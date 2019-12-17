@@ -27,10 +27,6 @@ body {
   }
 }
 
-.highlight {
-  background: #7a7979;
-}
-
 .link {
   display: inline-block;
   margin-top: 1rem;
@@ -547,6 +543,10 @@ body {
   display: block;
 }
 
+.highlight {
+  background: #7a7979;
+}
+
 .About {
   background: #F7F7F7;
   color: #333333;
@@ -995,7 +995,7 @@ body::before {
 
 @media (max-width: 479px) {
   .modal-window {
-    top: 15%;
+    top: 20%;
     left: 50%;
     width: 80vw;
   }

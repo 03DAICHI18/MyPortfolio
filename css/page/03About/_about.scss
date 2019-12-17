@@ -1,0 +1,163 @@
+// ・・・・・・・・・about・・・・・・・・・
+.About {
+  @include white;
+  margin-bottom: 70vh;
+
+  .About-flex {
+    display: flex;
+    margin-top: 3rem;
+    @include fontsize(16);
+    filter: grayscale(80%);
+    -webkit-filter: grayscale(80%);
+
+    @include sp {
+      flex-direction: column;
+      &__photo {
+      max-width: 15rem;
+      margin: 0 auto;
+        img {
+        max-width: 100%;
+        height: auto;
+        @include circle;
+        }
+      }
+      &__text {
+        margin-top: 3rem;
+      }
+      &__text--name {
+        text-align: center;
+        margin: 2rem 0;
+        position: relative;
+      }
+      &__text--name::after {
+        position: absolute;
+        content: '';
+        width: 80%;
+        bottom: -1rem;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+      }
+    }
+
+    @include tab {
+      justify-content: space-around;
+      align-items: center;
+      &__photo {
+        width: 30%;
+        img {
+        width: 100%;
+        height: auto;
+        @include circle;
+        }
+      }
+      &__text {
+        width: 20rem;
+        margin-top: 3rem;
+        line-height: 1.5;
+      }
+      &__text--name {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+      &__text--name::after {
+        position: absolute;
+        content: '';
+        width: 70%;
+        bottom: -1rem;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+      }
+    } 
+
+    @include pc {
+    justify-content: space-around;
+    align-items: center;
+    &__photo {
+      width: 30%;
+      img {
+      width: 100%;
+      height: auto;
+      @include circle;
+      }
+    }
+    &__text {
+      width: 50%;
+      margin-top: 3rem;
+      line-height: 1.5;
+    }
+    &__text--name {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      }
+    &__text--name::after {
+        position: absolute;
+        content: '';
+        width: 70%;
+        bottom: -1rem;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+      }
+    }
+  }
+    .About__theme {
+      margin-top: 3rem;
+      line-height: 2;
+      
+      &-history {
+        margin: 2rem 0 4rem;
+        position: relative;
+
+        td {
+          padding-bottom: 1rem;
+        }
+        p {
+          text-align: center;
+          margin-bottom: 2rem;
+          position: relative;
+        }
+        p::after {
+        position: absolute;
+        content: '';
+        width: 10%;
+        bottom: -0.5rem;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+        }
+
+        .year {
+          width: 6rem;
+        }
+      }
+
+      &-history::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        bottom: -1rem;
+        left: 50%;
+        @include centertransform;
+        height: 1px;
+        background: #333;
+      }
+    }
+}
+
+// パララックス（ios対応のため  background-attachment: fixedは使用しない）
+body::before {
+  @include bg();
+  background-image: url(../img/Canal.jpeg);
+    @include sp {
+      background-image: url(../img/sptower.jpeg);
+    }
+}
+

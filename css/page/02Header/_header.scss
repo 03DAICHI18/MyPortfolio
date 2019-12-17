@@ -1,0 +1,46 @@
+// ・・・・・・・・・header・・・・・・・・・
+.Header {
+  position: relative;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background: #333333;
+  transform: translate3d(0, 0, 0);  // iosでの不具合対策
+  box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  z-index: 10;
+
+  .Header-inner {
+  font-size: 0;  // inline-blockで生じる余白消し
+    &__list {
+      @include sp {
+        @include header;
+        @include fontsize(14);  // 余白消しで0にしたフォントサイズの再設定
+        width: calc(100% / 5);
+      }
+      @include tab {
+        @include header;
+        @include fontsize(16);  // 余白消しで0にしたフォントサイズの再設定
+        width: calc(100% / 5);
+      }
+      @include pc {
+        @include header;
+        @include fontsize(16);  // 余白消しで0にしたフォントサイズの再設定
+        width: calc(100% / 5);
+      }
+    }
+
+    &__list:hover {
+      background: #cfcfcf;
+      a {
+        color: rgb(66, 66, 66);
+        display: block;
+      }
+    }
+  }
+}
+
+.highlight {
+  background: #7a7979;
+}

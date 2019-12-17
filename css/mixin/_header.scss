@@ -1,0 +1,12 @@
+// //・・・・・・・ ヘッダー設定・・・・・・・
+@mixin header {
+  display: inline-block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #EAEAEA;
+  border-top: 0;
+    a {
+      color: #EAEAEA;
+    }
+}
