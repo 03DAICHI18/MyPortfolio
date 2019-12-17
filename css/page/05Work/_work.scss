@@ -86,7 +86,7 @@
 .modal-window {
   display: none;
   position: fixed;
-  top: 20%;
+  top: 15%;
   left: 50%;
   @include centertransform;
   width: 50vw;
@@ -96,7 +96,7 @@
     width: 50vw;
   }
   @include sp {
-    top: 20%;
+    top: 30%;
     left: 50%;
     width: 80vw;
   }
