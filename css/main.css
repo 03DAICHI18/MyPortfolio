@@ -1034,10 +1034,12 @@ body::before {
   color: #F7F7F7;
   border: 1px solid #F7F7F7;
   cursor: pointer;
+  transition: .5s;
 }
 
-.modal-window .modal-button__btn:hover {
-  opacity: 0.5;
+.modal-window .modal-switch__btn:hover {
+  background: rgba(247, 247, 247, 0.9);
+  color: #333;
 }
 
 .Price {

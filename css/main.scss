@@ -933,21 +933,24 @@ body::before {
   .modal-switch {
     display: flex;
     justify-content: center;
-  }
-  .modal-switch__btn {
-    text-align: center;
-    margin: 1rem auto;
-    width: 40%;
-    padding: 0.5rem 1rem;
-    border: none;
-    color: #F7F7F7;
-    border: 1px solid #F7F7F7;
-    cursor: pointer;
+
+    &__btn {
+      text-align: center;
+      margin: 1rem auto;
+      width: 40%;
+      padding: 0.5rem 1rem;
+      border: none;
+      color: #F7F7F7;
+      border: 1px solid #F7F7F7;
+      cursor: pointer;
+      transition: .5s;
+    }
+    &__btn:hover {
+      background: rgba($color: #F7F7F7, $alpha: .9);
+      color: #333;
+    }
   }
 
-  .modal-button__btn:hover {
-    opacity: 0.5;
-  }
 
 }
 

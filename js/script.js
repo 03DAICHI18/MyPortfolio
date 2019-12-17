@@ -58,7 +58,7 @@ $(".work__capture-img").hover(function(){
         $(this).children(".caption").stop().fadeIn(500);
     // キャプションのテキスト位置：top70% から 40% へ移動
         $(this).children(".caption").children(".modal-link").stop().animate({"top" : "40%"}, 500);
-
+        
     }, function(){
     // キャプション部分の非表示：フェードアウト
         $(this).children(".caption").stop().fadeOut(500);
