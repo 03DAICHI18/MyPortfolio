@@ -11,7 +11,7 @@
 }
 @include tab {
   :root {
-    font-size: calc(1rem + ((1vw - 7.68px) * 1.5625));
+    font-size: calc(16);
   }
 }
 @include sp {

@@ -16,7 +16,7 @@ body {
 
 @media (min-width: 480px) and (max-width: 1024px) {
   :root {
-    font-size: calc(1rem + ((1vw - 7.68px) * 1.5625));
+    font-size: calc(16);
   }
 }
 
@@ -1125,8 +1125,8 @@ body.fadeout::after {
   border-bottom: 1px solid #333333;
   background: #F7F7F7;
   margin-right: 1rem;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 .Contact .inputs:focus {
@@ -1139,8 +1139,8 @@ body.fadeout::after {
   height: 8rem;
   border: 1px solid #333333;
   background: #F7F7F7;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 .Contact .textarea:focus {
@@ -1166,8 +1166,8 @@ body.fadeout::after {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   background: #F7F7F7;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all .3s;
 }
@@ -1188,8 +1188,8 @@ body.fadeout::after {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   background: #F7F7F7;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all .3s;
 }
