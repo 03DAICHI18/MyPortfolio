@@ -7,6 +7,28 @@ body {
   overflow: hidden;
 }
 
+/* バウンススクロール時のカラースタイル */
+body::before,
+body::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50%;
+  position: fixed;
+  left: 0;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  background-color: #7a7979;
+}
+
+body::after {
+  bottom: 0;
+  background-color: #7a7979;
+}
+
 @media (min-width: 1024px) {
   :root {
     font-size: 20px;
