@@ -1057,7 +1057,7 @@ body::after {
   /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
   opacity: 0;
   /* 初期値では非表示 */
-  transition: opacity .8s ease;
+  transition: opacity 1s ease-out;
 }
 
 /*body要素に.fadeoutセレクタがある場合には、レイヤーが表示されるようにopacityを１に設定します。*/

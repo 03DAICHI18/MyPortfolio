@@ -3,6 +3,8 @@ $(function () {
 // ・・・・・元のページに戻った際にフェードインさせる・・・
   $(window).on('load', function(){
     $('body').removeClass('fadeout');
+    $('.content-block').css('opacity' , 0);
+    $('.content-block').animate({opacity: 1},2000);
   });
 
   $(function() {
@@ -11,25 +13,14 @@ $(function () {
       e.preventDefault(); // ナビゲートをキャンセル
       url = $(this).attr('href'); // 遷移先のURLを取得
       if (url !== '') {
-        $('#work > div').removeClass('fadeInopacity');
         $('body').addClass('fadeout');  // bodyに class="fadeout"を挿入
         setTimeout(function(){
           window.location = url;  // 0.8秒後に取得したURLに遷移
-        }, 300);
+        }, 800);
       }
       return false;
     });
   });
-
-  // ・・・・・ブロックフェードイン・・・
-  $('.fadeInopacity').each(function(){
-    var elemPos = $(this).offset().top;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > elemPos - windowHeight){
-        $(this).addClass('scrollIn');
-    }
-});
 
   // ・・・・・キャプチャ画像の説明文・・・・・
 // li要素をマウスオーバー

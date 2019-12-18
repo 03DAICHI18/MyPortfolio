@@ -9,7 +9,7 @@ body::after {
   z-index: 9999;  /* 一番手前に */
   pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
   opacity: 0;  /* 初期値では非表示 */
-  transition: opacity .8s ease;
+  transition: opacity 1s ease-out;
 }
 
 
