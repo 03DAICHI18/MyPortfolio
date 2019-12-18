@@ -969,7 +969,7 @@ body::before {
 .modal-window {
   display: none;
   position: fixed;
-  top: 20%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%);
   -webkit-transform: translate(-50%);
