@@ -11,7 +11,7 @@ $(function () {
       e.preventDefault(); // ナビゲートをキャンセル
       url = $(this).attr('href'); // 遷移先のURLを取得
       if (url !== '') {
-        $('#work > div').removeClass('.fadeInopacity');
+        $('#work > div').removeClass('fadeInopacity');
         $('body').addClass('fadeout');  // bodyに class="fadeout"を挿入
         setTimeout(function(){
           window.location = url;  // 0.8秒後に取得したURLに遷移
