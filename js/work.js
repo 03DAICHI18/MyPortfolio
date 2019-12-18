@@ -9,6 +9,10 @@ $(function () {
     }
 });
 
+  $('.link-button').click(function(){
+    $('#work').addClass('scrollIn');
+  });
+
   // ・・・・・キャプチャ画像の説明文・・・・・
 // li要素をマウスオーバー
 $(".work__capture-img").hover(function(){
