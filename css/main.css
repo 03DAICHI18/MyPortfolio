@@ -962,6 +962,7 @@ body::before {
   font-size: 12px;
   font-size: 0.75rem;
   width: 100%;
+  text-align: center;
   padding: 1rem;
   background: rgba(51, 51, 51, 0.7);
   cursor: pointer;
