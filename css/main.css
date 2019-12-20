@@ -1142,15 +1142,9 @@ body.fadeout::after {
     display: flex;
     align-items: center;
   }
-}
-
-@media (min-width: 1024px) and (min-width: 1024px) {
   .Contact__area-left {
     width: 50%;
   }
-}
-
-@media (min-width: 1024px) and (min-width: 1024px) {
   .Contact__area-right {
     width: 50%;
     height: 100%;

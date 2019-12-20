@@ -17,22 +17,19 @@
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+
     @include pc {
-      display: flex;
+    display: flex;
     align-items: center;
-    &-left {
-      @include pc {
+      &-left {
         width: 50%;
-      }
-    }
-    &-right {
-      @include pc {
+        }
+      &-right {
         width: 50%;
         height: 100%;
+        }
       }
     }
-    }
-  }
 
 
   &__block {
