@@ -12,23 +12,48 @@
     line-height: 1.5;
   }
 
+
   &__area {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    @include pc {
+      display: flex;
+    align-items: center;
+    &-left {
+      @include pc {
+        width: 50%;
+      }
+    }
+    &-right {
+      @include pc {
+        width: 50%;
+        height: 100%;
+      }
+    }
+    }
   }
-  
-  .label {
-    margin-bottom: 0.5rem;
+
+
+  &__block {
+    margin-top: 2rem;
+    span {
+      margin-left: 2rem;
+    }
+
+    .label {
+      display: block;
+      text-align: left;
+    }
   }
 
   .inputs {
     width: 90%;
     padding: 1rem;
+    margin-top: 0.5rem;
     border: none;
     border-bottom: 1px solid #333333;
     background: #F7F7F7;
-    margin-right: 1rem;
     @include fontsize(16);
 
     &:focus {
@@ -39,6 +64,10 @@
   .textarea {
     width: 90%;
     height: 8rem;
+    @include pc {
+      height: 20rem;
+    }
+    margin-top: 1rem;
     border: 1px solid #333333;
     background: #F7F7F7;
     @include fontsize(16);
@@ -49,10 +78,7 @@
     }
   }
 
-  &__block {
-    margin-top: 2rem;
-  }
-
+  
   &__block-btn {
     margin: 2rem auto;
     display: flex;
@@ -61,7 +87,10 @@
   }
 
   &__block-send {
-    margin-right: 5%;
+    margin-right: 3rem;
+    @include sp {
+      margin-right: 1rem;
+    }
     padding: 0.5rem 1rem;
     border: none;
     border-top: 1px solid #333;
@@ -80,7 +109,7 @@
   }
 
   &__block-reset {
-    margin-right: 5%;
+    margin-right: 3rem;
     padding: 0.5rem 1rem;
     border: none;
     border-top: 1px solid #333;

@@ -1137,17 +1137,46 @@ body.fadeout::after {
   margin: 0 auto;
 }
 
-.Contact .label {
-  margin-bottom: 0.5rem;
+@media (min-width: 1024px) {
+  .Contact__area {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .Contact__area-left {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .Contact__area-right {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.Contact__block {
+  margin-top: 2rem;
+}
+
+.Contact__block span {
+  margin-left: 2rem;
+}
+
+.Contact__block .label {
+  display: block;
+  text-align: left;
 }
 
 .Contact .inputs {
   width: 90%;
   padding: 1rem;
+  margin-top: 0.5rem;
   border: none;
   border-bottom: 1px solid #333333;
   background: #F7F7F7;
-  margin-right: 1rem;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -1160,19 +1189,22 @@ body.fadeout::after {
 .Contact .textarea {
   width: 90%;
   height: 8rem;
+  margin-top: 1rem;
   border: 1px solid #333333;
   background: #F7F7F7;
   font-size: 16px;
   font-size: 1rem;
 }
 
+@media (min-width: 1024px) {
+  .Contact .textarea {
+    height: 20rem;
+  }
+}
+
 .Contact .textarea:focus {
   outline: none;
   box-shadow: 0 3px 3px #7a7979;
-}
-
-.Contact__block {
-  margin-top: 2rem;
 }
 
 .Contact__block-btn {
@@ -1183,7 +1215,7 @@ body.fadeout::after {
 }
 
 .Contact__block-send {
-  margin-right: 5%;
+  margin-right: 3rem;
   padding: 0.5rem 1rem;
   border: none;
   border-top: 1px solid #333;
@@ -1193,6 +1225,12 @@ body.fadeout::after {
   font-size: 1rem;
   cursor: pointer;
   transition: all .3s;
+}
+
+@media (max-width: 479px) {
+  .Contact__block-send {
+    margin-right: 1rem;
+  }
 }
 
 .Contact__block-send:hover {
@@ -1205,7 +1243,7 @@ body.fadeout::after {
 }
 
 .Contact__block-reset {
-  margin-right: 5%;
+  margin-right: 3rem;
   padding: 0.5rem 1rem;
   border: none;
   border-top: 1px solid #333;
