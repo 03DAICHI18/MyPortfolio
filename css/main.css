@@ -1017,7 +1017,7 @@ body::before {
 
 @media (max-width: 479px) {
   .modal-window {
-    top: 10vw;
+    top: 20vw;
     left: 50%;
   }
 }
@@ -1029,7 +1029,7 @@ body::before {
 @media (max-width: 479px) {
   .modal-window__wrap {
     width: 80vw;
-    height: 70%;
+    height: 60%;
   }
 }
 
