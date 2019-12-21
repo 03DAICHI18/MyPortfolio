@@ -999,7 +999,6 @@ body::before {
   -moz-transform: translate(-50%);
   -ms-transform: translate(-50%);
   -o-transform: translate(-50%);
-  width: 50vw;
   padding: 1rem;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1011,6 +1010,7 @@ body::before {
 
 @media (min-width: 480px) and (max-width: 1024px) {
   .modal-window {
+    top: 20%;
     left: 50%;
     width: 50vw;
   }
@@ -1018,7 +1018,7 @@ body::before {
 
 @media (max-width: 479px) {
   .modal-window {
-    top: 20%;
+    top: 10%;
     left: 50%;
     width: 80vw;
   }
@@ -1112,8 +1112,15 @@ body.fadeout::after {
 }
 
 .Price .Price__text {
-  margin-top: 2rem;
-  text-align: center;
+  width: 70%;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .Price .Price__text {
+    text-align: center;
+  }
 }
 
 .Contact {
@@ -1165,14 +1172,20 @@ body.fadeout::after {
 }
 
 .Contact .inputs {
-  width: 90%;
+  width: 100%;
   padding: 1rem;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
   border: none;
   border-bottom: 1px solid #333333;
   background: #F7F7F7;
   font-size: 16px;
   font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .Contact .inputs {
+    width: 90%;
+  }
 }
 
 .Contact .inputs:focus {
@@ -1181,7 +1194,7 @@ body.fadeout::after {
 }
 
 .Contact .textarea {
-  width: 90%;
+  width: 100%;
   height: 8rem;
   margin-top: 1rem;
   border: 1px solid #333333;
@@ -1209,7 +1222,7 @@ body.fadeout::after {
 }
 
 .Contact__block-send {
-  margin-right: 3rem;
+  margin-right: 2em;
   padding: 0.5rem 1rem;
   border: none;
   border-top: 1px solid #333;
@@ -1223,7 +1236,7 @@ body.fadeout::after {
 
 @media (max-width: 479px) {
   .Contact__block-send {
-    margin-right: 1rem;
+    margin-right: 1em;
   }
 }
 
@@ -1237,7 +1250,7 @@ body.fadeout::after {
 }
 
 .Contact__block-reset {
-  margin-right: 3rem;
+  margin-right: 2em;
   padding: 0.5rem 1rem;
   border: none;
   border-top: 1px solid #333;
@@ -1247,6 +1260,12 @@ body.fadeout::after {
   font-size: 1rem;
   cursor: pointer;
   transition: all .3s;
+}
+
+@media (max-width: 479px) {
+  .Contact__block-reset {
+    margin-right: 1em;
+  }
 }
 
 .Contact__block-reset:hover {

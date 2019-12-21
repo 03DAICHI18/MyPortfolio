@@ -21,7 +21,11 @@
   }
 
   .Price__text {
-    margin-top: 2rem;
-    text-align: center;
+    width: 70%;
+    margin: 2rem auto;
+    text-align: left;
+    @include pc {
+      text-align: center;
+    }
   }
 }

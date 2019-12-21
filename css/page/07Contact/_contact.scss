@@ -45,9 +45,12 @@
   }
 
   .inputs {
-    width: 90%;
+    width: 100%;
+    @include pc {
+      width: 90%;
+    }
     padding: 1rem;
-    margin-top: 0.5rem;
+    margin-top: .5rem;
     border: none;
     border-bottom: 1px solid #333333;
     background: #F7F7F7;
@@ -59,7 +62,7 @@
     }
   }
   .textarea {
-    width: 90%;
+    width: 100%;
     height: 8rem;
     @include pc {
       height: 20rem;
@@ -83,10 +86,11 @@
     align-items: center;
   }
 
+
   &__block-send {
-    margin-right: 3rem;
+    margin-right: 2em;
     @include sp {
-      margin-right: 1rem;
+      margin-right: 1em;
     }
     padding: 0.5rem 1rem;
     border: none;
@@ -106,7 +110,10 @@
   }
 
   &__block-reset {
-    margin-right: 3rem;
+    margin-right: 2em;
+    @include sp {
+      margin-right: 1em;
+    }
     padding: 0.5rem 1rem;
     border: none;
     border-top: 1px solid #333;
