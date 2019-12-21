@@ -77,13 +77,15 @@ $(".work__capture-img").hover(function(){
         
 
 // ・・・・・モーダルウィンドウ・・・・・
-    // クリックで表示制御
     var scrollPos;
     $('.open').on('click' , function(){
         $("html , body").addClass("no_scroll");    // 背景固定させるクラス付与
         scrollPos = $(window).scrollTop();
 
-        $('.overlay , .modal-window').fadeIn(1000);
+        $('.overlay').fadeIn(1000);   // オーバーレイフェードイン
+
+        var id = $(this).data('id');   // 何番目のキャプション（モーダルウィンドウ）か認識
+        $('.modal-window[data-id="modal' + id + '"]').fadeIn(1000);
         return false;
         });
         

@@ -13,8 +13,10 @@
     <script src="js/script.js"></script>
 </head>
 <body>
+
+<!----------------- モーダルウィンドウ ----------------->
   <div class="overlay"></div>
-  <div class="modal-window">
+  <div class="modal-window" data-id="modal1">
     <div class="modal-window__wrap">
       <div class="modal-switch">
         <a class="modal-switch__btn" href="https://03daichi18.github.io/MyPortfolio/" target="blank">Site Link</a>
@@ -39,7 +41,87 @@
         </div>
     </div>
   </div>
-<!-- TopVisual -->
+  <div class="modal-window" data-id="modal2">
+    <div class="modal-window__wrap">
+      <div class="modal-switch">
+        <a class="modal-switch__btn" href="img/PC iSara.life模写製作LP.jpg" target="blank">PC image</a>
+        <a class="modal-switch__btn" href="img/SP iSara.life模写製作LP.jpg" target="blank">SP image</a>
+      </div>
+      <div class="modal-window__text">
+          <div class="modal-window__about">
+              <p>【used language】</p>
+              <p>HTML / css / JavaScript・jQuery</p>
+          </div>
+          <div class="modal-window__about">
+              <p>【used tool】</p>
+              <p>vscode</p>
+          </div>
+          <div class="modal-window__about">
+              <p>【Description】</p>
+              <a href=" https://isara.life" target="blank">リンク先</a>
+              <p>iSara.lifeのLP模写です。（著作権の関係で作品は画像データとしています）</p>
+              <p>全体ボリュームも多く、LPにおける汎用的なデザインも沢山あり多くのことを学べました。レスポンシブでコーディングを行い、スクロールトップやアコーディオンメニューはjQueryで実装しています。</p>
+          </div>
+      </div>
+      <div class="modal-switch">
+        <a class="close modal-switch__btn">Close</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal-window" data-id="modal3">
+    <div class="modal-window__wrap">
+      <div class="modal-switch">
+          <a class="modal-switch__btn" href="img/Pas-PolPC.jpg" target="blank">PC image</a>
+          <a class="modal-switch__btn" href="img/Pas-PolSP.jpg" target="blank">SP image</a>
+      </div>
+      <div class="modal-window__text">
+          <div class="modal-window__about">
+              <p>【used language】</p>
+              <p>HTML / css / JavaScript・jQuery</p>
+          </div>
+          <div class="modal-window__about">
+              <p>【used tool】</p>
+              <p>vscode</p>
+          </div>
+          <div class="modal-window__about">
+              <p>【Description】</p>
+              <a href="https://pas-pol.jp/" target="blank">リンク先</a>
+              <p>PAS-POLのLP模写です。（著作権の関係で作品は画像データとしています）</p>
+              <p>画像が自動的にフェードイン・アウトで切り替わるスライドショー、スマートフォン以下のサイズで画面上部に出るハンバーガーメニューなどjQueryで実装しています。PC版の一部はCSSのグリットレイアウトで配置しています。</p>
+          </div>
+      </div>
+      <div class="modal-switch">
+        <a class="close modal-switch__btn">Close</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal-window" data-id="modal4">
+    <div class="modal-window__wrap">
+      <div class="modal-switch">
+        <a class="modal-switch__btn" href="https://03daichi18.github.io/corporateA/" target="blank">Site Link</a>
+      </div>
+      <div class="modal-window__text">
+          <div class="modal-window__about">
+              <p>【used language】</p>
+              <p>HTML / css / JavaScript・jQuery</p>
+          </div>
+          <div class="modal-window__about">
+              <p>【used tool】</p>
+              <p>vscode</p>
+          </div>
+          <div class="modal-window__about">
+              <p>【Description】</p>
+              <p>下町の町工場を営んでいる会社を想定したシンプルなコーポレートサイトです。</p>
+              <p>ノングリッドデザインを採用しています。CSSを用いて背景色や画像はセピア調に変えています。スマートフォンの画面サイズにするとハンバーガーメニューに変化するヘッダーメニューはjQueryで実装しています。</p>
+          </div>
+      </div>
+      <div class="modal-switch">
+        <a class="close modal-switch__btn">Close</a>
+      </div>
+    </div>
+  </div>
+
+<!----------------- TopVisual ----------------->
     <div class="TopVisual">
       <div class="TopVisual__inner">
         <h1>DAICHI's Portfolio</h1>
@@ -52,7 +134,8 @@
             <a href="#"><span></span><span></span><span></span>Scroll</a>
           </div>
     </div>
-<!-- Header -->
+
+<!----------------- Header ----------------->
   <header id="Header" class="Header">
       <nav>
         <ul class="Header-inner">
@@ -65,7 +148,8 @@
       </nav>
   </header>
   <main>
-<!-- About -->
+
+<!-- ---------------About ----------------->
     <section id="About" class="About">
       <div class="content-block fadeInopacity">
         <h2 class="section-title">ABOUT</h2>
@@ -114,7 +198,8 @@
         </div>
       </div> 
     </section>
-<!-- Service -->
+
+<!----------------- Service ----------------->
     <section id="Service" class="Service">
       <div class="content-block fadeIn">
         <h2 class="section-title">Service</h2>
@@ -172,7 +257,8 @@
         </div>
       </div>
     </section>
-<!-- Work -->
+
+<!----------------- Work ----------------->
     <section id="Work" class="Work">
       <div class="content-block content-block__page">
           <h2 class="section-title">Work</h2>
@@ -180,113 +266,30 @@
           <ul class="Work__capture">
             <li class="work__capture-img"><a href="#"><img src="img/Portfolio.png" alt="ポートフォリオキャプチャ"></a>
               <div class="caption">
-                <div class="modal-link open">
+                <div class="modal-link open" data-id="1">
                     <p>伊藤大地のポートフォリオサイトです。</p>
                 </div>
-                
               </div>
             </li>
             <li class="work__capture-img"><a href="#"><img src="img/iSARA.jpg" alt="iSaraサイトの模写キャプチャ"></a>
               <div class="caption">
-                <div class="modal-link open">
+                <div class="modal-link open" data-id="2">
                   <p>iSara.life模写製作LP</p>
                 </div>
-                  <div class="overlay"></div>
-                  <div class="modal-window">
-                    <div class="modal-window__wrap">
-                      <div class="modal-switch">
-                        <a class="modal-switch__btn" href="img/PC iSara.life模写製作LP.jpg" target="blank">PC image</a>
-                        <a class="modal-switch__btn" href="img/SP iSara.life模写製作LP.jpg" target="blank">SP image</a>
-                      </div>
-                      <div class="modal-window__text">
-                          <div class="modal-window__about">
-                              <p>【used language】</p>
-                              <p>HTML / css / JavaScript・jQuery</p>
-                          </div>
-                          <div class="modal-window__about">
-                              <p>【used tool】</p>
-                              <p>vscode</p>
-                          </div>
-                          <div class="modal-window__about">
-                              <p>【Description】</p>
-                              <a href=" https://isara.life" target="blank">リンク先</a>
-                              <p>iSara.lifeのLP模写です。（著作権の関係で作品は画像データとしています）</p>
-                              <p>全体ボリュームも多く、LPにおける汎用的なデザインも沢山あり多くのことを学べました。レスポンシブでコーディングを行い、スクロールトップやアコーディオンメニューはjQueryで実装しています。</p>
-                          </div>
-                      </div>
-                      <div class="modal-switch">
-                        <a class="close modal-switch__btn">Close</a>
-                      </div>
-                    </div>
-                  </div>
               </div>
             </li>
             <li class="work__capture-img"><a href="#"><img src="img/PAS-POL.jpg" alt="PAS=POLサイトの模写キャプチャ"></a>
               <div class="caption">
-                <div class="modal-link open">
+                <div class="modal-link open" data-id="3">
                   <p>PAS-POL模写製作</p>
-              </div>
-                  <div class="overlay"></div>
-                  <div class="modal-window">
-                    <div class="modal-window__wrap">
-                      <div class="modal-switch">
-                          <a class="modal-switch__btn" href="img/Pas-PolPC.jpg" target="blank">PC image</a>
-                          <a class="modal-switch__btn" href="img/Pas-PolSP.jpg" target="blank">SP image</a>
-                      </div>
-                      <div class="modal-window__text">
-                          <div class="modal-window__about">
-                              <p>【used language】</p>
-                              <p>HTML / css / JavaScript・jQuery</p>
-                          </div>
-                          <div class="modal-window__about">
-                              <p>【used tool】</p>
-                              <p>vscode</p>
-                          </div>
-                          <div class="modal-window__about">
-                              <p>【Description】</p>
-                              <a href="https://pas-pol.jp/" target="blank">リンク先</a>
-                              <p>PAS-POLのLP模写です。（著作権の関係で作品は画像データとしています）</p>
-                              <p>画像が自動的にフェードイン・アウトで切り替わるスライドショー、スマートフォン以下のサイズで画面上部に出るハンバーガーメニューなどjQueryで実装しています。PC版の一部はCSSのグリットレイアウトで配置しています。</p>
-                          </div>
-                      </div>
-                      <div class="modal-switch">
-                        <a class="close modal-switch__btn">Close</a>
-                      </div>
-                    </div>
-                  </div>
+                </div>
               </div>
             </li>
             <li class="work__capture-img"><a href="#"><img src="img/corporate.jpg" alt="コーポレイトサイトのキャプチャ"></a>
               <div class="caption">
-                <div class="modal-link open">
+                <div class="modal-link open" data-id="4">
                   <p>仮想のコーポレートサイト</p>
-              </div>
-              <div class="overlay"></div>
-                  <div class="modal-window">
-                    <div class="modal-window__wrap">
-                      <div class="modal-switch">
-                        <a class="modal-switch__btn" href="https://03daichi18.github.io/corporateA/" target="blank">Site Link</a>
-                      </div>
-                      <div class="modal-window__text">
-                          <div class="modal-window__about">
-                              <p>【used language】</p>
-                              <p>HTML / css / JavaScript・jQuery</p>
-                          </div>
-                          <div class="modal-window__about">
-                              <p>【used tool】</p>
-                              <p>vscode</p>
-                          </div>
-                          <div class="modal-window__about">
-                              <p>【Description】</p>
-                              <p>下町の町工場を営んでいる会社を想定したシンプルなコーポレートサイトです。</p>
-                              <p>ノングリッドデザインを採用しています。CSSを用いて背景色や画像はセピア調に変えています。スマートフォンの画面サイズにするとハンバーガーメニューに変化するヘッダーメニューはjQueryで実装しています。</p>
-                          </div>
-                      </div>
-                      <div class="modal-switch">
-                        <a class="close modal-switch__btn">Close</a>
-                      </div>
-                    </div>
-                  </div>
+                </div>
               </div>
             </li>
           </ul>
@@ -298,7 +301,8 @@
           </div>
       </div>
     </section>
-<!-- Price -->
+
+<!-- ---------------Price ----------------->
     <section id="Price" class="Price">
       <div class="content-block fadeIn">
           <h2 class="section-title">Price</h2>
@@ -335,7 +339,8 @@
           <p class="Price__text">※上記は参考料金です。ご相談に応じてお見積もりさせていただきます。</p>
       </div>
     </section>
-<!-- Contact -->
+
+<!----------------- Contact ----------------->
     <section id="Contact" class="Contact">
       <div class="content-block fadeInopacity">
         <h2 class="section-title">Contact</h2>
@@ -345,7 +350,6 @@
         </div>
 
         <form action="mailform/php/mailform.php" method="post" id="mail_form" class="Contact__area">
-
           <div class="Contact__area-left">
               <div class="Contact__block  Contact__block-name">
                 <label class="label">会社名<span>Company Name</span></label>
@@ -400,9 +404,11 @@
       </div>
     </section>
   </main>
-<!-- Footer -->
+
+<!----------------- Footer ----------------->
   <footer class="Footer">
       <p>&copy; 2019 DAICHI ITOU</p>
   </footer>
+  
 </body>
 </html>
