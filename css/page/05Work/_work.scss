@@ -94,7 +94,7 @@
       left: 50%;
     }
     @include sp {
-      top: 20vw;
+      top: 15vh;
       left: 50%;
     }
   @include centertransform;
@@ -109,7 +109,7 @@
     overflow: scroll;
     @include sp {
       width: 80vw;
-      height: 60%;
+      height: 23rem;
     }
     
   }
