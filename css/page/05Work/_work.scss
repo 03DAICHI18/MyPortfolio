@@ -90,14 +90,12 @@
   top: 10%;
   left: 50%;
     @include tab {
-      top: 20%;
-      left: 50%;
-      width: 50vw;
-    }
-    @include sp {
       top: 10%;
       left: 50%;
-      width: 80vw;
+    }
+    @include sp {
+      top: 10vw;
+      left: 50%;
     }
   @include centertransform;
   padding: 1rem;
@@ -106,6 +104,15 @@
   color: #333;
   background: rgba($color: #333, $alpha: .9);
   z-index: 110;
+
+  &__wrap {
+    overflow: scroll;
+    @include sp {
+      width: 80vw;
+      height: 70vh;
+    }
+    
+  }
 
   &__text {
     padding: 1rem;
