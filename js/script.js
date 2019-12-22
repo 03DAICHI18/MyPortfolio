@@ -86,6 +86,10 @@ $(".work__capture-img").hover(function(){
 
         var id = $(this).data('id');   // 何番目のキャプション（モーダルウィンドウ）か認識
         $('.modal-window[data-id="modal' + id + '"]').fadeIn(1000);
+
+        $(window).on('touchmove', function(event) {
+            event.preventDefault();
+        });
         return false;
         });
         
