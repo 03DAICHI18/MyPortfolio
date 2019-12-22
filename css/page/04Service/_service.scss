@@ -58,6 +58,7 @@
       }
 
       &-contents {
+        width: calc(100% / 3);
         padding: 10px;
         border-right: 1px solid #EAEAEA;
         @include sp {

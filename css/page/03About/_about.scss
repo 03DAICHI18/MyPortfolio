@@ -7,8 +7,8 @@
     display: flex;
     margin-top: 3rem;
     @include fontsize(16);
-    filter: grayscale(80%);
-    -webkit-filter: grayscale(80%);
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
 
     @include sp {
       flex-direction: column;

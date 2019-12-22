@@ -576,8 +576,8 @@ body::after {
   margin-top: 3rem;
   font-size: 16px;
   font-size: 1rem;
-  filter: grayscale(80%);
-  -webkit-filter: grayscale(80%);
+  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%);
 }
 
 @media (max-width: 479px) {
@@ -857,6 +857,7 @@ body::before {
 }
 
 .Service .skill .skill__container-contents {
+  width: calc(100% / 3);
   padding: 10px;
   border-right: 1px solid #EAEAEA;
 }
