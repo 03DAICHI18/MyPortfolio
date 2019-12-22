@@ -565,10 +565,6 @@ body::after {
   display: block;
 }
 
-.highlight {
-  background: #7a7979;
-}
-
 .About {
   background: #F7F7F7;
   color: #333333;
