@@ -864,6 +864,7 @@ body::before {
 
 @media (max-width: 479px) {
   .Service .skill .skill__container-contents {
+    width: 100%;
     border-right: none;
     border-bottom: 1px solid #EAEAEA;
   }

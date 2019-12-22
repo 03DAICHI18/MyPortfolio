@@ -62,6 +62,7 @@
         padding: 10px;
         border-right: 1px solid #EAEAEA;
         @include sp {
+          width: 100%;
           border-right: none;
           border-bottom: 1px solid #EAEAEA;
         }
