@@ -1027,7 +1027,7 @@ body::before {
 @media (max-width: 479px) {
   .modal-window__wrap {
     width: 80vw;
-    height: 23rem;
+    height: 25rem;
   }
 }
 
