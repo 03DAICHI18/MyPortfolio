@@ -576,8 +576,8 @@ body::after {
   margin-top: 3rem;
   font-size: 16px;
   font-size: 1rem;
-  filter: grayscale(50%);
-  -webkit-filter: grayscale(50%);
+  filter: grayscale(60%);
+  -webkit-filter: grayscale(60%);
 }
 
 @media (max-width: 479px) {
