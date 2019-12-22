@@ -1,5 +1,5 @@
 $(function(){
-// ・・・トップ位置でフィックスすると色を透過させるヘッダー・・・
+// ・・・・・・・・・・・トップ位置でフィックスすると色を透過させるヘッダー・・・・・・・・・・・・・・・・
     var Header = $('#Header');
     var About = $('#About');
     //ウィンドウ枠からのAbout位置を取得
@@ -15,7 +15,7 @@ $(function(){
             Header.css('opacity' , '1');
         }
 
-// ・・・・・ブロックフェードイン・・・
+// ・・・・・・・・・・・・・・・・・・ブロックフェードイン・・・・・・・・・・・・・・・・
         $('.fadeInopacity').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
@@ -34,7 +34,7 @@ $(function(){
             }
         });
 
-// ・・・・ページナビのハイライト・・・・
+// ・・・・・・・・・・・・・・・・・ページナビのハイライト・・・・・・・・・・・・・・・・・
     // 各コンテンツ位置とスクロール量の関係を調べる
     for(var i = 1; i <= 5; i++){
         if($("section:nth-child(" + i + ")").offset().top < $(window).scrollTop() + 100){
@@ -46,7 +46,7 @@ $(function(){
     }
 });
 
-// ・・・・・ページ内スクロール・・・・・
+// ・・・・・・・・・・・・・・・・・・ページ内スクロール・・・・・・・・・・・・・・・・・・
     $('a[href^="#"]').click(function(event) {
         // クリックした要素のhref属性の値を取得
         var anchor = $(this).attr("href"); 
@@ -60,7 +60,7 @@ $(function(){
 // ＝＝＝＝＝＝＝＝ここまでスクロール関連＝＝＝＝＝＝＝＝＝＝＝
 
 
-// ・・・・・キャプチャ画像の説明文・・・・・
+// ・・・・・・・・・・・・・・・・・・キャプチャ画像の説明文・・・・・・・・・・・・・・・・・・
 // li要素をマウスオーバー
 $(".work__capture-img").hover(function(){
     // キャプション部分の表示：フェードイン
@@ -76,32 +76,47 @@ $(".work__capture-img").hover(function(){
     });
         
 
-// ・・・・・モーダルウィンドウ・・・・・
+// ・・・・・・・・・・・・・モーダルウィンドウ・・・・・・・・・・・・・
+// モーダル表示
     var scrollPos;
     $('.open').on('click' , function(){
         $("html , body").addClass("no_scroll");    // 背景固定させるクラス付与
         scrollPos = $(window).scrollTop();
-
         $('.overlay').fadeIn(1000);   // オーバーレイフェードイン
-
         var id = $(this).data('id');   // 何番目のキャプション（モーダルウィンドウ）か認識
         $('.modal-window[data-id="modal' + id + '"]').fadeIn(1000);
 
-        $(window).on('touchmove', function(event) {
-            event.preventDefault();
+    // ＝＝＝＝＝＝ios背景スクロール固定＝＝＝＝＝＝
+    var touch_start_y;    // タッチしたとき開始位置を保存しておく
+        $(window).on('touchstart', function(event) {
+            touch_start_y = event.originalEvent.changedTouches[0].screenY;
         });
+
+    $(window).on('touchmove.noscroll', function(event) {       // スワイプしているとき
+        var current_y = event.originalEvent.changedTouches[0].screenY,
+        height = $('.overlay').outerHeight(),
+        is_top = touch_start_y <= current_y && $('.overlay')[0].scrollTop === 0,
+        is_bottom = touch_start_y >= current_y && $('.overlay')[0].scrollHeight - $('.overlay')[0].scrollTop === height;
+    
+        if (is_top || is_bottom) {       // スクロール対応モーダルの上端または下端のとき
+        event.preventDefault();      // スクロール禁止
+        }
         return false;
         });
-        
+    }); 
+
+// モーダル非表示
     $('.close , .overlay').on('click' , function(){
         $("html , body").removeClass("no_scroll");    // 背景固定させるクラス削除
-        $(window).scrollTop(scrollPos);
+        $(window).off('touchmove.noscroll');     // イベントを削除
 
+        $(window).scrollTop(scrollPos);
         $('.overlay , .modal-window').stop().fadeOut(500);
         return false;
     });
+    
 
-// 別ベージ遷移時にフェードインさせる
+// ・・・・・・・・・・別ベージ遷移時にフェードインさせる・・・・・・・・・・
     $(window).on('load', function(){
         $('body').removeClass('fadeout');
         $('.content-block__page').css('opacity' , 0);
@@ -109,4 +124,4 @@ $(".work__capture-img").hover(function(){
         return false;
         });
         
-    });
+});
