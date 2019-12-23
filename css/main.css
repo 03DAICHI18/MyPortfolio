@@ -489,7 +489,6 @@ body::after {
 }
 
 .Header {
-  position: relative;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -502,12 +501,13 @@ body::after {
 }
 
 .Header .Header-inner {
+  display: flex;
   font-size: 0;
 }
 
 @media (max-width: 479px) {
   .Header .Header-inner__list {
-    display: inline-block;
+    display: block;
     text-align: center;
     height: 50px;
     line-height: 50px;
@@ -524,7 +524,7 @@ body::after {
 
 @media (min-width: 480px) and (max-width: 1024px) {
   .Header .Header-inner__list {
-    display: inline-block;
+    display: block;
     text-align: center;
     height: 50px;
     line-height: 50px;
@@ -541,7 +541,7 @@ body::after {
 
 @media (min-width: 1024px) {
   .Header .Header-inner__list {
-    display: inline-block;
+    display: block;
     text-align: center;
     height: 50px;
     line-height: 50px;
@@ -1119,14 +1119,14 @@ body.fadeout::after {
 }
 
 .Price .Price__text {
-  width: 70%;
   margin: 2rem auto;
-  text-align: left;
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 479px) {
   .Price .Price__text {
-    text-align: center;
+    width: 90%;
+    text-align: left;
   }
 }
 

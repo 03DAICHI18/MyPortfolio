@@ -1,6 +1,5 @@
 // ・・・・・・・・・header・・・・・・・・・
 .Header {
-  position: relative;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -12,6 +11,7 @@
   z-index: 10;
 
   .Header-inner {
+  display: flex;
   font-size: 0;  // inline-blockで生じる余白消し
     &__list {
       @include sp {
