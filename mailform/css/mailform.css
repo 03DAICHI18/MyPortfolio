@@ -58,15 +58,14 @@ form#mail_form dl dt span {
 form#mail_form dl dt span.required,
 form#mail_form dl dt span.optional {
 	display: inline-block;
-	float: left;
 	color: #ffffff;
 	padding: 4px 10px;
 	border-radius: 3px;
 }
 
 form#mail_form dl dt span.required {
-	background: #d9534f;
-	border: 1px solid #d43f3a;
+	background: #bd4e4a;
+	border: 1px solid #bd4e4a;
 }
 
 form#mail_form dl dt span.optional {
@@ -78,7 +77,7 @@ form#mail_form dl dd span.error_blank,
 form#mail_form dl dd span.error_format,
 form#mail_form dl dd span.error_match {
 	display: block;
-	color: #ff0000;
+	color: #bd4e4a;
 	margin-top: 3px;
 }
 

@@ -575,12 +575,12 @@ EOM;
 	for ( var i = 0; i < mailform_dt.length; i++ ) {
 		if ( mailform_dt.eq(i).next( 'dd' ).hasClass( 'required' ) ) {
 			$( '<span/>' )
-				.text( '必須' )
+				.text( '必須　：　' )
 				.addClass( 'required' )
 				.prependTo( $( mailform_dt.eq(i) ) );
 		} else {
 			$( '<span/>' )
-				.text( '任意' )
+				.text( '任意　：　' )
 				.addClass( 'optional' )
 				.prependTo( $( mailform_dt.eq(i) ) );
 		}

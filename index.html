@@ -368,33 +368,25 @@
         </div>
 
         <form action="mailform/php/mailform.php" method="post" id="mail_form" class="Contact__area">
-          <div class="Contact__area-left">
-              <div class="Contact__block  Contact__block-name">
-                <label class="label">会社名<span>Company Name</span></label>
-                <input class="inputs" type="text" id="company" name="company" value="" />
-              </div>
-              <div class="Contact__block Contact__block-name">
-                <label class="label">名前<span>Your Name</span></label>
-                <input class="inputs" type="text" id="name_1" name="name_1" value="" />
-              </div>
-              <div class="Contact__block Contact__block-name">
-                <label class="label">ふりがな<span>Name Reading</span></label>
-                <input class="inputs" type="text" id="read_1" name="read_1" value="" />
-              </div>
-              <div class="Contact__block Contact__block-mail">
-                <label class="label">メールアドレス<span>Mail Address</span></label>
-                <input class="inputs" type="email" id="mail_address" name="mail_address" value="" />
-              </div>
-              <div class="Contact__block Contact__block-mail">
-                <label class="label">(確認用)メールアドレス<span>Mail Address Confirm</span></label>
-                <input class="inputs" type="email" id="mail_address_confirm" name="mail_address_confirm" value="" />
-              </div>
-          </div>
-          <div class="Contact__area-right">
-              <div class="Contact__block Contact__block-message">
-                <label class="label">お問い合わせ内容<span>Contents</span></label>
-                <textarea id="contents" class="textarea" name="contents"></textarea>
-              </div>
+          <dl>
+              <dt class="label">会社名<span>Company Name</span></dt>
+              <dd><input class="inputs" type="text" id="company" name="company" value="" /></dd>
+              
+              <dt class="label">名前<span>Your Name</span></dt>
+              <dd class="required"><input class="inputs-name" type="text" id="name_1" name="name_1" value="" /> <input class="inputs-name" type="text" id="name_2" name="name_2" value="" /></dd>
+              
+              <dt class="label">ふりがな<span>Name Reading</span></dt>
+              <dd><input class="inputs-name" type="text" id="read_1" name="read_1" value="" /> <input class="inputs-name" type="text" id="read_2" name="read_2" value="" /></dd>
+              
+              <dt class="label">メールアドレス<span>Mail Address</span></dt>
+              <dd class="required"><input class="inputs" type="email" id="mail_address" name="mail_address" value="" /></dd>
+              
+              <dt class="label">メールアドレス<br />(確認用)<span>Mail Address Confirm</span></dt>
+              <dd><input class="inputs" type="email" id="mail_address_confirm" name="mail_address_confirm" value="" /></dd>
+
+              <dt class="label">お問い合わせの内容<span>Contents</span></dt>
+              <dd class="required"><textarea id="contents" class="textarea" name="contents"></textarea></dd>
+
               <div  class="Contact__block Contact__block-btn">
                 <p id="form_submit"><input class="Contact__block-send" type="button" id="form_submit_button" value="送信する" /></p>
                 <input class="Contact__block-reset" type="reset" value="リセット">
@@ -402,12 +394,12 @@
                     <a href="https://twitter.com/18__DAiCHi" target="blank"><i class="fab fa-twitter-square fa-2x faa-horizontal animated-hover"></i></a>
                 </div>
               </div>
-          </div>
+          </dl>
         </form>
-
-        <script src="mailform/js/mailform-js.php"></script>
+      </div>
+        <script src="./mailform/js/mailform-js.php"></script>
         <!-- フリガナ自動入力ライブラリここから -->
-        <script src="mailform/js/jquery.autoKana.js"></script>
+        <script src="./mailform/js/jquery.autoKana.js"></script>
         <script>
           (function( $ ) {
             $.fn.autoKana( '#name_1', '#read_1', {
@@ -418,8 +410,8 @@
             });
           })( jQuery );
         </script>
-        <!-- フリガナ自動入力ライブラリここまで -->
-      </div>
+<!-- フリガナ自動入力ライブラリここまで -->
+      
     </section>
   </main>
 

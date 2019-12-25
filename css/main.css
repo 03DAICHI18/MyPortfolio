@@ -1151,20 +1151,6 @@ body.fadeout::after {
   margin: 0 auto;
 }
 
-@media (min-width: 1024px) {
-  .Contact__area {
-    display: flex;
-    align-items: center;
-  }
-  .Contact__area-left {
-    width: 50%;
-  }
-  .Contact__area-right {
-    width: 50%;
-    height: 100%;
-  }
-}
-
 .Contact__block {
   margin-top: 2rem;
 }
@@ -1179,23 +1165,64 @@ body.fadeout::after {
 }
 
 .Contact .inputs {
-  width: 100%;
+  width: 65%;
   padding: 1rem;
-  margin-top: .5rem;
+  margin: 1rem 0 2rem;
   border: none;
   border-bottom: 1px solid #333333;
   background: #F7F7F7;
-  font-size: 16px;
-  font-size: 1rem;
 }
 
 @media (min-width: 1024px) {
   .Contact .inputs {
-    width: 90%;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  .Contact .inputs {
+    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 .Contact .inputs:focus {
+  outline: none;
+  box-shadow: 0 3px 3px #7a7979;
+}
+
+.Contact .inputs-name {
+  margin: 1rem 2rem 2rem 0;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #333333;
+  background: #F7F7F7;
+}
+
+@media (min-width: 1024px) {
+  .Contact .inputs-name {
+    width: 30%;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  .Contact .inputs-name {
+    width: 30%;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .Contact .inputs-name {
+    width: 30%;
+  }
+}
+
+.Contact .inputs-name:focus {
   outline: none;
   box-shadow: 0 3px 3px #7a7979;
 }
@@ -1206,14 +1233,6 @@ body.fadeout::after {
   margin-top: 1rem;
   border: 1px solid #333333;
   background: #F7F7F7;
-  font-size: 16px;
-  font-size: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .Contact .textarea {
-    height: 20rem;
-  }
 }
 
 .Contact .textarea:focus {
