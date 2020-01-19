@@ -31,8 +31,6 @@
   <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="js/script.js"></script>
 </head>
 <body>
 
@@ -380,7 +378,7 @@
           <p>お仕事のご依頼、ご質問等ございましたら下記フォームか、TwitterのDMからお気軽にお声掛けください。</p>
         </div>
 
-        <form action="php/mailform.php" method="post" id="mail_form">
+        <form action="mailform/php/mailform.php" method="post" id="mail_form">
           <dl>
             <dt>会社名<span>Company Name</span></dt>
             <dd><input type="text" id="company" name="company" value="" /></dd>
@@ -410,9 +408,12 @@
         
 
       </div>
-        <script src="./mailform/js/mailform-js.php"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="js/script.js"></script>
+
+        <script src="mailform/js/mailform-js.php"></script>
         <!-- フリガナ自動入力ライブラリここから -->
-        <script src="./mailform/js/jquery.autoKana.js"></script>
+        <script src="mailform/js/jquery.autoKana.js"></script>
         <script>
           (function( $ ) {
             $.fn.autoKana( '#name_1', '#read_1', {

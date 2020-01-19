@@ -60,13 +60,13 @@ form#mail_form dl dt span.optional {
 }
 
 form#mail_form dl dt span.required {
-	background: #d9534f;
-	border: 1px solid #d43f3a;
+	color: #431917;
+	border-bottom: 1px solid #431917;
 }
 
 form#mail_form dl dt span.optional {
-	background: #337ab7;
-	border: 1px solid #2e6da4;
+	color: #1f4a6f;
+	border-bottom: 1px solid #1f4a6f;
 }
 
 form#mail_form dl dd span.error_blank,
