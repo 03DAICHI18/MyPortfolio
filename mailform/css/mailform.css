@@ -7,14 +7,9 @@ form#mail_form * {
 }
 
 form#mail_form {
-	width: 960px;
 	margin: 50px auto;
 	padding: 10px 0;
-	background: #ffffff;
-	border: 1px solid #cccccc;
 	border-radius: 7px;
-	box-shadow: 0 0 7px rgba( 0, 0, 0, 0.2 );
-	font-size: 95%;
 	line-height: 1.8;
 }
 
@@ -49,7 +44,7 @@ form#mail_form dl dt:first-child + dd {
 form#mail_form dl dt span {
 	display: block;
 	font-size: 85%;
-	color: #3377ff;
+	color: #0b2456;
 }
 
 
@@ -58,14 +53,15 @@ form#mail_form dl dt span {
 form#mail_form dl dt span.required,
 form#mail_form dl dt span.optional {
 	display: inline-block;
+	float: left;
 	color: #ffffff;
 	padding: 4px 10px;
 	border-radius: 3px;
 }
 
 form#mail_form dl dt span.required {
-	background: #bd4e4a;
-	border: 1px solid #bd4e4a;
+	background: #d9534f;
+	border: 1px solid #d43f3a;
 }
 
 form#mail_form dl dt span.optional {
@@ -77,7 +73,7 @@ form#mail_form dl dd span.error_blank,
 form#mail_form dl dd span.error_format,
 form#mail_form dl dd span.error_match {
 	display: block;
-	color: #bd4e4a;
+	color: #ff0000;
 	margin-top: 3px;
 }
 
@@ -237,15 +233,15 @@ form#mail_form input#address {
 form#mail_form p#form_submit {
 	width: 90%;
 	margin: 0 auto;
+	text-align: center;
 	padding: 15px 0;
 	border-top: 1px solid #cccccc;
 }
 
 form#mail_form input[type="button"] {
 	padding: 7px 20px;
-	border: 1px solid #4cae4c;
-	border-radius: 3px;
-	background: #5cb85c;
+	border-radius: 5px;
+	background: #050505;
 	font-size: 100%;
 	color: #ffffff;
 	font-family: inherit;
@@ -254,19 +250,8 @@ form#mail_form input[type="button"] {
 
 form#mail_form input[type="button"]:hover {
 	cursor: pointer;
-	background: #449d44;
-	border: 1px solid #398439;
+	opacity: .5;
 }
-
-form#mail_form input#form_submit_button {
-	margin-left: 35%;
-}
-
-
-
-
-
-
 
 
 /* -- responsive ----------------------------------------------------------------------------------------------------------------- */
@@ -288,7 +273,6 @@ form#mail_form dl dt {
 	float: none;
 	text-align: left;
 	padding: 15px 0 5px;
-	font-weight: bold;
 }
 
 form#mail_form dl dd {
@@ -340,7 +324,3 @@ form#mail_form input#schedule {
 
 }
 /* 1000pixel end */
-
-
-
-

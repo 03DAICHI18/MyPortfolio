@@ -72,21 +72,6 @@ $(function(){
             var id = $(this).data('id');   // 何番目のキャプション（モーダルウィンドウ）か認識
             $('.modal-window[data-id="modal' + id + '"]').fadeIn(1000);
     
-        // // ＝＝＝＝＝＝ios背景スクロール固定　※機能検証中のため一時削除＝＝＝＝＝＝
-        // var touch_start_y;    // タッチしたとき開始位置を保存しておく
-        //     $(window).on('touchstart', function(event) {
-        //         touch_start_y = event.originalEvent.changedTouches[0].screenY;
-        //     });
-    
-        // $(window).on('touchmove.noscroll', function(event) {       // スワイプしているとき
-        //     var current_y = event.originalEvent.changedTouches[0].screenY,
-        //     height = $('.overlay').outerHeight(),
-        //     is_top = touch_start_y <= current_y && $('.overlay')[0].scrollTop === 0,
-        //     is_bottom = touch_start_y >= current_y && $('.overlay')[0].scrollHeight - $('.overlay')[0].scrollTop === height;
-        
-        //     if (is_top || is_bottom) {       // スクロール対応モーダルの上端または下端のとき
-        //     event.preventDefault();      // スクロール禁止
-        //     }
             return false;
             });
     
