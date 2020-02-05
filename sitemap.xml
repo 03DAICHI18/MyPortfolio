@@ -3,14 +3,48 @@
 
 <!--  created with free sitemap generation system www.sitemapxml.jp  --> 
 <url>
-  <loc>https://daichito.com/</loc>
+  <loc>https://daichito.com/blog/</loc>
   <priority>1.0</priority>
-  <lastmod>2020-01-19T14:30:08+09:00</lastmod>
 </url>
 <url>
-  <loc>https://daichito.com/work.html</loc>
+  <loc>https://daichito.com/blog/operator-information/</loc>
   <priority>0.8</priority>
-  <lastmod>2020-01-19T14:30:07+09:00</lastmod>
+</url>
+<url>
+  <loc>https://daichito.com/blog/category/web%e8%a3%bd%e4%bd%9c/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/category/study/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/recommended-study-method/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/create-a-homepage/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/web-production/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/about-me/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/2020/02/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/2020/01/</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://daichito.com/blog/category/profile/</loc>
+  <priority>0.7</priority>
 </url>
 
 </urlset>

@@ -232,7 +232,7 @@ form#mail_form input#address {
 
 form#mail_form p#form_submit {
 	width: 90%;
-	margin: 0 auto;
+	margin: 2em auto;
 	text-align: center;
 	padding: 15px 0;
 	border-top: 1px solid #cccccc;

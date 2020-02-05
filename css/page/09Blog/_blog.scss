@@ -1,0 +1,72 @@
+.Blog {
+  @include black;
+
+  .slider {
+    width: 600px;
+    height: 11rem;
+    @include sp {
+      width: 20rem;
+      height: 22rem;
+    }
+    margin: 2rem auto 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #4b4b4b;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    position: relative;
+  }
+
+  .slideSet {
+    position: absolute;
+  }
+
+  .slideSet > div {
+    width: 600px;
+    height: 11rem;
+    @include sp {
+      width: 20rem;
+      height: 22rem;
+    }
+  }
+
+  .slide {
+    float: left;
+    width: 600px;
+    height: 11rem;
+    @include sp {
+      width: 20rem;
+      height: 22rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .slidebtn {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .slidebtn > button {
+    width: 5rem;
+    height: 2rem;
+    margin: 0 2rem;
+    background: rgba($color: #000000, $alpha: 0);
+    border: 1px solid #fafafa;
+    color: #fafafa;
+    cursor: pointer;
+  }
+
+  .Blog-link {
+    padding: 3rem;
+    text-align: center;
+    
+    a {
+      color: #dcdbdb;
+      text-decoration: underline;
+    }
+    }
+}

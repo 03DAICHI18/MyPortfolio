@@ -242,7 +242,7 @@ body::after {
     height: 0;
     border-style: solid;
     border-width: 100vh 100vw 0 0;
-    border-color: #333 transparent transparent transparent;
+    border-color: #3e3e3e transparent transparent transparent;
     animation: SpfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: SpfadeInBack 4s ease-in 0s 1 normal;
   }
@@ -272,7 +272,7 @@ body::after {
     left: 0;
     width: 50%;
     height: 55%;
-    background: #333;
+    background: #3e3e3e;
     animation: LeftfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
   }
@@ -302,7 +302,7 @@ body::after {
     left: 0;
     width: 50%;
     height: 55%;
-    background: #333;
+    background: #3e3e3e;
     animation: LeftfadeInBack 4s ease-in 0s 1 normal;
     -webkit-animation: LeftfadeInBack 4s ease-in 0s 1 normal;
   }
@@ -339,7 +339,7 @@ body::after {
     right: 0;
     width: 80%;
     height: 10%;
-    background: #333;
+    background: #3e3e3e;
   }
   @keyframes RightfadeInBack {
     0% {
@@ -367,7 +367,7 @@ body::after {
     right: 0;
     width: 80%;
     height: 10%;
-    background: #333;
+    background: #3e3e3e;
   }
   @keyframes RightfadeInBack {
     0% {
@@ -786,7 +786,7 @@ body::before {
 
 .Service {
   display: block;
-  background: #7a7979;
+  background: #3e3e3e;
   color: #EAEAEA;
 }
 
@@ -1097,7 +1097,7 @@ body.fadeout::after {
 
 .Price {
   display: block;
-  background: #7a7979;
+  background: #3e3e3e;
   color: #EAEAEA;
 }
 
@@ -1147,7 +1147,6 @@ body.fadeout::after {
 
 .Contact .Contant__sns {
   text-align: center;
-  margin: 0 auto;
 }
 
 .Contact .Contant__sns a {
@@ -1159,9 +1158,92 @@ body.fadeout::after {
 }
 
 .Footer {
-  background: #7a7979;
+  background: #3e3e3e;
   color: #EAEAEA;
   width: 100%;
   text-align: center;
   padding: 30px 0;
+}
+
+.Blog {
+  background: #3e3e3e;
+  color: #EAEAEA;
+}
+
+.Blog .slider {
+  width: 600px;
+  height: 11rem;
+  margin: 2rem auto 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 1px solid #4b4b4b;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+@media (max-width: 479px) {
+  .Blog .slider {
+    width: 20rem;
+    height: 22rem;
+  }
+}
+
+.Blog .slideSet {
+  position: absolute;
+}
+
+.Blog .slideSet > div {
+  width: 600px;
+  height: 11rem;
+}
+
+@media (max-width: 479px) {
+  .Blog .slideSet > div {
+    width: 20rem;
+    height: 22rem;
+  }
+}
+
+.Blog .slide {
+  float: left;
+  width: 600px;
+  height: 11rem;
+}
+
+@media (max-width: 479px) {
+  .Blog .slide {
+    width: 20rem;
+    height: 22rem;
+  }
+}
+
+.Blog .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Blog .slidebtn {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.Blog .slidebtn > button {
+  width: 5rem;
+  height: 2rem;
+  margin: 0 2rem;
+  background: transparent;
+  border: 1px solid #fafafa;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+.Blog .Blog-link {
+  padding: 3rem;
+  text-align: center;
+}
+
+.Blog .Blog-link a {
+  color: #dcdbdb;
+  text-decoration: underline;
 }
